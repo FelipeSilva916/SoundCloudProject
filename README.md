@@ -55,7 +55,7 @@ Returns the information about the current user that is logged in.
 - Request
 
   - Method: GET
-  - URL: /user/:id
+  - URL: /users/:id
   - Body: none
 
 - Successful Response
@@ -84,7 +84,7 @@ information.
 - Request
 
   - Method: POST
-  - URL: /login/:id
+  - URL: /users/login
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -155,7 +155,7 @@ user's information.
 - Request
 
   - Method: POST
-  - URL: /sign-up/:id
+  - URL: /users/signup
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -286,7 +286,7 @@ Returns all the songs created by the current user.
 - Request
 
   - Method: GET
-  - URL: /songs/:id
+  - URL: /my/songs
   - Body: none
 
 - Successful Response
@@ -322,7 +322,7 @@ Returns the details of a song specified by its id.
 - Request
 
   - Method: GET
-  - URL: /details/songs/:songId
+  - URL: /songs/:songId
   - Body: none
 
 - Successful Response
@@ -604,7 +604,7 @@ Returns all the Albums created by the current user.
 - Request
 
   - Method: GET
-  - URL: /:userId/albums
+  - URL: /my/albums
   - Body: none
 
 - Successful Response
@@ -638,7 +638,7 @@ Returns the details of an album specified by its id.
 - Request
 
   - Method: GET
-  - URL: /details/albums/:albumId
+  - URL: /albums/:albumId
   - Body: none
 
 - Successful Response
@@ -920,7 +920,7 @@ Create and return a new comment for a song specified by id.
 - Request
 
   - Method: POST
-  - URL: /songs/:songId/
+  - URL: /songs/:songId/comments
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -1284,7 +1284,7 @@ Creates and returns a new playlist.
 - Request
 
   - Method: POST
-  - URL: /playlist
+  - URL: /playlists
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -1568,7 +1568,7 @@ Returns all the playlists created by the current user.
 - Request
 
   - Method: GET
-  - URL: /:userId/playlists
+  - URL: /my/playlists
   - Body: none
 
 - Successful Response
