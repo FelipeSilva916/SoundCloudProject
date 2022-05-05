@@ -1,8 +1,8 @@
 ## User
 
 - GET /users/:id (Get current USER)
-- POST /users/login (Login an user)
-- POST /users/signup (Sign-up an user)
+- POST /login (Login an user)
+- POST /signup (Sign-up an user)
 
 ## My
 

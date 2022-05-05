@@ -84,7 +84,7 @@ information.
 - Request
 
   - Method: POST
-  - URL: /users/login
+  - URL: /login
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -155,7 +155,7 @@ user's information.
 - Request
 
   - Method: POST
-  - URL: /users/signup
+  - URL: /signup
   - Headers:
     - Content-Type: application/json
   - Body:
