@@ -4,7 +4,7 @@
 
 ## Database Schema Design
 
-`<insert database schema design here>`
+![alt text](https://github.com/FelipeSilva916/SoundCloudProject/blob/main/Screen%20Shot%202022-05-05%20at%208.01.35%20PM.png?raw=true)
 
 ## API Documentation
 
@@ -55,7 +55,7 @@ Returns the information about the current user that is logged in.
 - Request
 
   - Method: GET
-  - URL: /users/:id
+  - URL: /users/:userId
   - Body: none
 
 - Successful Response

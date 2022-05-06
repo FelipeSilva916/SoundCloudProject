@@ -1,6 +1,6 @@
 ## User
 
-- GET /users/:id (Get current USER)
+- GET /users/:userId (Get current USER)
 - POST /login (Login an user)
 - POST /signup (Sign-up an user)
 
