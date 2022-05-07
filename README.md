@@ -55,7 +55,7 @@ Returns the information about the current user that is logged in.
 - Request
 
   - Method: GET
-  - URL: /users/:userId
+  - URL: /my
   - Body: none
 
 - Successful Response
@@ -1057,7 +1057,7 @@ Delete an existing comment.
 - Require proper authorization: Comment must belong to the current user
 - Request
 
-  - Method: GET
+  - Method: DELETE
   - URL: songs/:songId/:commentId
   - Body: none
 
@@ -1139,7 +1139,7 @@ Returns all the songs created by the specified artist.
 - Request
 
   - Method: GET
-  - URL: /artist/:artistId/songs
+  - URL: /artists/:artistId/songs
   - Body: none
 
 - Successful Response
@@ -1237,7 +1237,7 @@ Returns all the playlists created by the specified artist.
 - Request
 
   - Method: GET
-  - URL: /artists/:artistId/playlist
+  - URL: /artists/:artistId/playlists
   - Body: none
 
 - Successful Response
@@ -1402,7 +1402,7 @@ Returns the details of a playlist specified by its id.
 - Request
 
   - Method: GET
-  - URL: /playlist/:playlistId
+  - URL: /playlists/:playlistId
   - Body: none
 
 - Successful Response
@@ -1459,7 +1459,7 @@ Updates and returns an existing playlist.
 - Request
 
   - Method: PUT/PATCH
-  - URL: /playlist/:playlistId
+  - URL: /playlists/:playlistId
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -1529,7 +1529,7 @@ Deletes an existing playlist.
 - Request
 
   - Method: DELETE
-  - URL: /playlist/:playlistId
+  - URL: /playlists/:playlistId
   - Body: none
 
 - Successful Response

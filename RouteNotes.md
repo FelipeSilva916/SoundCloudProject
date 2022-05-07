@@ -1,14 +1,14 @@
 ## User
 
-- GET /users/:userId (Get current USER)
 - POST /login (Login an user)
 - POST /signup (Sign-up an user)
 
-## My
+## My -> Current User
 
+- GET /my (Get current USER)
 - GET my/albums (Get all albums by Current user)
 - GET my/songs (Get all Songs by Current user)
-- GET my/playlist (Get all playlists by Current user)
+- GET my/playlists (Get all playlists by Current user)
 
 ## Songs
 
@@ -36,7 +36,7 @@
 ## Artist
 
 - GET /artists/:artistId (Artist by ID)
-- GET /artist/:artistId/songs (All songs from Artist by ID)
+- GET /artists/:artistId/songs (All songs from Artist by ID)
 - GET /artists/:artistId/albums (All albums from Artist by ID)
 - GET /artists/:artistId/playlist (Playlist created by Artist)
 
@@ -44,9 +44,9 @@
 
 - POST /playlists (Create playlist)
 - POST /playlists/:playlistId (Add song to playlist, by playlist ID)
-- GET /playlist/:playlistId
-- PUT/PATCH /playlist/:playlistId (Edit playlist by ID)
-- DELETE /playlist/:playlistId
+- GET /playlists/:playlistId
+- PUT/PATCH /playlists/:playlistId (Edit playlist by ID)
+- DELETE /playlists/:playlistId
 
 ## Add Query Filters to Get All Songs
 
