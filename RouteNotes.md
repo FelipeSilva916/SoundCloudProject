@@ -14,14 +14,14 @@
 
 - GET /songs (All songs)
 - GET /songs/:songId (Details of a specific song)
-- PUT/PATCH songs/:songId
+- PUT songs/:songId
 - DELETE /songs/:songId
 
 ## Albums
 
 - GET /albums (All albums)
 - GET /albums/:albumId (Details of specific album)
-- PUT/PATCH /albums/:albumsId
+- PUT /albums/:albumsId
 - DELETE /albums/:albumId
 - POST /albums (Create an album)
 - POST /albums/:albumId (Create a Song for an Album based on the Album's id)
@@ -30,7 +30,7 @@
 
 - GET /songs/:songId/comments (By song id)
 - POST /songs/:songId/comments (Post comment by ID)
-- PUT/PATCH /songs/:songId/:commendId
+- PUT /songs/:songId/:commendId
 - DELETE /songs/:songId/:commendId
 
 ## Artist
@@ -45,7 +45,7 @@
 - POST /playlists (Create playlist)
 - POST /playlists/:playlistId (Add song to playlist, by playlist ID)
 - GET /playlists/:playlistId
-- PUT/PATCH /playlists/:playlistId (Edit playlist by ID)
+- PUT /playlists/:playlistId (Edit playlist by ID)
 - DELETE /playlists/:playlistId
 
 ## Add Query Filters to Get All Songs
