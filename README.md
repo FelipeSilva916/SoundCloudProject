@@ -4,7 +4,7 @@
 
 ## Database Schema Design
 
-![alt text](https://github.com/FelipeSilva916/SoundCloudProject/blob/main/Screen%20Shot%202022-05-05%20at%208.01.35%20PM.png?raw=true)
+![alt text](./images/SoundCloudDB.png)
 
 ## API Documentation
 
