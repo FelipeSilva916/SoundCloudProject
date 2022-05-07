@@ -454,7 +454,7 @@ Updates and returns an existing song.
 - Require proper authorization: Song must belong to the current user
 - Request
 
-  - Method: PUT/PATCH
+  - Method: PUT
   - URL: /songs/:songId
   - Headers:
     - Content-Type: application/json
@@ -757,7 +757,7 @@ Updates and returns an existing album.
 - Require proper authorization: Album must belong to the current user
 - Request
 
-  - Method: PUT/PATCH
+  - Method: PUT
   - URL: /albums/:albumsId
   - Headers:
     - Content-Type: application/json
@@ -988,7 +988,7 @@ Update and return an existing comment.
 - Require proper authorization: Comment must belong to the current user
 - Request
 
-  - Method: PUT/PATCH
+  - Method: PUT
   - URL: /songs/:songId/:commendId
   - Headers:
     - Content-Type: application/json
@@ -1458,7 +1458,7 @@ Updates and returns an existing playlist.
 - Require proper authorization: Playlist must belong to the current user
 - Request
 
-  - Method: PUT/PATCH
+  - Method: PUT
   - URL: /playlists/:playlistId
   - Headers:
     - Content-Type: application/json
