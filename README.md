@@ -989,7 +989,7 @@ Update and return an existing comment.
 - Request
 
   - Method: PUT
-  - URL: /songs/:songId/:commendId
+  - URL: /comments/:commentId
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -1058,7 +1058,7 @@ Delete an existing comment.
 - Request
 
   - Method: DELETE
-  - URL: songs/:songId/:commentId
+  - URL: /comments/:commentId
   - Body: none
 
 - Successful Response

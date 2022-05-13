@@ -31,7 +31,7 @@
 - GET /songs/:songId/comments (By song id)
 - POST /songs/:songId/comments (Post comment by ID)
 
-// comments/:commentId
+## Comments -> CommendID (Edit/Delete comments)
 
 - PUT /songs/:songId/:commendId
 - DELETE /songs/:songId/:commendId
@@ -58,6 +58,4 @@
 - GET /artists/search
 - GET /playlists/search
 
-Schema
-created & updated to users table
 remove playlistId to playlists table
