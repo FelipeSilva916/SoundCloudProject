@@ -49,4 +49,3 @@ module.exports = {
     await queryInterface.dropTable("Users");
   }
 };
-//push
