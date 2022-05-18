@@ -37,6 +37,7 @@ router.post("/", validateSignup, async (req, res) => {
     user
   });
 });
+
 //
 //
 //
