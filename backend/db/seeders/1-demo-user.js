@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert("Users", [
+    await queryInterface.bulkInsert("Users", [
       {
         //1
         email: "demo@user.io",
@@ -34,7 +34,7 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     const Op = Sequelize.Op;
 
-    return queryInterface.bulkDelete(
+    await queryInterface.bulkDelete(
       "Users",
       {
         username: {
