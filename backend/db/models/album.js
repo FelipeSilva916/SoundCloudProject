@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "userId",
         onDelete: "CASCADE"
       }),
-        Album.hasHook(models.song, { foreignKey: "albumId" });
+        Album.hasMany(models.Song, { foreignKey: "albumId" });
     }
   }
   Album.init(
