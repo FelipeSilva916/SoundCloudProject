@@ -43,6 +43,8 @@ router.post("/signup", validateSignup, async (req, res) => {
   });
 });
 
+//get the current user
+
 //
 //
 //
