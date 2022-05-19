@@ -15,6 +15,14 @@ router.get("/", restoreUser, async (req, res) => {
   } else return res.json();
 });
 
-//get
+//get albums by current user
+router.get("/albums", async (req, res) => {
+  const { user } = req;
+
+  const albums = await Album.find.findAll({
+    where: { userId: user.is }
+  });
+  res.json(albums);
+});
 
 module.exports = router;
