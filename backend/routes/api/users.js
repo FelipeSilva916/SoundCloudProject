@@ -1,6 +1,10 @@
 // backend/routes/api/users.js
 const express = require("express");
-const { setTokenCookie, requireAuth } = require("../../utils/auth");
+const {
+  setTokenCookie,
+  requireAuth,
+  restoreUser
+} = require("../../utils/auth");
 const { User } = require("../../db/models");
 const router = express.Router();
 const { check } = require("express-validator");
@@ -53,5 +57,5 @@ router.post("/signup", validateSignup, async (req, res, next) => {
   });
 });
 //
-//
+
 module.exports = router;
