@@ -6,13 +6,14 @@ const albumRouter = require("./api/albums");
 const songRouter = require("./api/songs");
 const commentRouter = require("./api/comments");
 const playlistsRouter = require("./api/playlists");
-
+const myRouter = require("./api/my");
 //
 router.use(apiRouter); //keep
 router.use(albumRouter);
 router.use(songRouter);
 router.use(commentRouter);
 router.use(playlistsRouter);
+router.use(myRouter);
 
 //
 router.get("/api/csrf/restore", (req, res) => {

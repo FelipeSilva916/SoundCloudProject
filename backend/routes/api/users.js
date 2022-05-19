@@ -28,7 +28,8 @@ const validateSignup = [
 
 //================== Sign up ==========================//
 router.post("/signup", validateSignup, async (req, res) => {
-  const { firstName, lastName, email, password, username } = req.body;
+  const { firstName, lastName, email, password, username, token } = req.body;
+
   const user = await User.signup({
     firstName,
     lastName,
@@ -39,12 +40,10 @@ router.post("/signup", validateSignup, async (req, res) => {
   await setTokenCookie(res, user);
 
   return res.json({
-    user
+    user,
+    token
   });
 });
-
-//get the current user
-
 //
 //
 //
