@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const apiRouter = require("./api");
+const apiRouter = require("./api"); // keep
 const albumRouter = require("./api/albums");
 const songRouter = require("./api/songs");
 const commentRouter = require("./api/comments");
 const playlistsRouter = require("./api/playlists");
 
 //
-router.use(apiRouter);
+router.use(apiRouter); //keep
 router.use(albumRouter);
 router.use(songRouter);
 router.use(commentRouter);
