@@ -27,8 +27,15 @@ const validateSignup = [
 //=======================================================
 
 //================== Sign up ==========================//
-router.post("/signup", validateSignup, async (req, res) => {
-  const { firstName, lastName, email, password, username, token } = req.body;
+router.post("/signup", validateSignup, async (req, res, next) => {
+  const { firstName, lastName, email, password, username } = req.body;
+  const userCheck = await User.findOne({ where: { email: email } });
+
+  if (userCheck) {
+    const error = new Error("This e-mail already exists.");
+    error.status = 403;
+    return next(error);
+  }
 
   const user = await User.signup({
     firstName,
@@ -37,14 +44,14 @@ router.post("/signup", validateSignup, async (req, res) => {
     username,
     password
   });
-  await setTokenCookie(res, user);
+
+  let token = setTokenCookie(res, user);
 
   return res.json({
     user,
     token
   });
 });
-//
 //
 //
 module.exports = router;
