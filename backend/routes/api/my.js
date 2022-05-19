@@ -9,9 +9,12 @@ router.get("/", restoreUser, async (req, res) => {
   if (user) {
     return res.json({
       user: user.toSafeObject(),
-      msg: "Testing My"
+      msg: "Testing My",
+      token: cookies.token
     });
-  } else return res.json({ msg: "Testing My" });
+  } else return res.json();
 });
+
+//get
 
 module.exports = router;
