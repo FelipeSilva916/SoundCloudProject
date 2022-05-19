@@ -1,11 +1,15 @@
-const router = require("express").Router();
-//
+const express = require("express");
+const router = express.Router();
 const sessionRouter = require("./session.js");
 const usersRouter = require("./users.js");
+const myRouter = require("./my");
+const apiRouter = require("../api");
+const songRouter = require("./songs");
 
-router.use("/session", sessionRouter);
 router.use(usersRouter);
-
+router.use("/session", sessionRouter);
+router.use("/my", myRouter);
+router.use("/songs", songRouter);
 router.post("/test", (req, res) => {
   res.json({ requestBody: req.body });
 });

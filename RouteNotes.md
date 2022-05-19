@@ -5,7 +5,7 @@
 
 ## My -> Current User
 
-- GET /my (Get current USER)
+- GET my/ (Get current USER)
 - GET my/albums (Get all albums by Current user)
 - GET my/songs (Get all Songs by Current user)
 - GET my/playlists (Get all playlists by Current user)

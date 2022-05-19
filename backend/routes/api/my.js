@@ -1,7 +1,7 @@
 //import restoreUser
 const express = require("express");
 const router = express.Router();
-const { restoreUser } = require("../../utils/auth");
+const { restoreUser, requireAuth } = require("../../utils/auth");
 
 // Get current user
 router.get("/", restoreUser, async (req, res) => {
