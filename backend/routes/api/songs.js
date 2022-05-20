@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
 const { Song, User, Album } = require("../../db/models");
+const {
+  setTokenCookie,
+  requireAuth,
+  restoreUser
+} = require("../../utils/auth");
 
 router.get("/testsongs", (req, res, next) => {
   res.json("Songs go here");
@@ -25,6 +30,39 @@ router.get("/songs/:songId", async (req, res, next) => {
 
   return res.json(song);
 });
+
+// ========== Edit song by ID ========//
+router.put("/songs/:songId", requireAuth, async (req, res) => {
+  const { user } = req;
+  const { songId } = req.params;
+  const { title, description, url, previewImg } = req.body;
+
+  const updateSong = await Song.findByPk(songId);
+
+  if (!updateSong) {
+    const error = new Error("Song couldn't be found");
+    error.status(404);
+    throw error;
+  }
+
+  if (updateSong) {
+    if (updateSong.userId === user.id) {
+      await updateSong.update({
+        title,
+        description,
+        url,
+        previewImg
+      });
+      res.json(updateSong);
+    } else {
+      const error = new Error("Not authorized");
+      error.status(401);
+      throw error;
+    }
+  }
+});
+
+//========== Delete a song ============//
 
 // ====== Get all songs ===========//
 router.get("/songs", async (req, res) => {
