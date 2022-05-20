@@ -8,8 +8,7 @@ router.get("/", restoreUser, async (req, res) => {
   const { user, cookies } = req;
   if (user) {
     return res.json({
-      user: user.toSafeObject(),
-      msg: "Testing My",
+      ...user.toSafeObject(),
       token: cookies.token
     });
   } else return res.json();
