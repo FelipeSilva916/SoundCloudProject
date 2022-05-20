@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Playlist.belongsToMany(models.Song, { through: models.PlaylistSong }),
         Playlist.belongsTo(models.User, {
-          foreignKey: "userId",
-          onDelete: "CASCADE"
+          foreignKey: "userId"
+          // onDelete: "CASCADE"
         });
     }
   }

@@ -7,15 +7,19 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "userId",
         onDelete: "CASCADE"
       }),
-        Album.hasMany(models.Song, { foreignKey: "albumId" });
+        Album.hasMany(models.Song, {
+          foreignKey: "albumId",
+          onDelete: "CASCADE",
+          hooks: true
+        });
     }
   }
   Album.init(
     {
+      userId: { type: DataTypes.INTEGER, allowNull: false },
       title: { type: DataTypes.STRING, allowNull: false },
       description: { type: DataTypes.STRING, allowNull: false },
-      previewImg: { type: DataTypes.STRING, allowNull: false },
-      userId: { type: DataTypes.INTEGER, allowNull: false }
+      previewImg: { type: DataTypes.STRING, allowNull: false }
     },
     {
       sequelize,

@@ -12,18 +12,19 @@ module.exports = (sequelize, DataTypes) => {
         Song.belongsTo(models.Album, { foreignKey: "albumId" }),
         Song.hasMany(models.Comment, {
           foreignKey: "songId",
-          onDelete: "CASCADE"
+          onDelete: "CASCADE",
+          hooks: true
         });
     }
   }
   Song.init(
     {
+      userId: { type: DataTypes.INTEGER, allowNull: false },
+      albumId: { type: DataTypes.INTEGER, allowNull: false },
       title: { type: DataTypes.STRING, allowNull: false },
       description: { type: DataTypes.STRING, allowNull: false },
       url: { type: DataTypes.STRING, allowNull: false },
-      previewImg: { type: DataTypes.STRING, allowNull: false },
-      userId: { type: DataTypes.INTEGER, allowNull: false },
-      albumId: { type: DataTypes.INTEGER, allowNull: false }
+      previewImg: { type: DataTypes.STRING, allowNull: false }
     },
     {
       sequelize,

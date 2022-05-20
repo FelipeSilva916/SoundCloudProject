@@ -39,10 +39,20 @@ router.delete("/songs/:songId", requireAuth, async (req, res) => {
 
   const deletedSong = await Song.findByPk(songId);
 
+  if (!deletedSong) {
+    const error = new Error("Song could not be found");
+    error.status = 404;
+    return next(error);
+  }
+
   if (deletedSong) {
     if (deletedSong.userId === user.id) {
       await deletedSong.destroy();
       res.json({ message: "Successfully deleted" });
+    } else {
+      const error = new Error("Not Authorized");
+      error.status = 401;
+      return next(error);
     }
   }
 });

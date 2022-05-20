@@ -17,10 +17,26 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static associate(models) {
-      User.hasMany(models.Song, { foreignKey: "userId" }),
-        User.hasMany(models.Album, { foreignKey: "userId" }),
-        User.hasMany(models.Comment, { foreignKey: "userId" }),
-        User.hasMany(models.Playlist, { foreignKey: "userId" });
+      User.hasMany(models.Song, {
+        foreignKey: "userId",
+        onDelete: "CASCADE",
+        hooks: true
+      }),
+        User.hasMany(models.Album, {
+          foreignKey: "userId",
+          onDelete: "CASCADE",
+          hooks: true
+        }),
+        User.hasMany(models.Comment, {
+          foreignKey: "userId",
+          onDelete: "CASCADE",
+          hooks: true
+        }),
+        User.hasMany(models.Playlist, {
+          foreignKey: "userId",
+          onDelete: "CASCADE",
+          hooks: true
+        });
     }
     static async login({ credential, password }) {
       const { Op } = require("sequelize");
