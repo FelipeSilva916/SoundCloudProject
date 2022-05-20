@@ -16,6 +16,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      url: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       previewImg: {
         type: Sequelize.STRING,
         allowNull: false
