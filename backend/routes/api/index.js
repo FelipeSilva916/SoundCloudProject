@@ -3,12 +3,11 @@ const router = express.Router();
 const sessionRouter = require("./session.js");
 const usersRouter = require("./users.js");
 const myRouter = require("./my");
-const apiRouter = require("../api");
 const songRouter = require("./songs");
 
 router.use(usersRouter);
 router.use("/session", sessionRouter);
-router.use("/my", myRouter);
+router.use(myRouter);
 router.use(songRouter);
 router.post("/test", (req, res) => {
   res.json({ requestBody: req.body });
