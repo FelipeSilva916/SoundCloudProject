@@ -33,7 +33,7 @@ router.get("/songs/:songId", async (req, res, next) => {
 });
 
 //=============== Delete Song ======================//
-router.delete("/songs/:songId", requireAuth, async (req, res) => {
+router.delete("/songs/:songId", requireAuth, restoreUser, async (req, res) => {
   const { user } = req;
   const { songId } = req.params;
 
