@@ -9,7 +9,7 @@ const songRouter = require("./songs");
 router.use(usersRouter);
 router.use("/session", sessionRouter);
 router.use("/my", myRouter);
-router.use("/songs", songRouter);
+router.use(songRouter);
 router.post("/test", (req, res) => {
   res.json({ requestBody: req.body });
 });

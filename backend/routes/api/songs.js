@@ -8,7 +8,7 @@ router.get("/testsongs", (req, res, next) => {
 });
 
 // ======== Get songs by ID =======//
-router.get("/:songId", async (req, res, next) => {
+router.get("/songs/:songId", async (req, res, next) => {
   const { songId } = req.params;
   const song = await Song.findByPk(songId, {
     include: [
@@ -27,7 +27,7 @@ router.get("/:songId", async (req, res, next) => {
 });
 
 // ====== Get all songs ===========//
-router.get("/", async (req, res) => {
+router.get("/songs", async (req, res) => {
   const songs = await Song.findAll();
   res.json({ songs });
 });
