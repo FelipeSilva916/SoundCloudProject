@@ -8,21 +8,24 @@ module.exports = {
         title: "Demo Album",
         description: "An album about demotion",
         userId: 1,
-        previewImg: "www.imagepreview.com"
+        previewImg: "www.imagepreview.com",
+        url: "www.thisalbum.com"
       },
       {
         //2
         title: "Giants Greatest Hits",
         description: "Don't Stop Believing",
         userId: 3,
-        previewImg: "www.imagepreview.com"
+        previewImg: "www.imagepreview.com",
+        url: "www.thisalbum.com"
       },
       {
         //3
         title: "The Second Demo-lition",
         description: "We had to demolish more things",
         userId: 1,
-        previewImg: "www.imagepreview.com"
+        previewImg: "www.imagepreview.com",
+        url: "www.thisalbum.com"
       }
     ]);
   },
