@@ -11,6 +11,7 @@ const {
 const { User, Song, Album } = require("../../db/models");
 const { jwtConfig } = require("../../config");
 
+// ========= Create Song for an Album by ID ========//
 router.post("/albums/:albumId", requireAuth, async (req, res) => {
   const { user } = req;
   const { albumId } = req.params;
