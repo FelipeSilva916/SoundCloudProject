@@ -10,6 +10,15 @@ const {
 } = require("../../utils/auth");
 const { User, Song, Album } = require("../../db/models");
 const { jwtConfig } = require("../../config");
+const album = require("../../db/models/album");
+
+// ======== Validate Album Creation ==========//
+const validateAlbumCreation = [
+  check("title")
+    .exists({ checkFalsy: true })
+    .withMessage("Album title is required"),
+  handleValidationErrors
+];
 
 // ========= Create Song for an Album by ID ========//
 router.post("/albums/:albumId", requireAuth, async (req, res) => {
@@ -41,6 +50,42 @@ router.post("/albums/:albumId", requireAuth, async (req, res) => {
     }
   }
 });
+
+// =========== Edit an album by ID ====================//
+router.put(
+  "/albums/:albumId",
+  requireAuth,
+  validateAlbumCreation,
+  async (req, res, next) => {
+    const { albumId } = req.params;
+    const { user } = req;
+    const { title, description, previewImg } = req.body;
+
+    const currentAlbum = await Album.findByPk(albumId);
+
+    if (!currentAlbum) {
+      res.status(404),
+        res.json({
+          message: "Album couldn't be found",
+          statusCode: 404
+        });
+    }
+    if (currentAlbum) {
+      if (currentAlbum.userId === user.id) {
+        const album = await currentAlbum.update({
+          title,
+          description,
+          previewImg
+        });
+        res.json(album);
+      } else {
+        const error = new Error("Not Authorized");
+        error.status(401);
+        throw error;
+      }
+    }
+  }
+);
 
 // ============== Get Albums Detail by ID ===========//
 router.get("/albums/:albumId", async (req, res) => {
