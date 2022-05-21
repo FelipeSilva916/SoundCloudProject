@@ -8,11 +8,17 @@ const {
   restoreUser
 } = require("../../utils/auth");
 
+const {
+  setTokenCookie,
+  requireAuth,
+  restoreUser
+} = require("../../utils/auth");
+
 router.get("/testsongs", (req, res, next) => {
   res.json("Songs go here");
 });
 
-// ======== Get songs by ID =======//
+// ============== Get songs by ID ==================//
 router.get("/songs/:songId", async (req, res, next) => {
   const { songId } = req.params;
   const song = await Song.findByPk(songId, {
@@ -62,9 +68,37 @@ router.put("/songs/:songId", requireAuth, async (req, res) => {
   }
 });
 
-//========== Delete a song ============//
+//=============== Delete Song ======================//
+router.delete(
+  "/songs/:songId",
+  requireAuth,
+  restoreUser,
+  async (req, res, next) => {
+    const { user } = req;
+    const { songId } = req.params;
 
-// ====== Get all songs ===========//
+    const deletedSong = await Song.findByPk(songId);
+
+    if (!deletedSong) {
+      const error = new Error("Song could not be found");
+      error.status = 404;
+      return next(error);
+    }
+
+    if (deletedSong) {
+      if (deletedSong.userId === user.id) {
+        await deletedSong.destroy();
+        res.json({ message: "Successfully deleted" });
+      } else {
+        const error = new Error("Not Authorized");
+        error.status = 401;
+        return next(error);
+      }
+    }
+  }
+);
+
+// ================= Get all songs ================//
 router.get("/songs", async (req, res) => {
   const songs = await Song.findAll();
   res.json(songs);

@@ -5,18 +5,19 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Album.belongsTo(models.User, {
         foreignKey: "userId",
-        onDelete: "CASCADE",
         as: "Artist"
       }),
-        Album.hasMany(models.Song, { foreignKey: "albumId" });
+        Album.hasMany(models.Song, {
+          foreignKey: "albumId"
+        });
     }
   }
   Album.init(
     {
+      userId: { type: DataTypes.INTEGER, allowNull: false },
       title: { type: DataTypes.STRING, allowNull: false },
       description: { type: DataTypes.STRING, allowNull: false },
       previewImg: { type: DataTypes.STRING, allowNull: false },
-      userId: { type: DataTypes.INTEGER, allowNull: false },
       url: { type: DataTypes.INTEGER, allowNull: false }
     },
     {
