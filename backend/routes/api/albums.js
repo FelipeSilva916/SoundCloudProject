@@ -4,10 +4,8 @@ const { check } = require("express-validator");
 const { restoreUser, requireAuth } = require("../../utils/auth");
 const { handleValidationErrors } = require("../../utils/validation");
 const { Song, User, Album } = require("../../db/models");
-const e = require("express");
 
 const router = express.Router();
-const { Album, Song, User } = require("../../db/models");
 
 router.post("/albums/:albumId", requireAuth, async (req, res) => {
   const { user } = req;
@@ -37,7 +35,8 @@ router.post("/albums/:albumId", requireAuth, async (req, res) => {
       res.json(song);
     }
   }
-}
+});
+
 // ============== Get Albums Detail by ID ===========//
 router.get("/albums/:albumId", async (req, res) => {
   const { albumId } = req.params;
@@ -59,13 +58,13 @@ router.get("/albums/:albumId", async (req, res) => {
     res.status(404);
     res.json("Album couldn't be found");
   }
-  res.json({ currentAlbum });
+  res.json(currentAlbum);
 });
 
 // =============== GET All Albums =============== //
 router.get("/albums", async (req, res) => {
   const allAlbums = await Album.findAll();
-  res.json({ allAlbums });
+  res.json(allAlbums);
 });
 
-module.exports = router
+module.exports = router;
