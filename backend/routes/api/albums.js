@@ -86,4 +86,34 @@ router.post("/albums", requireAuth, restoreUser, async (req, res) => {
   res.json(newAlbum);
 });
 
+// ============ Delete Album ===============//
+router.delete(
+  "/albums/:albumsId",
+  requireAuth,
+  restoreUser,
+  async (req, res, next) => {
+    const { albumId } = req.params;
+    const { user } = req;
+
+    const deleteAlbum = await Album.findByPk(albumId);
+
+    if (!deleteAlbum) {
+      const error = new Error("Album could not be found");
+      error.status = 404;
+      return next(error);
+    }
+
+    if (deleteAlbum) {
+      if (deleteAlbum.userId === user.id) {
+        await deleteAlbum.destroy();
+        res.json({ message: "Successfully deleted" });
+      } else {
+        const error = new Error("Not Authorized");
+        error.status = 401;
+        return next(error);
+      }
+    }
+  }
+);
+
 module.exports = router;

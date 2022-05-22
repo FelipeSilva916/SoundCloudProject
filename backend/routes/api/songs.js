@@ -8,12 +8,6 @@ const {
   restoreUser
 } = require("../../utils/auth");
 
-const {
-  setTokenCookie,
-  requireAuth,
-  restoreUser
-} = require("../../utils/auth");
-
 router.get("/testsongs", (req, res, next) => {
   res.json("Songs go here");
 });
