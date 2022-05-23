@@ -1,8 +1,10 @@
 const express = require("express");
-const { check } = require("express-validator");
 
 const router = express.Router();
-const { handleValidationErrors } = require("../../utils/validation");
+const {
+  handleValidationErrors,
+  validateAlbumCreation
+} = require("../../utils/validation");
 const {
   setTokenCookie,
   requireAuth,
@@ -11,14 +13,6 @@ const {
 const { User, Song, Album } = require("../../db/models");
 const { jwtConfig } = require("../../config");
 const album = require("../../db/models/album");
-
-// ======== Validate Album Creation ==========//
-const validateAlbumCreation = [
-  check("title")
-    .exists({ checkFalsy: true })
-    .withMessage("Album title is required"),
-  handleValidationErrors
-];
 
 // ========= Create Song for an Album by ID ========//
 router.post("/albums/:albumId", requireAuth, async (req, res) => {
