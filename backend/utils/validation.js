@@ -26,7 +26,56 @@ const validateAlbumCreation = [
   handleValidationErrors
 ];
 
+//===== Validate Song Creation ============//
+validateSongCreation = [
+  check("title")
+    .exists({ checkFalsy: true })
+    .withMessage("Song title is required"),
+  check("url").exists({ checkFalsy: true }).withMessage("Audio is required"),
+  handleValidationErrors
+];
+
+// ======== Validate an User Sign up ================//
+const validateSignup = [
+  check("email")
+    .exists({ checkFalsy: true })
+    .isEmail()
+    .withMessage("Please provide a valid email."),
+  check("username")
+    .exists({ checkFalsy: true })
+    .isLength({ min: 4 })
+    .withMessage("Please provide a username with at least 4 characters."),
+  check("username").not().isEmail().withMessage("Username cannot be an email."),
+  check("password")
+    .exists({ checkFalsy: true })
+    .isLength({ min: 6 })
+    .withMessage("Password must be 6 characters or more."),
+  handleValidationErrors
+];
+
+// =============  Log in =================//
+const validateLogin = [
+  check("credential")
+    .exists({ checkFalsy: true })
+    .notEmpty()
+    .withMessage("Please provide a valid email or username."),
+  check("password")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a password."),
+  handleValidationErrors
+];
+
+//======= Validate Creation of Playlist =============//
+validatePlaylist = [
+  check("name").exists({ checkFalsy: true }).withMessage("Name is required"),
+  handleValidationErrors
+];
+
 module.exports = {
   handleValidationErrors,
-  validateAlbumCreation
+  validateAlbumCreation,
+  validateSongCreation,
+  validateSignup,
+  validateLogin,
+  validatePlaylist
 };
