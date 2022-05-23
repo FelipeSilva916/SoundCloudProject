@@ -88,7 +88,7 @@ router.post("/albums", requireAuth, restoreUser, async (req, res) => {
 
 // ============ Delete Album ===============//
 router.delete(
-  "/albums/:albumsId",
+  "/albums/:albumId",
   requireAuth,
   restoreUser,
   async (req, res, next) => {
