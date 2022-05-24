@@ -37,7 +37,8 @@ router.post(
   "/songs/:songId/comments",
   requireAuth,
   validateCommentCreation,
-  async (req, res) => {
+  restoreUser,
+  async (req, res, next) => {
     const { songId } = req.params;
     const { user } = req;
     const { body } = req.body;
