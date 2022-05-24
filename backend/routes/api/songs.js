@@ -61,6 +61,31 @@ router.post(
   }
 );
 
+router.get("/songs/:songId/comments", async (req, res, next) => {
+  const { songId } = req.params;
+  const song = await Song.findByPk(songId, {
+    include: [
+      {
+        model: Comment,
+        include: [{ model: User, attributes: ["id", "username"] }]
+      }
+    ]
+  });
+
+  if (!song) {
+    const error = new Error("Song could not be found");
+    error.status = 404;
+    return next(error);
+  }
+
+  if (song) {
+    const comment = song.Comments;
+    res.json({ Comments: comment });
+  }
+
+  res.json();
+});
+
 // ========== Edit song by ID ========//
 router.put("/songs/:songId", requireAuth, async (req, res) => {
   const { user } = req;
