@@ -104,18 +104,14 @@ router.get("/songs/:songId/comments", async (req, res, next) => {
     ]
   });
 
-  if (!song) {
+  if (song) {
+    const comment = song.Comments;
+    res.json({ Comments: comment });
+  } else {
     const error = new Error("Song could not be found");
     error.status = 404;
     return next(error);
   }
-
-  if (song) {
-    const comment = song.Comments;
-    res.json({ Comments: comment });
-  }
-
-  res.json();
 });
 
 // ================= Get all songs ================//
