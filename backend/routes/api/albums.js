@@ -30,7 +30,7 @@ router.post("/albums/:albumId", requireAuth, async (req, res) => {
   if (album) {
     if (album.userId === user.id) {
       const song = await Song.create({
-        albumId,
+        albumId: parseInt(albumId),
         userId: user.id,
         title,
         description,
