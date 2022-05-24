@@ -4,14 +4,13 @@ const sessionRouter = require("./session.js");
 const usersRouter = require("./users.js");
 const myRouter = require("./my");
 const songRouter = require("./songs");
+const artistRouter = require("./artist");
 
 router.use(usersRouter);
 router.use("/session", sessionRouter);
 router.use(myRouter);
 router.use(songRouter);
-router.post("/test", (req, res) => {
-  res.json({ requestBody: req.body });
-});
+router.use(artistRouter);
 
 //=============== Test Routes ============================//
 // GET /api/set-token-cookie

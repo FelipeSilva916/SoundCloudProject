@@ -11,8 +11,6 @@ const {
   restoreUser
 } = require("../../utils/auth");
 const { User, Song, Album } = require("../../db/models");
-const { jwtConfig } = require("../../config");
-const album = require("../../db/models/album");
 
 // ========= Create Song for an Album by ID ========//
 router.post("/albums/:albumId", requireAuth, async (req, res) => {
@@ -74,7 +72,7 @@ router.put(
         res.json(album);
       } else {
         const error = new Error("Not Authorized");
-        error.status(401);
+        error.status = 401;
         throw error;
       }
     }

@@ -1096,7 +1096,7 @@ Returns the details of an artist specified by their id.
 - Require Authentication: false
 - Request
 
-  - Method: POST
+  - Method: GET
   - URL: /artists/:artistId
   - Body: none
 
