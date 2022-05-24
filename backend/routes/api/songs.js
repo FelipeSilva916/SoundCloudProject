@@ -123,6 +123,28 @@ router.delete(
   }
 );
 
+// ======== GET Comments by song ID ==============//
+router.get("/songs/:songId/comments", async (req, res, next) => {
+  const { songId } = req.params;
+  const song = await Song.findByPk(songId, {
+    include: [
+      {
+        model: Comment,
+        include: [{ model: User, attributes: ["id", "username"] }]
+      }
+    ]
+  });
+
+  if (song) {
+    const comment = song.Comments;
+    res.json({ Comments: comment });
+  } else {
+    const error = new Error("Song could not be found");
+    error.status = 404;
+    return next(error);
+  }
+});
+
 // ================= Get all songs ================//
 router.get("/songs", async (req, res) => {
   const songs = await Song.findAll();
