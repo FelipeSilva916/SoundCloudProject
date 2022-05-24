@@ -12,6 +12,7 @@ const {
   restoreUser
 } = require("../../utils/auth");
 const { User, Song, Album, Playlist } = require("../../db/models");
+const e = require("express");
 
 //=======GET Details of Artist by ID ===========//
 router.get("/artists/:artistId", async (req, res, next) => {
@@ -38,6 +39,64 @@ router.get("/artists/:artistId", async (req, res, next) => {
       statusCode: 404
     });
   }
+});
+
+// ========== GET All Songs of Artist by ID ============//
+router.get("/artists/:artistId/songs", async (req, res, next) => {
+  const { artistId } = req.params;
+
+  const artist = await User.findByPk(artistId);
+
+  if (artist) {
+    const songs = await Song.findAll({
+      where: { userId: artistId }
+    });
+    res.json({
+      Songs: songs
+    });
+  } else {
+    res.json({
+      message: "Artist couldn't be found",
+      statusCode: 404
+    });
+  }
+});
+
+//========= GET All Albums of artist by ID ===========//
+router.get("/artists/:artistId/albums", async (req, res) => {
+  const { artistId } = req.params;
+
+  const artist = await User.findByPk(artistId);
+
+  if (artist) {
+    const albums = await Album.findAll({
+      where: { userId: artistId }
+    });
+    res.json({
+      albums: albums
+    });
+  } else {
+    res.json({
+      message: "Artist couldn't be found",
+      statusCode: 404
+    });
+  }
+});
+
+// ======== GET All playlists of artist by ID =========//
+router.get("/artists/:artistId/playlists", async (req, res) => {
+  const { artistId } = req.params;
+
+  const artist = await User.findByPk(artistId);
+
+  if (artist) {
+    const playlists = await Playlist.findAll({ where: { userId: artistId } });
+    res.json({ Playlists: playlists });
+  } else
+    res.json({
+      message: "Artist couldn't be found",
+      statusCode: 404
+    });
 });
 
 module.exports = router;
