@@ -18,6 +18,14 @@ const handleValidationErrors = (req, _res, next) => {
   next();
 };
 
+//======= Validate Comment ========//
+validateCommentCreation = [
+  check("body")
+    .exists({ checkFalsy: true })
+    .withMessage("Comment body text is required"),
+  handleValidationErrors
+];
+
 // ======== Validate Album Creation ==========//
 const validateAlbumCreation = [
   check("title")
@@ -77,5 +85,6 @@ module.exports = {
   validateSongCreation,
   validateSignup,
   validateLogin,
-  validatePlaylist
+  validatePlaylist,
+  validateCommentCreation
 };
