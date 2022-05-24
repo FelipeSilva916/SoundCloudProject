@@ -71,11 +71,20 @@ validatePlaylist = [
   handleValidationErrors
 ];
 
+//======= Validate Comment ========//
+validateComment = [
+  check("body")
+    .exists({ checkFalsy: true })
+    .withMessage("Comment body text is required"),
+  handleValidationErrors
+];
+
 module.exports = {
   handleValidationErrors,
   validateAlbumCreation,
   validateSongCreation,
   validateSignup,
   validateLogin,
-  validatePlaylist
+  validatePlaylist,
+  validateComment
 };
