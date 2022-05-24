@@ -145,7 +145,7 @@ router.delete(
     if (deleteAlbum) {
       if (deleteAlbum.userId === user.id) {
         await deleteAlbum.destroy();
-        res.json({ message: "Successfully deleted" });
+        res.json({ message: "Successfully deleted", statusCode: 200 });
       } else {
         const error = new Error("Not Authorized");
         error.status = 401;
