@@ -17,6 +17,11 @@ module.exports = {
         userId: 2,
         songId: 3,
         body: "Best demo song ever"
+      },
+      {
+        userId: 1,
+        songId: 3,
+        body: "Comments to test the routes from user 1"
       }
     ]);
   },

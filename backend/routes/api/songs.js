@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const { check } = require("express-validator");
 const { Song, User, Album, Comment } = require("../../db/models");
 const {
   handleValidationErrors,
