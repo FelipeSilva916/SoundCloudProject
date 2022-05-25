@@ -122,7 +122,7 @@ router.get("/albums/:albumId", async (req, res) => {
 // =============== GET All Albums =============== //
 router.get("/albums", async (req, res) => {
   const allAlbums = await Album.findAll();
-  res.json(allAlbums);
+  res.json({ Albums: allAlbums });
 });
 
 // ================== Create a new Album ====================//
