@@ -3,7 +3,8 @@ const router = express.Router();
 const { Song, User, Album, Comment } = require("../../db/models");
 const {
   handleValidationErrors,
-  validateComment
+  validateComment,
+  validateQuery
 } = require("../../utils/validation");
 
 const {
@@ -149,10 +150,50 @@ router.get("/songs/:songId/comments", async (req, res, next) => {
   }
 });
 
-// ================= Get all songs ================//
-router.get("/songs", async (req, res) => {
-  const songs = await Song.findAll();
-  res.json(songs);
+// ======== GET All Songs + Query ============//
+router.get("/songs", validateQuery, async (req, res) => {
+  let { page, size, title, createdAt } = req.query;
+  let pagination = {};
+  let where = {};
+
+  if (page) {
+    page = parseInt(page);
+  }
+  if (size) {
+    size = parseInt(size);
+  }
+
+  if (page > 10) {
+    page = 0;
+  } else {
+    page = page;
+  }
+
+  if (size > 20) {
+    size = 20;
+  } else {
+    size = size;
+  }
+
+  if (size) {
+    pagination.limit = size;
+  }
+  if (page && size) {
+    pagination.offset = size * (page - 1);
+  }
+
+  if (title) {
+    where.title = title;
+  }
+  if (createdAt) {
+    where.createdAt = createdAt;
+  }
+
+  const Songs = await Song.findAll({
+    where: { ...where },
+    ...pagination
+  });
+  res.json({ Songs, page, size });
 });
 
 module.exports = router;
