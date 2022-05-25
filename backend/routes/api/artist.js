@@ -16,7 +16,8 @@ const e = require("express");
 
 //=======GET Details of Artist by ID ===========//
 router.get("/artists/:artistId", async (req, res, next) => {
-  const { artistId } = req.params;
+  let { artistId } = req.params;
+  artistId = parseInt(artistId);
 
   const totalSongs = await Song.count({ where: { userId: artistId } });
   const totalAlbums = await Album.count({ where: { userId: artistId } });
@@ -43,7 +44,8 @@ router.get("/artists/:artistId", async (req, res, next) => {
 
 // ========== GET All Songs of Artist by ID ============//
 router.get("/artists/:artistId/songs", async (req, res, next) => {
-  const { artistId } = req.params;
+  let { artistId } = req.params;
+  artistId = parseInt(artistId);
 
   const artist = await User.findByPk(artistId);
 
@@ -64,7 +66,8 @@ router.get("/artists/:artistId/songs", async (req, res, next) => {
 
 //========= GET All Albums of artist by ID ===========//
 router.get("/artists/:artistId/albums", async (req, res) => {
-  const { artistId } = req.params;
+  let { artistId } = req.params;
+  artistId = parseInt(artistId);
 
   const artist = await User.findByPk(artistId);
 
@@ -85,7 +88,8 @@ router.get("/artists/:artistId/albums", async (req, res) => {
 
 // ======== GET All playlists of artist by ID =========//
 router.get("/artists/:artistId/playlists", async (req, res) => {
-  const { artistId } = req.params;
+  let { artistId } = req.params;
+  artistId = parseInt(artistId);
 
   const artist = await User.findByPk(artistId);
 

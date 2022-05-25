@@ -20,7 +20,8 @@ router.post(
   validateComment,
   restoreUser,
   async (req, res, next) => {
-    const { songId } = req.params;
+    let { songId } = req.params;
+    songId = parseInt(songId);
     const { user } = req;
     const { body } = req.body;
 
@@ -45,7 +46,8 @@ router.post(
 
 // ============== Get songs by ID ==================//
 router.get("/songs/:songId", async (req, res, next) => {
-  const { songId } = req.params;
+  let { songId } = req.params;
+  songId = parseInt(songId);
   const song = await Song.findByPk(songId, {
     include: [
       { model: User, as: "Artist", attributes: ["id", "username", "imgUrl"] },
@@ -65,7 +67,8 @@ router.get("/songs/:songId", async (req, res, next) => {
 // ========== Edit song by ID ========//
 router.put("/songs/:songId", requireAuth, async (req, res) => {
   const { user } = req;
-  const { songId } = req.params;
+  let { songId } = req.params;
+  songId = parseInt(songId);
   const { title, description, url, previewImg } = req.body;
 
   const updateSong = await Song.findByPk(songId);
@@ -100,7 +103,8 @@ router.delete(
   restoreUser,
   async (req, res, next) => {
     const { user } = req;
-    const { songId } = req.params;
+    let { songId } = req.params;
+    songId = parseInt(songId);
 
     const deletedSong = await Song.findByPk(songId);
 
@@ -125,7 +129,8 @@ router.delete(
 
 // ======== GET Comments by song ID ==============//
 router.get("/songs/:songId/comments", async (req, res, next) => {
-  const { songId } = req.params;
+  let { songId } = req.params;
+  songId = parseInt(songId);
   const song = await Song.findByPk(songId, {
     include: [
       {

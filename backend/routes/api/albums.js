@@ -15,7 +15,9 @@ const { User, Song, Album } = require("../../db/models");
 // ========= Create Song for an Album by ID ========//
 router.post("/albums/:albumId", requireAuth, async (req, res) => {
   const { user } = req;
-  const { albumId } = req.params;
+  let { albumId } = req.params;
+  albumId = parseInt(albumId);
+
   const { title, description, url, previewImg } = req.body;
   const album = await Album.findByPk(albumId);
 
@@ -49,7 +51,8 @@ router.put(
   requireAuth,
   validateAlbumCreation,
   async (req, res, next) => {
-    const { albumId } = req.params;
+    let { albumId } = req.params;
+    albumId = parseInt(albumId);
     const { user } = req;
     const { title, description, previewImg } = req.body;
 
@@ -81,7 +84,8 @@ router.put(
 
 // ============== Get Albums Detail by ID ===========//
 router.get("/albums/:albumId", async (req, res) => {
-  const { albumId } = req.params;
+  let { albumId } = req.params;
+  albumId = parseInt(albumId);
 
   const currentAlbum = await Album.findByPk(albumId, {
     include: [
@@ -129,7 +133,8 @@ router.delete(
   requireAuth,
   restoreUser,
   async (req, res, next) => {
-    const { albumId } = req.params;
+    let { albumId } = req.params;
+    albumId = parseInt(albumId);
     const { user } = req;
 
     const deleteAlbum = await Album.findByPk(albumId);
