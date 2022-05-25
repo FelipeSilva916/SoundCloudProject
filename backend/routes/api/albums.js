@@ -3,7 +3,8 @@ const express = require("express");
 const router = express.Router();
 const {
   handleValidationErrors,
-  validateAlbumCreation
+  validateAlbumCreation,
+  validateSongCreation
 } = require("../../utils/validation");
 const {
   setTokenCookie,
@@ -13,37 +14,48 @@ const {
 const { User, Song, Album } = require("../../db/models");
 
 // ========= Create Song for an Album by ID ========//
-router.post("/albums/:albumId", requireAuth, async (req, res) => {
-  const { user } = req;
-  let { albumId } = req.params;
-  albumId = parseInt(albumId);
+router.post(
+  "/albums/:albumId",
+  requireAuth,
+  validateSongCreation,
+  async (req, res) => {
+    const { user } = req;
+    let { albumId } = req.params;
+    albumId = parseInt(albumId);
 
-  const { title, description, url, previewImg } = req.body;
-  const album = await Album.findByPk(albumId);
+    const { title, description, url, previewImg } = req.body;
+    const album = await Album.findByPk(albumId);
 
-  if (!album) {
-    res.status(404),
-      res.json({
-        message: "Album couldn't be found",
-        statusCode: 404
-      });
-  }
+    if (!album) {
+      res.status(404),
+        res.json({
+          message: "Album couldn't be found",
+          statusCode: 404
+        });
+    }
 
-  if (album) {
-    if (album.userId === user.id) {
-      const song = await Song.create({
-        albumId: parseInt(albumId),
-        userId: user.id,
-        title,
-        description,
-        url,
-        previewImg
-      });
-      res.status(201);
-      res.json(song);
+    if (album) {
+      if (album.userId === user.id) {
+        const song = await Song.create({
+          albumId: parseInt(albumId),
+          userId: user.id,
+          title,
+          description,
+          url,
+          previewImg
+        });
+        res.status(201);
+        res.json(song);
+      } else {
+        res.status(403),
+          res.json({
+            message: "Unauthorized",
+            statusCode: 403
+          });
+      }
     }
   }
-});
+);
 
 // =========== Edit an album by ID ====================//
 router.put(
@@ -101,20 +113,22 @@ router.get("/albums/:albumId", async (req, res) => {
   });
 
   if (!currentAlbum) {
-    res.status(404);
-    res.json("Album couldn't be found");
+    const error = new Error("Album not found");
+    error.status = 404;
+    throw error;
   }
+
   res.json(currentAlbum);
 });
 
 // =============== GET All Albums =============== //
 router.get("/albums", async (req, res) => {
   const allAlbums = await Album.findAll();
-  res.json(allAlbums);
+  res.json({ Albums: allAlbums });
 });
 
 // ================== Create a new Album ====================//
-router.post("/albums", requireAuth, restoreUser, async (req, res) => {
+router.post("/albums", requireAuth, validateAlbumCreation, async (req, res) => {
   const { user } = req;
   const { title, description, previewImg } = req.body;
   const newAlbum = await Album.create({

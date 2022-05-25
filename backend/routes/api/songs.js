@@ -13,7 +13,7 @@ const {
   restoreUser
 } = require("../../utils/auth");
 
-//======= Create a comment for song by ID =========//
+//========== Create a comment for song by ID =========//
 router.post(
   "/songs/:songId/comments",
   requireAuth,
@@ -30,7 +30,7 @@ router.post(
     if (!currentSong) {
       const error = new Error("Song could not be found");
       error.status = 404;
-      return next(error);
+      throw error;
     }
 
     if (currentSong) {
@@ -58,43 +58,48 @@ router.get("/songs/:songId", async (req, res, next) => {
   if (!song) {
     const error = new Error("Song could not be found");
     error.status = 404;
-    return next(error);
-  }
-
-  return res.json(song);
-});
-
-// ========== Edit song by ID ========//
-router.put("/songs/:songId", requireAuth, async (req, res) => {
-  const { user } = req;
-  let { songId } = req.params;
-  songId = parseInt(songId);
-  const { title, description, url, previewImg } = req.body;
-
-  const updateSong = await Song.findByPk(songId);
-
-  if (!updateSong) {
-    const error = new Error("Song couldn't be found");
-    error.status(404);
     throw error;
   }
 
-  if (updateSong) {
-    if (updateSong.userId === user.id) {
-      await updateSong.update({
-        title,
-        description,
-        url,
-        previewImg
-      });
-      res.json(updateSong);
-    } else {
-      const error = new Error("Not authorized");
-      error.status(401);
+  return res.json({ Songs: song });
+});
+
+// ========== Edit song by ID ========//
+router.put(
+  "/songs/:songId",
+  requireAuth,
+  validateSongCreation,
+  async (req, res) => {
+    const { user } = req;
+    let { songId } = req.params;
+    songId = parseInt(songId);
+    const { title, description, url, previewImg } = req.body;
+
+    const updateSong = await Song.findByPk(songId);
+
+    if (!updateSong) {
+      const error = new Error("Song couldn't be found");
+      error.status = 404;
       throw error;
     }
+
+    if (updateSong) {
+      if (updateSong.userId === user.id) {
+        await updateSong.update({
+          title,
+          description,
+          url,
+          previewImg
+        });
+        res.json(updateSong);
+      } else {
+        const error = new Error("Not authorized");
+        error.status = 401;
+        throw error;
+      }
+    }
   }
-});
+);
 
 //=============== Delete Song ======================//
 router.delete(
@@ -111,7 +116,7 @@ router.delete(
     if (!deletedSong) {
       const error = new Error("Song could not be found");
       error.status = 404;
-      return next(error);
+      throw error;
     }
 
     if (deletedSong) {
@@ -121,13 +126,13 @@ router.delete(
       } else {
         const error = new Error("Not Authorized");
         error.status = 401;
-        return next(error);
+        throw error;
       }
     }
   }
 );
 
-// ======== GET Comments by song ID ==============//
+// ============= GET Comments by song ID ==============//
 router.get("/songs/:songId/comments", async (req, res, next) => {
   let { songId } = req.params;
   songId = parseInt(songId);
@@ -146,7 +151,7 @@ router.get("/songs/:songId/comments", async (req, res, next) => {
   } else {
     const error = new Error("Song could not be found");
     error.status = 404;
-    return next(error);
+    throw error;
   }
 });
 

@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const sessionRouter = require("./session.js");
 const usersRouter = require("./users.js");
 const myRouter = require("./my");
 const songRouter = require("./songs");
 const artistRouter = require("./artist");
 
 router.use(usersRouter);
-router.use("/session", sessionRouter);
 router.use(myRouter);
 router.use(songRouter);
 router.use(artistRouter);
@@ -26,13 +24,13 @@ router.get("/set-token-cookie", async (_req, res) => {
   return res.json({ user });
 });
 
-// GET /api/restore-user
+//===========  GET /api/restore-user ================//
 const { restoreUser } = require("../../utils/auth.js");
 router.get("/restore-user", restoreUser, (req, res) => {
   return res.json(req.user);
 });
 
-// GET /api/require-auth
+//========  GET /api/require-auth ==================//
 const { requireAuth } = require("../../utils/auth.js");
 router.get("/require-auth", requireAuth, (req, res) => {
   return res.json(req.user);
