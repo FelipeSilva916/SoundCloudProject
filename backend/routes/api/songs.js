@@ -4,7 +4,8 @@ const { Song, User, Album, Comment } = require("../../db/models");
 const {
   handleValidationErrors,
   validateComment,
-  validateQuery
+  validateQuery,
+  validateSongCreation
 } = require("../../utils/validation");
 
 const {
