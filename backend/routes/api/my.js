@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const { restoreUser, requireAuth } = require("../../utils/auth");
 
-const { Song, User, Album } = require("../../db/models");
+const { Song, User, Album, Playlist } = require("../../db/models");
 
 //=========== GET current user
 router.get("/my", restoreUser, async (req, res) => {
@@ -33,6 +33,14 @@ router.get("/my/songs", requireAuth, async (req, res) => {
     where: { userId: user.id }
   });
   res.json(songs);
+});
+
+//========== GET Playlist by Current User ================//
+router.get("/my/playlists", requireAuth, async (req, res) => {
+  const { user } = req;
+
+  const currentUserPlaylist = await user.getPlaylists();
+  res.json({ Playlist: currentUserPlaylist });
 });
 
 module.exports = router;
