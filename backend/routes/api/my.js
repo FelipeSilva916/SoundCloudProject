@@ -13,7 +13,11 @@ router.get("/my", restoreUser, async (req, res) => {
       ...user.toSafeObject(),
       token: cookies.token
     });
-  } else return res.json();
+  } else {
+    const error = new Error("Invalid Request");
+    error.status = 400;
+    throw error;
+  }
 });
 
 //========= GET albums by current user
