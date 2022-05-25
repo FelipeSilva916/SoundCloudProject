@@ -113,9 +113,11 @@ router.get("/albums/:albumId", async (req, res) => {
   });
 
   if (!currentAlbum) {
-    res.status(404);
-    res.json("Album couldn't be found");
+    const error = new Error("Album not found");
+    error.status = 404;
+    throw error;
   }
+
   res.json(currentAlbum);
 });
 
@@ -126,7 +128,7 @@ router.get("/albums", async (req, res) => {
 });
 
 // ================== Create a new Album ====================//
-router.post("/albums", requireAuth, restoreUser, async (req, res) => {
+router.post("/albums", requireAuth, validateAlbumCreation, async (req, res) => {
   const { user } = req;
   const { title, description, previewImg } = req.body;
   const newAlbum = await Album.create({

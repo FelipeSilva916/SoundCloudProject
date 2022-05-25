@@ -28,7 +28,7 @@ router.get("/my/albums", requireAuth, async (req, res) => {
   const albums = await Album.findAll({
     where: { userId: user.id }
   });
-  res.json(albums);
+  res.json({ Albums: albums });
 });
 
 //========== GET Current user's Songs ====================//
