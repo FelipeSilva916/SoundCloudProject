@@ -38,7 +38,7 @@ router.post(
   }
 );
 
-// =========== Add a playlist by Playlist ID ==============//
+// =========== Add a Song by Playlist ID ==============//
 router.post(
   "/playlists/:playlistId",
   requireAuth,
