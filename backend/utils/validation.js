@@ -26,7 +26,7 @@ const validateAlbumCreation = [
 ];
 
 //===== Validate Song Creation ============//
-validateSongCreation = [
+const validateSongCreation = [
   check("title")
     .exists({ checkFalsy: true })
     .withMessage("Song title is required"),
@@ -65,16 +65,37 @@ const validateLogin = [
 ];
 
 //======= Validate Creation of Playlist =============//
-validatePlaylist = [
+const validatePlaylist = [
   check("name").exists({ checkFalsy: true }).withMessage("Name is required"),
   handleValidationErrors
 ];
 
 //======= Validate Comment ========//
-validateComment = [
+const validateComment = [
   check("body")
     .exists({ checkFalsy: true })
     .withMessage("Comment body text is required"),
+  handleValidationErrors
+];
+
+//======= Validate Search Query ==========//
+const validateQuery = [
+  check("page")
+    .isInt({ min: 0 })
+    .optional({ nullable: true })
+    .withMessage("Page must be greater than or equal to 0"),
+  check("size")
+    .isInt({ min: 0 })
+    .optional({ nullable: true })
+    .withMessage("Size must be greater than or equal to 0"),
+  check("createdAt")
+    .isDate()
+    .optional({ nullable: true })
+    .withMessage("CreatedAt is invalid"),
+  check("updatedAt")
+    .isDate()
+    .optional({ nullable: true })
+    .withMessage("UpdatedAt is invalid"),
   handleValidationErrors
 ];
 
@@ -85,5 +106,6 @@ module.exports = {
   validateSignup,
   validateLogin,
   validatePlaylist,
-  validateComment
+  validateComment,
+  validateQuery
 };
