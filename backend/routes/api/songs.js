@@ -126,7 +126,7 @@ router.delete(
   }
 );
 
-// ======== GET Comments by song ID ==============//
+// ============= GET Comments by song ID ==============//
 router.get("/songs/:songId/comments", async (req, res, next) => {
   let { songId } = req.params;
   songId = parseInt(songId);

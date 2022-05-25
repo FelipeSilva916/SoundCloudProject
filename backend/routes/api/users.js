@@ -13,7 +13,7 @@ const {
   validateLogin
 } = require("../../utils/validation");
 
-//================== Sign up ==========================//
+//================== Sign up =====================//
 router.post("/signup", validateSignup, async (req, res, next) => {
   const { firstName, lastName, email, password, username } = req.body;
   const userCheck = await User.findOne({ where: { email: email } });
@@ -40,6 +40,7 @@ router.post("/signup", validateSignup, async (req, res, next) => {
   });
 });
 
+//================ Login User ==================//
 router.post("/login", validateLogin, async (req, res, next) => {
   const { credential, password } = req.body;
 

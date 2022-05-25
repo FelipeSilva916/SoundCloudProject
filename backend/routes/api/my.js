@@ -5,7 +5,7 @@ const { restoreUser, requireAuth } = require("../../utils/auth");
 
 const { Song, User, Album, Playlist } = require("../../db/models");
 
-//=========== GET current user
+//============= GET current user =====================//
 router.get("/my", restoreUser, async (req, res) => {
   const { user, cookies } = req;
   if (user) {
@@ -26,7 +26,7 @@ router.get("/my/albums", requireAuth, async (req, res) => {
   res.json(albums);
 });
 
-//========== GET Songs
+//========== GET Current user's Songs ====================//
 router.get("/my/songs", requireAuth, async (req, res) => {
   const { user } = req;
   const songs = await Song.findAll({
@@ -35,7 +35,7 @@ router.get("/my/songs", requireAuth, async (req, res) => {
   res.json(songs);
 });
 
-//========== GET Playlist by Current User ================//
+//========== GET Playlist by Current User =============//
 router.get("/my/playlists", requireAuth, async (req, res) => {
   const { user } = req;
 
