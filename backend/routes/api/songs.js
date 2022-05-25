@@ -60,7 +60,7 @@ router.get("/songs/:songId", async (req, res, next) => {
     return next(error);
   }
 
-  return res.json(song);
+  return res.json({ Songs: song });
 });
 
 // ========== Edit song by ID ========//
