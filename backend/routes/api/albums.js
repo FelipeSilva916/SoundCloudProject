@@ -15,7 +15,7 @@ const { User, Song, Album } = require("../../db/models");
 
 // ========= Create Song for an Album by ID ========//
 router.post(
-  "/albums/:albumId",
+  "/:albumId",
   requireAuth,
   validateSongCreation,
   async (req, res) => {
@@ -59,7 +59,7 @@ router.post(
 
 // =========== Edit an album by ID ====================//
 router.put(
-  "/albums/:albumId",
+  "/:albumId",
   requireAuth,
   validateAlbumCreation,
   async (req, res, next) => {
@@ -95,7 +95,7 @@ router.put(
 );
 
 // ============== Get Albums Detail by ID ===========//
-router.get("/albums/:albumId", async (req, res) => {
+router.get("/:albumId", async (req, res) => {
   let { albumId } = req.params;
   albumId = parseInt(albumId);
 
@@ -122,13 +122,13 @@ router.get("/albums/:albumId", async (req, res) => {
 });
 
 // =============== GET All Albums =============== //
-router.get("/albums", async (req, res) => {
+router.get("/", async (req, res) => {
   const allAlbums = await Album.findAll();
   res.json({ Albums: allAlbums });
 });
 
 // ================== Create a new Album ====================//
-router.post("/albums", requireAuth, validateAlbumCreation, async (req, res) => {
+router.post("/", requireAuth, validateAlbumCreation, async (req, res) => {
   const { user } = req;
   const { title, description, previewImg } = req.body;
   const newAlbum = await Album.create({
@@ -142,34 +142,29 @@ router.post("/albums", requireAuth, validateAlbumCreation, async (req, res) => {
 });
 
 // ============ Delete Album ===============//
-router.delete(
-  "/albums/:albumId",
-  requireAuth,
-  restoreUser,
-  async (req, res, next) => {
-    let { albumId } = req.params;
-    albumId = parseInt(albumId);
-    const { user } = req;
+router.delete("/:albumId", requireAuth, restoreUser, async (req, res, next) => {
+  let { albumId } = req.params;
+  albumId = parseInt(albumId);
+  const { user } = req;
 
-    const deleteAlbum = await Album.findByPk(albumId);
+  const deleteAlbum = await Album.findByPk(albumId);
 
-    if (!deleteAlbum) {
-      const error = new Error("Album could not be found");
-      error.status = 404;
+  if (!deleteAlbum) {
+    const error = new Error("Album could not be found");
+    error.status = 404;
+    return next(error);
+  }
+
+  if (deleteAlbum) {
+    if (deleteAlbum.userId === user.id) {
+      await deleteAlbum.destroy();
+      res.json({ message: "Successfully deleted", statusCode: 200 });
+    } else {
+      const error = new Error("Not Authorized");
+      error.status = 401;
       return next(error);
     }
-
-    if (deleteAlbum) {
-      if (deleteAlbum.userId === user.id) {
-        await deleteAlbum.destroy();
-        res.json({ message: "Successfully deleted", statusCode: 200 });
-      } else {
-        const error = new Error("Not Authorized");
-        error.status = 401;
-        return next(error);
-      }
-    }
   }
-);
+});
 
 module.exports = router;
