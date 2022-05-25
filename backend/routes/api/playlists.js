@@ -83,4 +83,23 @@ router.post(
   }
 );
 
+//======= GET Details of playlist from ID ===========//
+router.get("/playlists/:playlistId", async (req, res, next) => {
+  const { playlistId } = req.params;
+  const playlist = await Playlist.findByPk(playlistId, {
+    include: [
+      {
+        model: Song,
+        through: { attributes: [] }
+      }
+    ]
+  });
+  if (playlist) res.json(playlist);
+  else {
+    const error = new Error("Playlist could not be found");
+    error.status = 404;
+    throw error;
+  }
+});
+
 module.exports = router;
