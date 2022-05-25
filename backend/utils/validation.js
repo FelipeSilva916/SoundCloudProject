@@ -65,13 +65,13 @@ const validateLogin = [
 ];
 
 //======= Validate Creation of Playlist =============//
-validatePlaylist = [
+const validatePlaylist = [
   check("name").exists({ checkFalsy: true }).withMessage("Name is required"),
   handleValidationErrors
 ];
 
 //======= Validate Comment ========//
-validateComment = [
+const validateComment = [
   check("body")
     .exists({ checkFalsy: true })
     .withMessage("Comment body text is required"),

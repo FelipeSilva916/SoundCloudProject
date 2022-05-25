@@ -152,7 +152,7 @@ router.get("/songs/:songId/comments", async (req, res, next) => {
 // ================= Get all songs ================//
 router.get("/songs", async (req, res) => {
   const songs = await Song.findAll();
-  res.json(songs);
+  res.json({ Songs: songs });
 });
 
 module.exports = router;

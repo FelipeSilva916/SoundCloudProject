@@ -5,17 +5,18 @@ const { restoreUser, requireAuth } = require("../../utils/auth");
 
 const { Song, User, Album, Playlist } = require("../../db/models");
 
+//Token or no token?
 //============= GET current user =====================//
 router.get("/my", restoreUser, async (req, res) => {
   const { user, cookies } = req;
   if (user) {
     return res.json({
-      ...user.toSafeObject(),
-      token: cookies.token
+      ...user.toSafeObject()
+      // token: cookies.token
     });
   } else {
-    const error = new Error("Invalid Request");
-    error.status = 400;
+    const error = new Error("Authentication required");
+    error.status = 401;
     throw error;
   }
 });
@@ -36,7 +37,7 @@ router.get("/my/songs", requireAuth, async (req, res) => {
   const songs = await Song.findAll({
     where: { userId: user.id }
   });
-  res.json(songs);
+  res.json({ Songs: songs });
 });
 
 //========== GET Playlist by Current User =============//
