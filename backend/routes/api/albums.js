@@ -74,7 +74,7 @@ router.put(
         res.json(album);
       } else {
         const error = new Error("Not Authorized");
-        error.status(401);
+        error.status = 401;
         throw error;
       }
     }

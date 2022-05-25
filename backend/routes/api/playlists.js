@@ -9,7 +9,13 @@ const {
   requireAuth,
   restoreUser
 } = require("../../utils/auth");
-const { User, Song, Album, Playlist } = require("../../db/models");
+const {
+  User,
+  Song,
+  Album,
+  Playlist,
+  PlaylistSong
+} = require("../../db/models");
 
 //========== Create a Playlist ==========//
 router.post(
@@ -33,17 +39,47 @@ router.post(
 
 // =========== Add a playlist by Playlist ID ==============//
 router.post(
-  "/playlist/:playlistId",
+  "/playlists/:playlistId",
   requireAuth,
-  validatePlaylist,
   restoreUser,
   async (req, res) => {
     const { playlistId } = req.params;
     const { user } = req;
-    const { songId } = req.params;
+    const { songId } = req.body;
 
     const playlist = await Playlist.findByPk(playlistId);
     const song = await Song.findByPk(songId);
+
+    if (!playlist) {
+      res.status(404),
+        res.json({
+          message: "Playlist couldn't be found",
+          statusCode: 404
+        });
+    }
+    if (!song) {
+      res.status(404),
+        res.json({
+          message: "Song couldn't be found",
+          statusCode: 404
+        });
+    }
+
+    if (playlist.userId === user.id) {
+      const newPlaylistSong = await PlaylistSong.create({
+        playlistId,
+        songId
+      });
+      const playlistSong = await PlaylistSong.findOne({
+        where: { playlistId, songId },
+        attributes: ["id", "playlistId", "songId"]
+      });
+      res.json(playlistSong);
+    } else {
+      const error = new Error("Not Authorized");
+      error.status = 401;
+      throw error;
+    }
   }
 );
 
