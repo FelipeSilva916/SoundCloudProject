@@ -2,12 +2,11 @@
 const express = require("express");
 const router = express.Router();
 const { restoreUser, requireAuth } = require("../../utils/auth");
-
 const { Song, User, Album, Playlist } = require("../../db/models");
 
 //Token or no token?
 //============= GET current user =====================//
-router.get("/my", restoreUser, async (req, res) => {
+router.get("/", restoreUser, async (req, res) => {
   const { user, cookies } = req;
   if (user) {
     return res.json({
@@ -22,7 +21,7 @@ router.get("/my", restoreUser, async (req, res) => {
 });
 
 //========= GET albums by current user
-router.get("/my/albums", requireAuth, async (req, res) => {
+router.get("/albums", requireAuth, async (req, res) => {
   const { user } = req;
 
   const albums = await Album.findAll({
@@ -32,7 +31,7 @@ router.get("/my/albums", requireAuth, async (req, res) => {
 });
 
 //========== GET Current user's Songs ====================//
-router.get("/my/songs", requireAuth, async (req, res) => {
+router.get("/songs", requireAuth, async (req, res) => {
   const { user } = req;
   const songs = await Song.findAll({
     where: { userId: user.id }
@@ -41,7 +40,7 @@ router.get("/my/songs", requireAuth, async (req, res) => {
 });
 
 //========== GET Playlist by Current User =============//
-router.get("/my/playlists", requireAuth, async (req, res) => {
+router.get("/playlists", requireAuth, async (req, res) => {
   const { user } = req;
 
   const currentUserPlaylist = await user.getPlaylists();

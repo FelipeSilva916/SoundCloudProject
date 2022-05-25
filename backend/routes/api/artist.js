@@ -1,21 +1,9 @@
 const express = require("express");
-
 const router = express.Router();
-
-const {
-  handleValidationErrors,
-  validateAlbumCreation
-} = require("../../utils/validation");
-const {
-  setTokenCookie,
-  requireAuth,
-  restoreUser
-} = require("../../utils/auth");
 const { User, Song, Album, Playlist } = require("../../db/models");
-const e = require("express");
 
 //=======GET Details of Artist by ID ===========//
-router.get("/artists/:artistId", async (req, res, next) => {
+router.get("/:artistId", async (req, res, next) => {
   let { artistId } = req.params;
   artistId = parseInt(artistId);
 
@@ -43,7 +31,7 @@ router.get("/artists/:artistId", async (req, res, next) => {
 });
 
 // ========== GET All Songs of Artist by ID ============//
-router.get("/artists/:artistId/songs", async (req, res, next) => {
+router.get("/:artistId/songs", async (req, res, next) => {
   let { artistId } = req.params;
   artistId = parseInt(artistId);
 
@@ -65,7 +53,7 @@ router.get("/artists/:artistId/songs", async (req, res, next) => {
 });
 
 //========= GET All Albums of artist by ID ===========//
-router.get("/artists/:artistId/albums", async (req, res) => {
+router.get("/:artistId/albums", async (req, res) => {
   let { artistId } = req.params;
   artistId = parseInt(artistId);
 
@@ -87,7 +75,7 @@ router.get("/artists/:artistId/albums", async (req, res) => {
 });
 
 // ======== GET All playlists of artist by ID =========//
-router.get("/artists/:artistId/playlists", async (req, res) => {
+router.get("/:artistId/playlists", async (req, res) => {
   let { artistId } = req.params;
   artistId = parseInt(artistId);
 

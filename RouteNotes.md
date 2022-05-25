@@ -57,5 +57,3 @@
 - GET /albums/search
 - GET /artists/search
 - GET /playlists/search
-
-remove playlistId to playlists table

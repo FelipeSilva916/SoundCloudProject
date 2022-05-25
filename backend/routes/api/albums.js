@@ -1,16 +1,10 @@
 const express = require("express");
-
 const router = express.Router();
 const {
-  handleValidationErrors,
   validateAlbumCreation,
   validateSongCreation
 } = require("../../utils/validation");
-const {
-  setTokenCookie,
-  requireAuth,
-  restoreUser
-} = require("../../utils/auth");
+const { requireAuth, restoreUser } = require("../../utils/auth");
 const { User, Song, Album } = require("../../db/models");
 
 // ========= Create Song for an Album by ID ========//

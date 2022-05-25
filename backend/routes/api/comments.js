@@ -1,21 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const { Song, User, Album, Comment } = require("../../db/models");
-const {
-  handleValidationErrors,
-  validateComment
-} = require("../../utils/validation");
+const { Comment } = require("../../db/models");
+const { validateComment } = require("../../utils/validation");
 
-const {
-  setTokenCookie,
-  requireAuth,
-  restoreUser
-} = require("../../utils/auth");
+const { requireAuth } = require("../../utils/auth");
 
 // ============= Edit comment ===============//
 router.put(
-  "/comments/:commentId",
+  "/:commentId",
   requireAuth,
   validateComment,
   async (req, res, next) => {
@@ -43,7 +36,7 @@ router.put(
 );
 
 //=========== Delete a comment by ID ==============//
-router.delete("/comments/:commentId", requireAuth, async (req, res, next) => {
+router.delete("/:commentId", requireAuth, async (req, res, next) => {
   const { commentId } = req.params;
   const { user } = req;
 

@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const usersRouter = require("./users.js");
-const myRouter = require("./my");
-const songRouter = require("./songs");
-const artistRouter = require("./artist");
+// const usersRouter = require("./users.js");
+// const myRouter = require("./my");
+// const songRouter = require("./songs");
+// const artistRouter = require("./artist");
 
-router.use(usersRouter);
-router.use(myRouter);
-router.use(songRouter);
-router.use(artistRouter);
+// router.use(usersRouter);
+// router.use(myRouter);
+// router.use(songRouter);
+// router.use(artistRouter);
 
 //=============== Test Routes ============================//
 // GET /api/set-token-cookie
