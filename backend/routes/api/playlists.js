@@ -16,6 +16,7 @@ const {
   Playlist,
   PlaylistSong
 } = require("../../db/models");
+const e = require("express");
 
 //========== Create a Playlist ==========//
 router.post(
@@ -77,7 +78,7 @@ router.post(
       res.json(playlistSong);
     } else {
       const error = new Error("Not Authorized");
-      error.status = 401;
+      error.status = 403;
       throw error;
     }
   }
@@ -101,5 +102,68 @@ router.get("/playlists/:playlistId", async (req, res, next) => {
     throw error;
   }
 });
+
+//======== Edit a playlist by ID ========//
+router.put(
+  "/playlists/:playlistId",
+  requireAuth,
+  validatePlaylist,
+  async (req, res) => {
+    let { playlistId } = req.params;
+    playlistId = parseInt(playlistId);
+    const { user } = req;
+    const { name, previewImg } = req.body;
+    const playlist = await Playlist.findByPk(playlistId);
+
+    if (!playlist) {
+      const error = new Error("Playlist could not be found");
+      error.status = 404;
+      throw error;
+    }
+
+    if (playlist) {
+      if (playlist.userId === user.id) {
+        playlist.update({ name, previewImage: previewImg });
+        res.json(playlist);
+      } else {
+        const error = new Error("Not Authorized");
+        error.status = 403;
+        throw error;
+      }
+    }
+  }
+);
+
+//======== Delete a playlist by ID ================
+router.delete(
+  "/playlists/:playlistId",
+  requireAuth,
+  restoreUser,
+  async (req, res) => {
+    let { playlistId } = req.params;
+    playlistId = parseInt(playlistId);
+    const { user } = req;
+    const selectedPlaylist = await Playlist.findByPk(playlistId);
+
+    if (!selectedPlaylist) {
+      const error = new Error("Playlist could not be found");
+      error.status = 404;
+      throw error;
+    }
+    if (selectedPlaylist) {
+      if (selectedPlaylist.userId === user.id) {
+        await selectedPlaylist.destroy();
+        res.json({
+          message: "Successfully deleted",
+          statusCode: 200
+        });
+      } else {
+        const error = new Error("Not Authorized");
+        error.status = 403;
+        throw error;
+      }
+    }
+  }
+);
 
 module.exports = router;
