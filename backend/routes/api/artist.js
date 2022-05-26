@@ -84,14 +84,16 @@ router.get("/:artistId/playlists", async (req, res) => {
   if (artist) {
     const playlists = await Playlist.findAll({ where: { userId: artistId } });
     if (!playlists.length) {
-      res.json({ message: "This user does not have a playlist" });
+      const error = new Error("Playlist not found");
+      error.status = 404;
+      throw error;
     }
     res.json({ Playlists: playlists });
-  } else
-    res.json({
-      message: "Artist couldn't be found",
-      statusCode: 404
-    });
+  } else {
+    const error = new Error("Playlist not found");
+    error.status = 404;
+    throw error;
+  }
 });
 
 module.exports = router;

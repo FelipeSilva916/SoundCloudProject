@@ -33,7 +33,7 @@ module.exports = {
       {
         //song 4
         title: "Everlong",
-        description: "Song by Foo Fighters",
+        description: "Song by the Foo Fighters",
         url: "www.thissong.com",
         previewImage: "www.previewimg.com",
         userId: "5",
@@ -42,7 +42,7 @@ module.exports = {
       {
         //song 5
         title: "Monkey Wrench",
-        description: "Song by Foo Fighters",
+        description: "Song by the Foo Fighters",
         url: "www.thissong.com",
         previewImage: "www.previewimg.com",
         userId: "5",
@@ -51,7 +51,7 @@ module.exports = {
       {
         //song 6
         title: "My Hero",
-        description: "Song by Foo Fighters",
+        description: "Song by the Foo Fighters",
         url: "www.thissong.com",
         previewImage: "www.previewimg.com",
         userId: "5",
@@ -74,6 +74,51 @@ module.exports = {
         previewImage: "www.previewimg.com",
         userId: "4",
         albumId: "5"
+      },
+      {
+        //song 9
+        title: "Same Love",
+        description: "Song by Macklemore",
+        url: "www.thissong.com",
+        previewImage: "www.previewimg.com",
+        userId: "4",
+        albumId: "5"
+      },
+      {
+        //song 10
+        title: "Starting Over",
+        description: "Song by Macklemore",
+        url: "www.thissong.com",
+        previewImage: "www.previewimg.com",
+        userId: "5",
+        albumId: "4"
+      },
+      {
+        //song 11
+        title: "Everlong (Acustic)",
+        description: "Song by the Foo Fighters",
+        url: "www.thissong.com",
+        previewImage: "www.previewimg.com",
+        userId: "5",
+        albumId: "4"
+      },
+      {
+        //song 12
+        title: "Somewhere I Belong",
+        description: "Song by Linking Park, Album Meteora",
+        url: "www.thissong.com",
+        previewImage: "www.previewimg.com",
+        userId: "3",
+        albumId: "2"
+      },
+      {
+        //song 13
+        title: "Numb",
+        description: "Song by Linking Park, Album Meteora",
+        url: "www.thissong.com",
+        previewImage: "www.previewimg.com",
+        userId: "3",
+        albumId: "2"
       }
     ]);
   },

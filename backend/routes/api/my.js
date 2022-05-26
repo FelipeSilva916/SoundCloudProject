@@ -4,22 +4,6 @@ const router = express.Router();
 const { restoreUser, requireAuth } = require("../../utils/auth");
 const { Song, User, Album, Playlist } = require("../../db/models");
 
-//Token or no token?
-//============= GET current user =====================//
-router.get("/", restoreUser, async (req, res) => {
-  const { user, cookies } = req;
-  if (user) {
-    return res.json({
-      ...user.toSafeObject()
-      // token: cookies.token
-    });
-  } else {
-    const error = new Error("Authentication required");
-    error.status = 401;
-    throw error;
-  }
-});
-
 //========= GET albums by current user
 router.get("/albums", requireAuth, async (req, res) => {
   const { user } = req;
@@ -47,4 +31,19 @@ router.get("/playlists", requireAuth, async (req, res) => {
   res.json({ Playlist: currentUserPlaylist });
 });
 
+//Token or no token?
+//============= GET current user =====================//
+router.get("/", restoreUser, async (req, res) => {
+  const { user, cookies } = req;
+  if (user) {
+    return res.json({
+      ...user.toSafeObject()
+      // token: cookies.token
+    });
+  } else {
+    const error = new Error("Authentication required");
+    error.status = 401;
+    throw error;
+  }
+});
 module.exports = router;
