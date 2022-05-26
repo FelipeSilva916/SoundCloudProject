@@ -22,7 +22,7 @@ module.exports = {
         //3
         title: "Meteora",
         description:
-          "Meteora is the second studio album by American rock band Linkin Park. It was released on March 25, 2003, through Warner Bros. Records, following Reanimation, a collaboration album which featured remixes of songs included on their 2000 debut studio album Hybrid Theory.",
+          "Meteora is the second studio album by American rock band Linkin Park. It was released on March 25, 2003, through Warner Bros.",
         userId: 3,
         previewImage: "www.imagepreview.com"
       },
@@ -38,7 +38,7 @@ module.exports = {
         //5
         title: "The Heist",
         description:
-          "The Heist is the debut studio album by American hip hop duo Macklemore & Ryan Lewis. It was released on October 9, 2012, by Macklemore LLC, distributed under the Alternative Distribution Alliance.",
+          "The Heist is the debut studio album by American hip hop duo Macklemore & Ryan Lewis. It was released on October 9, 2012, by Macklemore LLC.",
         userId: 4,
         previewImage: "www.imagepreview.com"
       }
