@@ -98,7 +98,7 @@ router.put("/:songId", requireAuth, validateSongCreation, async (req, res) => {
 });
 
 //=============== Delete Song ======================//
-router.delete("/:songId", requireAuth, restoreUser, async (req, res, next) => {
+router.delete("/:songId", requireAuth, async (req, res, next) => {
   const { user } = req;
   let { songId } = req.params;
   songId = parseInt(songId);
@@ -114,10 +114,10 @@ router.delete("/:songId", requireAuth, restoreUser, async (req, res, next) => {
   if (deletedSong) {
     if (deletedSong.userId === user.id) {
       await deletedSong.destroy();
-      res.json({ message: "Successfully deleted" });
+      res.json({ message: "Successfully deleted", statusCode: 200 });
     } else {
       const error = new Error("Not Authorized");
-      error.status = 401;
+      error.status = 403;
       throw error;
     }
   }
