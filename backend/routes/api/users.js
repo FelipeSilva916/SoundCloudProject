@@ -8,12 +8,21 @@ const { validateSignup, validateLogin } = require("../../utils/validation");
 //================== Sign up =====================//
 router.post("/signup", validateSignup, async (req, res, next) => {
   const { firstName, lastName, email, password, username } = req.body;
-  const userCheck = await User.findOne({ where: { email: email } });
+  const emailCheck = await User.findOne({ where: { email: email } });
+  const userCheck = await User.findOne({ where: { username } });
 
-  if (userCheck) {
+  if (emailCheck) {
     const error = new Error("This e-mail already exists.");
     error.status = 403;
-    return next(error);
+    error.errors = ["User with that email already exits"];
+    throw error;
+  }
+
+  if (userCheck) {
+    const error = new Error("User already exists.");
+    error.status = 403;
+    error.errors = ["User with that username already exits"];
+    throw error;
   }
 
   const user = await User.signup({
@@ -41,7 +50,6 @@ router.post("/login", validateLogin, async (req, res, next) => {
     const err = new Error("Login failed");
     err.status = 401;
     err.title = "Login failed";
-    err.errors = ["The provided credentials were invalid."];
     return next(err);
   }
   const token = setTokenCookie(res, user);

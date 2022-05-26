@@ -17,7 +17,7 @@ router.post(
     let { albumId } = req.params;
     albumId = parseInt(albumId);
 
-    const { title, description, url, previewImg } = req.body;
+    const { title, description, url, previewImage } = req.body;
     const album = await Album.findByPk(albumId);
 
     if (!album) {
@@ -36,8 +36,9 @@ router.post(
           title,
           description,
           url,
-          previewImg
+          previewImage
         });
+
         res.status(201);
         res.json(song);
       } else {
@@ -60,7 +61,7 @@ router.put(
     let { albumId } = req.params;
     albumId = parseInt(albumId);
     const { user } = req;
-    const { title, description, previewImg } = req.body;
+    const { title, description, previewImage } = req.body;
 
     const currentAlbum = await Album.findByPk(albumId);
 
@@ -76,7 +77,7 @@ router.put(
         const album = await currentAlbum.update({
           title,
           description,
-          previewImg
+          previewImage
         });
         res.json(album);
       } else {
@@ -124,12 +125,12 @@ router.get("/", async (req, res) => {
 // ================== Create a new Album ====================//
 router.post("/", requireAuth, validateAlbumCreation, async (req, res) => {
   const { user } = req;
-  const { title, description, previewImg } = req.body;
+  const { title, description, previewImage } = req.body;
   const newAlbum = await Album.create({
     userId: user.id,
     title,
     description,
-    previewImg
+    previewImage
   });
   res.status(201);
   res.json(newAlbum);

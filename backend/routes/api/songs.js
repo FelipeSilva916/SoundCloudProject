@@ -35,6 +35,7 @@ router.post(
         songId,
         body
       });
+
       res.json(comment);
     }
   }
@@ -47,7 +48,7 @@ router.get("/:songId", async (req, res, next) => {
   const song = await Song.findByPk(songId, {
     include: [
       { model: User, as: "Artist", attributes: ["id", "username", "imgUrl"] },
-      { model: Album, attributes: ["id", "title", "previewImg"] }
+      { model: Album, attributes: ["id", "title", "previewImagev"] }
     ]
   });
 
@@ -65,7 +66,7 @@ router.put("/:songId", requireAuth, validateSongCreation, async (req, res) => {
   const { user } = req;
   let { songId } = req.params;
   songId = parseInt(songId);
-  const { title, description, url, previewImg } = req.body;
+  const { title, description, url, previewImage } = req.body;
 
   const updateSong = await Song.findByPk(songId);
 
@@ -81,7 +82,7 @@ router.put("/:songId", requireAuth, validateSongCreation, async (req, res) => {
         title,
         description,
         url,
-        previewImg
+        previewImage
       });
       res.json(updateSong);
     } else {

@@ -17,7 +17,7 @@ router.use("/comments", commentRouter);
 router.use("/playlists", playlistsRouter);
 router.use("/my", myRouter);
 router.use("/artists", artistRouter);
-router.use("/user", userRouter);
+router.use(userRouter);
 //
 router.get("/api/csrf/restore", (req, res) => {
   const csrfToken = req.csrfToken();
