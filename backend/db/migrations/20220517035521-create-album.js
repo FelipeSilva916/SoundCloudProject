@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false
       },
 
-      previewImg: {
+      previewImage: {
         type: Sequelize.STRING,
         allowNull: false
       },

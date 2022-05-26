@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       userId: { type: DataTypes.INTEGER, allowNull: false },
       title: { type: DataTypes.STRING, allowNull: false },
       description: { type: DataTypes.STRING, allowNull: false },
-      previewImg: { type: DataTypes.STRING, allowNull: false }
+      previewImage: { type: DataTypes.STRING, allowNull: false }
     },
     {
       sequelize,

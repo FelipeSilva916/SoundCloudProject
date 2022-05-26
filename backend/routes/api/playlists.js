@@ -17,7 +17,7 @@ router.post(
     const newPlaylist = await Playlist.create({
       userId: user.id,
       name: name,
-      previewImg: imageUrl
+      previewImage: imageUrl
     });
     res.status(201);
     res.json(newPlaylist);
@@ -89,7 +89,7 @@ router.put("/:playlistId", requireAuth, validatePlaylist, async (req, res) => {
   let { playlistId } = req.params;
   playlistId = parseInt(playlistId);
   const { user } = req;
-  const { name, previewImg } = req.body;
+  const { name, previewImage } = req.body;
   const playlist = await Playlist.findByPk(playlistId);
 
   if (!playlist) {
@@ -100,7 +100,7 @@ router.put("/:playlistId", requireAuth, validatePlaylist, async (req, res) => {
 
   if (playlist) {
     if (playlist.userId === user.id) {
-      playlist.update({ name, previewImage: previewImg });
+      playlist.update({ name, previewImage: previewImage });
       res.json(playlist);
     } else {
       const error = new Error("Not Authorized");

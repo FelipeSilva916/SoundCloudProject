@@ -8,7 +8,7 @@ module.exports = {
         title: "Song Demo",
         description: "The best demo-ever",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "1",
         albumId: "1"
       },
@@ -17,7 +17,7 @@ module.exports = {
         title: "Papercut",
         description: "Song by Linkin Park",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "3",
         albumId: "2"
       },
@@ -26,7 +26,7 @@ module.exports = {
         title: "Crawling",
         description: "Song by Linkin Park",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "3",
         albumId: "2"
       },
@@ -35,7 +35,7 @@ module.exports = {
         title: "Everlong",
         description: "Song by Foo Fighters",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "5",
         albumId: "4"
       },
@@ -44,7 +44,7 @@ module.exports = {
         title: "Monkey Wrench",
         description: "Song by Foo Fighters",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "5",
         albumId: "4"
       },
@@ -53,7 +53,7 @@ module.exports = {
         title: "My Hero",
         description: "Song by Foo Fighters",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "5",
         albumId: "4"
       },
@@ -62,7 +62,7 @@ module.exports = {
         title: "Ten Thousand Hours",
         description: "Song by Macklemore",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "4",
         albumId: "5"
       },
@@ -71,7 +71,7 @@ module.exports = {
         title: "Can't Hold Us",
         description: "Song by Macklemore",
         url: "www.thissong.com",
-        previewImg: "www.previewimg.com",
+        previewImage: "www.previewimg.com",
         userId: "4",
         albumId: "5"
       }

@@ -6,25 +6,25 @@ module.exports = {
       {
         //Playlist 1
         name: "My Rock Playlist!",
-        previewImg: "www.previewImg.com",
+        previewImage: "www.previewImg.com",
         userId: "1"
       },
       {
         // Playlist 2
         name: "My top 3 songs",
-        previewImg: "www.previewImg.com",
+        previewImage: "www.previewImg.com",
         userId: "2"
       },
       {
         // Playlist 3
         name: "My Macklemore Favorites",
-        previewImg: "www.previewImg.com",
+        previewImage: "www.previewImg.com",
         userId: "5"
       },
       {
         // Playlist 4
         name: "My Favorite Foo-Fighters",
-        previewImg: "www.previewImg.com",
+        previewImage: "www.previewImg.com",
         userId: "3"
       }
     ]);

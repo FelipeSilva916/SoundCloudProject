@@ -99,7 +99,7 @@ router.get("/:albumId", async (req, res) => {
       {
         model: User,
         as: "Artist",
-        attributes: ["id", "username", "imgUrl"]
+        attributes: ["id", "username", "previewImage"]
       },
       {
         model: Song
