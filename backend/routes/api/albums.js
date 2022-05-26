@@ -82,7 +82,7 @@ router.put(
         res.json(album);
       } else {
         const error = new Error("Not Authorized");
-        error.status = 401;
+        error.status = 403;
         throw error;
       }
     }
@@ -156,7 +156,7 @@ router.delete("/:albumId", requireAuth, restoreUser, async (req, res, next) => {
       res.json({ message: "Successfully deleted", statusCode: 200 });
     } else {
       const error = new Error("Not Authorized");
-      error.status = 401;
+      error.status = 403;
       return next(error);
     }
   }

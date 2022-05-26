@@ -64,7 +64,7 @@ router.get("/:artistId/albums", async (req, res) => {
       where: { userId: artistId }
     });
     res.json({
-      albums: albums
+      Albums: albums
     });
   } else {
     res.json({
@@ -83,6 +83,9 @@ router.get("/:artistId/playlists", async (req, res) => {
 
   if (artist) {
     const playlists = await Playlist.findAll({ where: { userId: artistId } });
+    if (!playlists.length) {
+      res.json({ message: "This user does not have a playlist" });
+    }
     res.json({ Playlists: playlists });
   } else
     res.json({

@@ -12,7 +12,8 @@ router.put(
   requireAuth,
   validateComment,
   async (req, res, next) => {
-    const { commentId } = req.params;
+    let { commentId } = req.params;
+    commentId = parseInt(commentId);
     const { user } = req;
     const { body } = req.body;
 
