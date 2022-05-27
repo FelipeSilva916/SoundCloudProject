@@ -38,7 +38,7 @@ module.exports = {
         description:
           "'Everlong' is a song by American rock group Foo Fighters. It was released in August 1997 as the second single from their second studio album, The Colour and the Shape (1997). ",
         url: "www.thecolourandtheshape.com",
-        previewImage: "www.thecolourandtheshapeimage.com",
+        previewImage: "www.colourandtheshapeimage.com",
         userId: 5,
         albumId: 4
       },
@@ -48,7 +48,7 @@ module.exports = {
         description:
           "'Monkey Wrench' is the lead single by American rock band Foo Fighters from their second album, The Colour and the Shape.",
         url: "www.thecolourandtheshape.com",
-        previewImage: "www.thecolourandtheshapeimage.com",
+        previewImage: "www.colourandtheshapeimage.com",
         userId: 5,
         albumId: 4
       },
@@ -58,7 +58,7 @@ module.exports = {
         description:
           "'My Hero' is a song by American rock group Foo Fighters. It was released in January 1998 as the third single from their second album, The Colour and the Shape (1997).",
         url: "www.thecolourandtheshape.com",
-        previewImage: "www.thecolourandtheshapeimage.com",
+        previewImage: "www.colourandtheshapeimage.com",
         userId: 5,
         albumId: 4
       },
@@ -76,7 +76,7 @@ module.exports = {
         //song 8
         title: "Can't Hold Us",
         description:
-          "'Can't Hold Us' is a song written and performed by American hip hop duo Macklemore & Ryan Lewis and singer Ray Dalton, originally released on August 16, 2011 as the second single from the duo's debut studio album The Heist (2012).",
+          "'Can't Hold Us' is a song written and performed by American hip hop duo Macklemore & Ryan Lewis and singer Ray Dalton, originally released on August 16, 2011.",
         url: "www.theheist.com",
         previewImage: "www.theheistimage.com",
         userId: 4,
@@ -107,7 +107,7 @@ module.exports = {
         title: "Everlong (Acustic)",
         description: "Recorded at Studio 606 in Northridge, CA",
         url: "www.thecolourandtheshape.com",
-        previewImage: "www.thecolourandtheshapeimage.com",
+        previewImage: "www.colourandtheshapeimage.com",
         userId: 5,
         albumId: 4
       },
@@ -115,7 +115,7 @@ module.exports = {
         //song 12
         title: "Somewhere I Belong",
         description:
-          "'Somewhere I Belong' is a song by American rock band Linkin Park. It was released to US radio on February 24, 2003, as the first single from their second studio album, Meteora (2003), and is the album's third track. ",
+          "'Somewhere I Belong' is a song by American rock band Linkin Park. It was released to US radio on February 24, 2003, as the first single from their second studio album, Meteora (2003). ",
         url: "www.meteora.com",
         previewImage: "www.meteoraimage.com",
         userId: 3,
@@ -125,7 +125,7 @@ module.exports = {
         //song 13
         title: "Numb",
         description:
-          "'Numb' is a song by American rock band Linkin Park. It was released as the third single from their second studio album, Meteora (2003), and is the closing track on the album. One of Linkin Park's most well-known and critically acclaimed songs.",
+          "'Numb' is a song by American rock band Linkin Park. It was released as the third single from their second studio album, Meteora (2003), and is the closing track on the album.",
         url: "www.meteora.com",
         previewImage: "www.meteoraimage.com",
         userId: 3,
@@ -136,6 +136,7 @@ module.exports = {
         title: "In The End",
         description:
           "'In the End' is a song by American rock band Linkin Park. It is the eighth track on their debut album, Hybrid Theory (2000), and was released as the album's fourth and final single.",
+        url: "www.hybridtheory.com",
         previewImage: "www.hybridtheoryimage.com",
         userId: 3,
         albumId: 2
