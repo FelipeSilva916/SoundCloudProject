@@ -3,12 +3,12 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Song extends Model {
     static associate(models) {
-      // const playlistsSongMap = {
-      //   foreignKey: "songId",
-      //   otherKey: "playlistId",
-      //   through: "PlaylistSong"
-      // };
-      Song.belongsToMany(models.Playlist, { through: models.PlaylistSong }),
+      const playlistsSongMap = {
+        foreignKey: "songId",
+        otherKey: "playlistId",
+        through: "PlaylistSong"
+      };
+      Song.belongsToMany(models.Playlist, playlistsSongMap),
         Song.belongsTo(models.User, {
           foreignKey: "userId",
           as: "Artist"
