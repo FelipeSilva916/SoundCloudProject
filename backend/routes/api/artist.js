@@ -19,7 +19,7 @@ router.get("/:artistId/songs", async (req, res, next) => {
   } else {
     const error = new Error("Artist couldn't be found");
     error.status = 404;
-    return next(error);
+    throw error;
   }
 });
 
@@ -40,7 +40,7 @@ router.get("/:artistId/albums", async (req, res) => {
   } else {
     const error = new Error("Artist couldn't be found");
     error.status = 404;
-    return next(error);
+    throw error;
   }
 });
 
@@ -89,7 +89,7 @@ router.get("/:artistId", async (req, res, next) => {
   } else {
     const error = new Error("Artist couldn't be found");
     error.status = 404;
-    return next(error);
+    throw error;
   }
 });
 module.exports = router;

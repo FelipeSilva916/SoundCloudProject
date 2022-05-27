@@ -1,4 +1,3 @@
-https://www.dropbox.com/sh/fu37966qe5ebvxx/AACBMx3cYxWNUIyiiYbtVAgna?dl=0const express = require("express");
 const router = express.Router();
 
 const { Comment } = require("../../db/models");
@@ -50,12 +49,12 @@ router.delete("/:commentId", requireAuth, async (req, res, next) => {
     } else {
       const error = new Error("Not Authorized");
       error.status = 401;
-      return next(error);
+      throw error;
     }
   } else {
     const error = new Error("Comment could not be found");
     error.status = 404;
-    return next(error);
+    throw error;
   }
 });
 
