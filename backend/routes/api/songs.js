@@ -91,7 +91,7 @@ router.put("/:songId", requireAuth, validateSongCreation, async (req, res) => {
       res.json(updateSong);
     } else {
       const error = new Error("Not authorized");
-      error.status = 401;
+      error.status = 403;
       throw error;
     }
   }
