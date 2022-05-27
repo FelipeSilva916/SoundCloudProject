@@ -6,6 +6,8 @@ const {
   validateQuery,
   validateSongCreation
 } = require("../../utils/validation");
+const { environment } = require("../../config");
+const isProduction = environment === "production";
 
 const { requireAuth, restoreUser } = require("../../utils/auth");
 
@@ -181,9 +183,12 @@ router.get("/", validateQuery, async (req, res) => {
     pagination.offset = size * (page - 1);
   }
 
-  if (title) {
-    where.title = title;
+  if (isProduction) {
+    if (title) where.title = { [Op.iLike]: `%${title}%` };
+  } else {
+    if (title) where.title = { [Op.like]: `%${title}%` };
   }
+
   if (createdAt) {
     where.createdAt = createdAt;
   }
