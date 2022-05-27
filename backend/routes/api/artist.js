@@ -23,10 +23,9 @@ router.get("/:artistId", async (req, res, next) => {
       previewImage: artist.previewImage
     });
   } else {
-    res.json({
-      message: "Album couldn't be found",
-      statusCode: 404
-    });
+    const error = new Error("Artist couldn't be found");
+    error.status = 404;
+    return next(error);
   }
 });
 
