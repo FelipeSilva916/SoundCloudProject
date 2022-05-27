@@ -158,6 +158,8 @@ router.get("/", validateQuery, async (req, res) => {
   if (size) {
     size = parseInt(size);
   }
+  if (!size) size = 20;
+  if (!page) page = 0;
 
   if (page > 10) {
     page = 0;

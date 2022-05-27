@@ -92,10 +92,6 @@ const validateQuery = [
     .isDate()
     .optional({ nullable: true })
     .withMessage("CreatedAt is invalid"),
-  check("updatedAt")
-    .isDate()
-    .optional({ nullable: true })
-    .withMessage("UpdatedAt is invalid"),
   handleValidationErrors
 ];
 
