@@ -43,30 +43,6 @@ router.post(
   }
 );
 
-// ============== Get songs by ID ==================//
-router.get("/:songId", async (req, res, next) => {
-  let { songId } = req.params;
-  songId = parseInt(songId);
-  const song = await Song.findByPk(songId, {
-    include: [
-      {
-        model: User,
-        as: "Artist",
-        attributes: ["id", "username", "previewImage"]
-      },
-      { model: Album, attributes: ["id", "title", "previewImage"] }
-    ]
-  });
-
-  if (!song) {
-    const error = new Error("Song could not be found");
-    error.status = 404;
-    throw error;
-  }
-
-  return res.json({ Songs: song });
-});
-
 // ========== Edit song by ID ========//
 router.put("/:songId", requireAuth, validateSongCreation, async (req, res) => {
   const { user } = req;
@@ -148,6 +124,29 @@ router.get("/:songId/comments", async (req, res, next) => {
   }
 });
 
+// ============== Get songs by ID ==================//
+router.get("/:songId", async (req, res, next) => {
+  let { songId } = req.params;
+  songId = parseInt(songId);
+  const song = await Song.findByPk(songId, {
+    include: [
+      {
+        model: User,
+        as: "Artist",
+        attributes: ["id", "username", "previewImage"]
+      },
+      { model: Album, attributes: ["id", "title", "previewImage"] }
+    ]
+  });
+
+  if (!song) {
+    const error = new Error("Song could not be found");
+    error.status = 404;
+    throw error;
+  }
+
+  return res.json({ Songs: song });
+});
 // ======== GET All Songs + Query ============//
 router.get("/", validateQuery, async (req, res) => {
   let { page, size, title, createdAt } = req.query;
