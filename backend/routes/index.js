@@ -27,8 +27,8 @@ router.get("/api/csrf/restore", (req, res) => {
   });
 });
 
-router.get("/", async (req, res) => {
-  res.json({ message: "Welcome To My App 👋🏼" });
+router.get("/", (req, res) => {
+  res.send("Welcome To My App 👋🏼");
 });
 
 module.exports = router;
