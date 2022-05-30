@@ -60,7 +60,7 @@ router.get("/:artistId/playlists", async (req, res) => {
     }
     res.json({ Playlists: playlists });
   } else {
-    const error = new Error("Playlist not found");
+    const error = new Error("Artist not found");
     error.status = 404;
     throw error;
   }

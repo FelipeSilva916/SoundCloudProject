@@ -28,7 +28,7 @@ router.get("/playlists", requireAuth, async (req, res) => {
   const { user } = req;
 
   const currentUserPlaylist = await user.getPlaylists();
-  res.json({ Playlist: currentUserPlaylist });
+  res.json({ Playlists: currentUserPlaylist });
 });
 
 //Token or no token?

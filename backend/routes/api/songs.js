@@ -145,7 +145,7 @@ router.get("/:songId", async (req, res, next) => {
     throw error;
   }
 
-  return res.json({ Songs: song });
+  return res.json(song);
 });
 // ======== GET All Songs + Query ============//
 router.get("/", validateQuery, async (req, res) => {
