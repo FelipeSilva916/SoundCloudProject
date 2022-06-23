@@ -20,6 +20,5 @@
   "bugs": {
     "url": "https://github.com/FelipeSilva916/SoundCloudProject/issues"
   },
-  "homepage": "https://github.com/FelipeSilva916/SoundCloudProject#readme",
-  "proxy": "http://localhost:8000"
+  "homepage": "https://github.com/FelipeSilva916/SoundCloudProject#readme"
 }
