@@ -48,3 +48,5 @@ function ProfileButton({ user }) {
     </>
   );
 }
+
+export default ProfileButton;
