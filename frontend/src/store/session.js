@@ -30,14 +30,14 @@ export const login = (user) => async (dispatch) => {
   return response;
 };
 
+const initialState = { user: null };
+
 export const restoreUser = () => async (dispatch) => {
   const response = await csrfFetch("/my");
   const data = await response.json();
   dispatch(setUser(data));
   return response;
 };
-
-const initialState = { user: null };
 
 const sessionReducer = (state = initialState, action) => {
   let newState;
@@ -56,3 +56,18 @@ const sessionReducer = (state = initialState, action) => {
 };
 
 export default sessionReducer;
+
+export const signup = (user) => async (dispatch) => {
+  const { username, email, password } = user;
+  const response = await csrfFetch("/signup", {
+    method: "POST",
+    body: JSON.stringify({
+      username,
+      email,
+      password
+    })
+  });
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  return response;
+};
