@@ -1,0 +1,15 @@
+nav {
+  background-color: #fff;
+  box-shadow: 0 0 40px rgba(255, 119, 0, 0.342);
+  position: fixed;
+  top: 0%;
+}
+
+.signup {
+  background-color: #f50;
+  border-color: #f50;
+  color: #fff;
+  height: 30px;
+  line-height: 24px;
+  margin: 0 0 0 6px;
+}
