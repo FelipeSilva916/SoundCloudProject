@@ -6,30 +6,29 @@ import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-let sessionLinks;
 
-if(sessionUser){
+  let sessionLinks;
+  if (sessionUser) {
+    sessionLinks = <ProfileButton user={sessionUser} />;
+  } else {
     sessionLinks = (
-        <ProfileButton user={sessionUser}/>
+      <>
+        <NavLink to="/login">Log In</NavLink>
+        <NavLink to="/signup">Sign Up</NavLink>
+      </>
     );
-    else {
-        sessionsLinks = (
-            <>
-            <NavLink to='/login'>Log In</NavLink>
-            <NavLink to='/signup'>Sign Up</NavLink>
-            </>
-        )
-    }
-}
+  }
 
   return (
     <ul>
-      <liL>
+      <li>
         <NavLink exact to="/">
           Home
         </NavLink>
         {isLoaded && sessionLinks}
-      </liL>
+      </li>
     </ul>
   );
 }
+
+export default Navigation;
