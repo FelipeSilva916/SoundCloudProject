@@ -41,9 +41,7 @@ router.get("/", restoreUser, async (req, res) => {
       // token: cookies.token
     });
   } else {
-    const error = new Error("Authentication required");
-    error.status = 401;
-    throw error;
+    res.json({});
   }
 });
 module.exports = router;

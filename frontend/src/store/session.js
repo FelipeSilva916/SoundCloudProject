@@ -35,7 +35,7 @@ const initialState = { user: null };
 export const restoreUser = () => async (dispatch) => {
   const response = await csrfFetch("/my");
   const data = await response.json();
-  dispatch(setUser(data));
+  if (data.id) dispatch(setUser(data));
   return response;
 };
 
