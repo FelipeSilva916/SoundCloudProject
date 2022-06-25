@@ -1,0 +1,23 @@
+nav {
+  background: #fff;
+  box-shadow: 0 10px 25px rgb(0 0 0 / 30%);
+  position: fixed;
+  top: 0%;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+  display: flex;
+}
+.nav-right {
+  margin-right: auto;
+  padding: 10px;
+}
+.nav-right li {
+  display: flex;
+  position: relative;
+}
