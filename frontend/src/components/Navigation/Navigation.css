@@ -6,20 +6,20 @@
 }
 .active {
   color: #fff;
-  font-weight: 800;
+  font-weight: 700;
 }
 nav {
-  background-color: aqua;
+  /* background-color: aqua; */
   padding: 0 10px;
 }
 
 .top-splash li {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   padding: 0 5px;
 }
 
 .nav-right {
-  background-color: crimson;
+  /* background-color: crimson; */
 }
 
 .nav-li {
@@ -31,7 +31,7 @@ nav a {
   padding: 0 5px;
 }
 
-.signup {
+.signup-btn {
   background-color: #ff5501;
   border-color: #ff5501;
   color: #fff;
@@ -39,7 +39,7 @@ nav a {
   margin: 0;
   padding: 4px 15px;
   border: 1px solid #ff5501;
-  border-radius: 3px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
   line-height: 20px;
@@ -52,6 +52,19 @@ nav a {
 
 .login-btn {
   background-color: transparent;
-  border-color: #e5e5e5;
-  margin-right: 10px;
+  border-color: white;
+  color: #fff;
+  height: 30px;
+  margin: 0;
+  padding: 4px 15px;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  font-family: sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
 }

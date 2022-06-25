@@ -16,7 +16,7 @@ function Navigation({ isLoaded }) {
         <NavLink className="login-btn" to="/login">
           Log In
         </NavLink>
-        <NavLink className="signup" to="/signup">
+        <NavLink className="signup-btn" to="/signup">
           Sign Up
         </NavLink>
       </>
