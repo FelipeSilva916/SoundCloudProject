@@ -90,3 +90,13 @@ nav a {
   vertical-align: middle;
   box-sizing: border-box;
 }
+
+.search-bar {
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-left: 8px;
+  outline: none;
+  padding: 4px 32px 4px 8px;
+  transition: border 0.2s;
+}
