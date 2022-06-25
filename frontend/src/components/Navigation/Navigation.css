@@ -5,16 +5,23 @@ nav {
   top: 0%;
   width: 100%;
 }
-
+nav div {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 10px; */
+  align-items: center;
+}
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
   align-items: stretch;
   display: flex;
+  align-items: center;
 }
 .nav-right {
-  margin-right: auto;
+  position: absolute;
+  right: 20px;
+
   padding: 10px;
 }
 .nav-right li {
