@@ -20,13 +20,10 @@ function ProfileButton({ user }) {
 
     document.addEventListener("click", closeMenu);
 
-    return (
-      () => {
-        document.removeEventListener("click", closeMenu);
-      },
-      [showMenu]
-    );
-  });
+    return () => {
+      document.removeEventListener("click", closeMenu);
+    };
+  }, [showMenu]);
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
