@@ -1,0 +1,22 @@
+nav {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+
+.top-splash {
+  background-color: chartreuse;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.top-splash li {
+  background-color: blueviolet;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+}

@@ -13,7 +13,9 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/login">Log In</NavLink>
+        <NavLink activeStyle={{ fontWeight: 700 }} to="/login">
+          Log In
+        </NavLink>
         <NavLink className="signup" to="/signup">
           Sign Up
         </NavLink>
