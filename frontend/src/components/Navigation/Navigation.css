@@ -1,35 +1,36 @@
 .top-splash {
   background-color: #333333;
-  padding: 0 5px;
+  padding: 0 10px;
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .active {
   color: #fff;
   font-weight: 700;
 }
-nav {
-  /* background-color: aqua; */
+/* nav {
+  background-color: aqua;
   padding: 0;
-}
+} */
 
 /* .top-splash li {
   background-color: blueviolet;
 } */
 
-/* .nav-right {
+.nav-right {
   background-color: crimson;
-} */
+}
 
 .nav-li {
   color: blue;
 }
 
-nav a {
+/* nav a {
   color: white;
   padding: 0 5px;
-}
+} */
 
 .signup-btn {
   background-color: #ff5501;
@@ -70,7 +71,20 @@ nav a {
 }
 
 .nav-left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  background-color: transparent;
+  border-color: white;
+  color: rgb(255, 255, 255);
+  height: 30px;
+  margin: 0;
+  padding: 4px 15px;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  font-family: sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
