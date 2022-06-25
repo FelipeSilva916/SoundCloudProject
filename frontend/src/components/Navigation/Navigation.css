@@ -1,6 +1,7 @@
 .top-splash {
   background-color: #333333;
   padding: 0 5px;
+  margin: 0;
   display: flex;
   justify-content: flex-end;
 }
@@ -10,17 +11,16 @@
 }
 nav {
   /* background-color: aqua; */
-  padding: 0 10px;
+  padding: 0;
 }
 
-.top-splash li {
-  /* background-color: blueviolet; */
-  padding: 0 5px;
-}
+/* .top-splash li {
+  background-color: blueviolet;
+} */
 
-.nav-right {
-  /* background-color: crimson; */
-}
+/* .nav-right {
+  background-color: crimson;
+} */
 
 .nav-li {
   color: blue;
