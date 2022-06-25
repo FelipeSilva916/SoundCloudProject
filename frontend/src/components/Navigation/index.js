@@ -13,7 +13,7 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <NavLink activeStyle={{ fontWeight: 700 }} to="/login">
+        <NavLink className="login-btn" to="/login">
           Log In
         </NavLink>
         <NavLink className="signup" to="/signup">
@@ -28,7 +28,7 @@ function Navigation({ isLoaded }) {
       <div className="top-splash">
         <div className="nav-right">
           <ul>
-            <li>
+            <li className="nav-li">
               <NavLink exact to="/">
                 Home
               </NavLink>
