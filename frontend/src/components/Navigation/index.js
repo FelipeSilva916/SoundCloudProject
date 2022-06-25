@@ -23,10 +23,7 @@ function Navigation({ isLoaded }) {
 
   return (
     <nav className="navigation">
-      <div className="navigation-logo">
-        <NavLink to="/">
-          <img src="/images/logo.png" alt="SoundCloud logo" />
-        </NavLink>
+      <div className="top-splash">
         <div className="nav-right">
           <ul>
             <li>

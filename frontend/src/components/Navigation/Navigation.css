@@ -19,8 +19,17 @@ nav ul {
   align-items: center;
 }
 .nav-right {
-  position: absolute;
-  right: 20px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
 
   padding: 10px;
 }
@@ -29,12 +38,13 @@ nav ul {
   position: relative;
 }
 
-.top-spash {
-  position: fixed;
+.top-splash {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: #fff;
-  z-index: -1;
+  box-sizing: border-box;
+  padding: 25px;
 }
