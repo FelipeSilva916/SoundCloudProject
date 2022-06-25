@@ -1,9 +1,20 @@
-/* TODO Add site wide styles */
-.login {
-  padding: 2px 15px;
-  background-color: aqua;
+* {
+  box-sizing: border-box;
 }
 
-form {
-  background-color: black;
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+nav > div {
+  display: flex;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
 }
