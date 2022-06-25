@@ -28,10 +28,9 @@
   color: blue;
 }
 
-/* nav a {
+nav a {
   color: white;
-  padding: 0 5px;
-} */
+}
 
 .signup-btn {
   background-color: #ff5501;
