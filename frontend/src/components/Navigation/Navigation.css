@@ -3,7 +3,7 @@
   padding: 0 5px;
   margin: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .active {
   color: #fff;
@@ -67,4 +67,10 @@ nav a {
   text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

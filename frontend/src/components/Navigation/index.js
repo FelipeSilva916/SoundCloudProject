@@ -26,14 +26,14 @@ function Navigation({ isLoaded }) {
   return (
     <nav className="navigation">
       <div className="top-splash">
+        <div className="nav-left">
+          <NavLink exact to="/">
+            Home
+          </NavLink>
+        </div>
         <div className="nav-right">
           <ul>
-            <li className="nav-li">
-              <NavLink exact to="/">
-                Home
-              </NavLink>
-              {isLoaded && sessionLinks}
-            </li>
+            <li className="nav-li">{isLoaded && sessionLinks}</li>
           </ul>
         </div>
       </div>
