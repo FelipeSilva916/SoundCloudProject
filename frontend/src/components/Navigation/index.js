@@ -32,7 +32,7 @@ function Navigation({ isLoaded }) {
           </NavLink>
         </div>
         <div className="search-bar">
-          <input type="text" placeholder="Search" />
+          <input className="search-input" type="text" placeholder="Search..." />
         </div>
         <div className="nav-right">
           <ul>
