@@ -31,6 +31,9 @@ function Navigation({ isLoaded }) {
             Home
           </NavLink>
         </div>
+        <div className="search-bar">
+          <input type="text" placeholder="Search" />
+        </div>
         <div className="nav-right">
           <ul>
             <li className="nav-li">{isLoaded && sessionLinks}</li>
