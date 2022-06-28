@@ -34,16 +34,6 @@
   background-color: white;
 }
 
-.login-form {
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  justify-content: space-between;
-  /* background-color: blueviolet; */
-  padding: 12px 20px;
-  margin: 20px;
-}
-
 .login-form-buttons {
   display: flex;
   justify-content: space-between;
@@ -54,5 +44,5 @@
 }
 
 .label-div {
-  padding: 10px 2px;
+  padding: 5px 2px;
 }
