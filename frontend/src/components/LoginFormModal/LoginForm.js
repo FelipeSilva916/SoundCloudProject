@@ -66,7 +66,7 @@ function LoginForm() {
       <div>
         <form className="guest-login-form">
           <button className="guest-login-btn" type="submit">
-            Guest Login
+            Demo Login
           </button>
         </form>
       </div>

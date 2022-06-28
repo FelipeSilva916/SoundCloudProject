@@ -6,7 +6,7 @@
   width: 10em;
   height: 2em;
   font-size: 20px;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
 }
 
@@ -18,7 +18,7 @@
   width: 10em;
   height: 2em;
   font-size: 20px;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
 }
 
@@ -30,5 +30,26 @@
   height: 200px;
   width: 400px;
   padding: 10px;
+}
+
+.auth-separator {
+  background-color: aquamarine;
+  font-weight: 400;
   font-size: 16px;
+  margin: 1em auto;
+  position: relative;
+  text-align: center;
+}
+
+div {
+  display: block;
+}
+
+.auth-separator::before,
+.auth-separator::after {
+  border-top: 1px solid #333;
+  content: " ";
+  display: inline-block;
+  height: 1px;
+  position: absolute;
 }
