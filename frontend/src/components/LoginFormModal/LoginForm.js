@@ -28,7 +28,7 @@ function LoginForm() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <div>
+        <div className="label-div">
           <label>
             Username or Email
             <input
