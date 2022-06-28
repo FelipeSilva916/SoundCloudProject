@@ -21,6 +21,8 @@
 }
 
 #modal-content {
+  display: block;
+  text-align: center;
   position: absolute;
   background-color: white;
 }
