@@ -12,7 +12,7 @@
   font-weight: 700;
 }
 nav {
-  background-color: aqua;
+  /* background-color: aqua; */
   padding: 0;
   width: 100%;
 }
@@ -103,4 +103,9 @@ nav a {
 .search-input {
   width: 100%;
   padding: 2px;
+}
+
+.logo-image {
+  width: 5%;
+  height: 5%;
 }
