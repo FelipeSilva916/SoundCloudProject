@@ -28,36 +28,46 @@ function LoginForm() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Username or Email
-          <input
-            type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
-            placeholder="Username or Email"
-            required
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-        </label>
-        <button className="login-btn" type="submit">
-          Log In
-        </button>
+        <div>
+          <label>
+            Username or Email
+            <input
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              placeholder="Username or Email"
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <button className="login-btn" type="submit">
+            Log In
+          </button>
+        </div>
       </form>
-      <span className="auth-separator">or</span>
-      <form className="guest-login-form">
-        <button className="guest-login-btn" type="submit">
-          Guest Login
-        </button>
-      </form>
+      <div>
+        <span className="auth-separator">or</span>
+      </div>
+      <div>
+        <form className="guest-login-form">
+          <button className="guest-login-btn" type="submit">
+            Guest Login
+          </button>
+        </form>
+      </div>
     </>
   );
 }
