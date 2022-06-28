@@ -16,9 +16,6 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <LoginFormModal />
-        {/* <NavLink className="signup-btn" to="/signup">
-          Sign Up
-        </NavLink> */}
         <SignupFormModal />
       </>
     );
@@ -27,6 +24,7 @@ function Navigation({ isLoaded }) {
   return (
     <nav className="navigation">
       <div className="top-splash">
+        <img src="../images/logo.png" alt="logo" />
         <div className="nav-left">
           <NavLink exact to="/">
             Home

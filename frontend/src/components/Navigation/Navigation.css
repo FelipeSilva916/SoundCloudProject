@@ -1,11 +1,10 @@
 .top-splash {
-  background-color: #333333;
+  background-color: transparent;
   padding: 0 10px;
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 10px 15px 18px rgba(0, 0, 0, 0.25);
   width: 100%;
 }
 .active {
@@ -26,7 +25,14 @@ nav a {
   color: white;
 }
 
-.signup-btn {
+.navigation {
+  background-image: url(https://a-v2.sndcdn.com/assets/images/sc_landing_header_web_b@2x-7e5ff471.jpg);
+  height: 1920px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.nav-right button + button {
   background-color: #ff5501;
   border-color: #ff5501;
   color: #fff;
@@ -91,7 +97,7 @@ nav a {
   outline: none;
   padding: 3px;
   width: 50%;
-  box-shadow: 4px 2px 2px #ff560171;
+  box-shadow: 8px 8px 12px #ff560171;
 }
 
 .search-input {
