@@ -30,28 +30,32 @@ function LoginForm() {
           ))}
         </ul>
 
-        <div>
+        <div className="input-wrapper">
           <label>
             Username or Email
-            <input
-              type="text"
-              value={credential}
-              onChange={(e) => setCredential(e.target.value)}
-              placeholder="Username or Email"
-              required
-            />
+            <div>
+              <input
+                type="text"
+                value={credential}
+                onChange={(e) => setCredential(e.target.value)}
+                placeholder="Username or Email"
+                required
+              />
+            </div>
           </label>
         </div>
-        <div>
+        <div className="input-wrapper">
           <label>
             Password
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-            />
+            <div>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+              />
+            </div>
           </label>
         </div>
         <div>

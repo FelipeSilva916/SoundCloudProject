@@ -32,6 +32,7 @@
   border-radius: 4px;
   position: absolute;
   background-color: white;
+  box-shadow: #f50 0px 0px 20px 1px;
 }
 
 .label-div {
