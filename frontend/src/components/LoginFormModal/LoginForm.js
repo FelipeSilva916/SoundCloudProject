@@ -34,6 +34,7 @@ function LoginForm() {
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
+            placeholder="Username or Email"
             required
           />
         </label>
@@ -43,11 +44,18 @@ function LoginForm() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
             required
           />
         </label>
         <button className="login-btn" type="submit">
           Log In
+        </button>
+      </form>
+      <span className="auth-separator">or</span>
+      <form className="guest-login-form">
+        <button className="guest-login-btn" type="submit">
+          Guest Login
         </button>
       </form>
     </>

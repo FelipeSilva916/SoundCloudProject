@@ -21,8 +21,12 @@
 }
 
 #modal-content {
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 16px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
   position: absolute;
   background-color: white;
 }
