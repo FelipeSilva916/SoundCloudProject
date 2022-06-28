@@ -29,7 +29,6 @@
   position: relative;
   text-align: center;
   width: 100%;
-  background-color: aquamarine;
 }
 
 .auth-separator::after {
