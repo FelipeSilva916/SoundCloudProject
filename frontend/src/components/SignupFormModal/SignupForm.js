@@ -49,6 +49,7 @@ function SignupForm() {
       <label>
         First Name
         <input
+          className="signup-input"
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
@@ -58,6 +59,7 @@ function SignupForm() {
       <label>
         Last Name
         <input
+          className="signup-input"
           type="text"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
@@ -67,6 +69,7 @@ function SignupForm() {
       <label>
         Email
         <input
+          className="signup-input"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -76,6 +79,7 @@ function SignupForm() {
       <label>
         Username
         <input
+          className="signup-input"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -85,6 +89,7 @@ function SignupForm() {
       <label>
         Password
         <input
+          className="signup-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -94,6 +99,7 @@ function SignupForm() {
       <label>
         Confirm Password
         <input
+          className="signup-input"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}

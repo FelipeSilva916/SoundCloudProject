@@ -34,15 +34,6 @@
   background-color: white;
 }
 
-.login-form-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  margin: 20px;
-  background-color: rgb(255, 0, 102);
-}
-
 .label-div {
   padding: 5px 2px;
 }

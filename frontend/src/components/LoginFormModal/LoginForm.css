@@ -22,7 +22,7 @@
   border-radius: 5px;
 }
 
-.login-form {
+/* .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@
   height: 200px;
   width: 400px;
   padding: 10px;
-}
+} */
 
 .auth-separator {
   background-color: aquamarine;
@@ -41,15 +41,10 @@
   text-align: center;
 }
 
-div {
-  display: block;
-}
-
-.auth-separator::before,
-.auth-separator::after {
-  border-top: 1px solid #333;
-  content: " ";
-  display: inline-block;
-  height: 1px;
-  position: absolute;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
