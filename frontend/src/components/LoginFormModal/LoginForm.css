@@ -23,12 +23,33 @@
 }
 
 .auth-separator {
-  background-color: aquamarine;
   font-weight: 400;
   font-size: 16px;
   margin: 1em auto;
   position: relative;
   text-align: center;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+.auth-separator::after {
+  border-top: 1px solid #333;
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  top: 0.7em;
+  right: 0.7em;
+  width: 43%;
+}
+
+.auth-separator::before {
+  border-top: 1px solid #333;
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  top: 0.7em;
+  left: 0.7em;
+  width: 43%;
 }
 
 form {

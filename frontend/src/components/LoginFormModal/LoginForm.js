@@ -74,8 +74,8 @@ function LoginForm() {
           </button>
         </div>
       </form>
-      <div>
-        <span className="auth-separator">or</span>
+      <div className="auth-separator">
+        <span>or</span>
       </div>
       <div>
         <form onSubmit={handleDemoUser} className="guest-login-form">
