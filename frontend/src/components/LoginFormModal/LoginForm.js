@@ -20,6 +20,16 @@ function LoginForm() {
     );
   };
 
+  const handleDemoUser = (e) => {
+    e.preventDefault();
+    return dispatch(
+      sessionActions.login({ credential: "Demo-lition", password: "password" })
+    ).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    });
+  };
+
   return (
     <>
       <h2>Login here </h2>
@@ -68,7 +78,7 @@ function LoginForm() {
         <span className="auth-separator">or</span>
       </div>
       <div>
-        <form className="guest-login-form">
+        <form onSubmit={handleDemoUser} className="guest-login-form">
           <button className="guest-login-btn" type="submit">
             Demo Login
           </button>
