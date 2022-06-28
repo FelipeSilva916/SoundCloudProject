@@ -109,3 +109,9 @@ nav a {
   width: 5%;
   height: 5%;
 }
+
+@media screen and (max-width: 1260px) {
+  nav {
+    padding-right: 20px;
+  }
+}

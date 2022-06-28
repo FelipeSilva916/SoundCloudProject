@@ -21,42 +21,8 @@
 }
 
 #modal-content {
-  display: block;
+  display: inline-block;
   text-align: center;
   position: absolute;
   background-color: white;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  justify-content: center;
-}
-
-form button {
-  margin-top: 4px;
-}
-
-form ul {
-  color: #e916c7;
-  list-style: none;
-  text-align: center;
-}
-
-form li {
-  margin: 20px 0;
-}
-
-.login-btn {
-  display: inline-block;
-  text-align: center;
-  background-color: #f50;
-  color: #fff;
-  width: 410px;
-  height: 48px;
-  margin-left: -6px;
-  font-size: 20px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
 }
