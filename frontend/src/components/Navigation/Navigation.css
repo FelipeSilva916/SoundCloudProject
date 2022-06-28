@@ -45,7 +45,7 @@ nav a {
   box-sizing: border-box;
 }
 
-.login-btn {
+.nav-right button {
   background-color: transparent;
   margin: 5px;
   border-color: white;
