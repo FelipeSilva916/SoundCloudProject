@@ -8,3 +8,9 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.song-link-text {
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+}

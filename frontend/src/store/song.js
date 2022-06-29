@@ -13,12 +13,13 @@ export const getAllSongs = () => async (dispatch) => {
   const result = await csrfFetch("/songs");
 
   if (result.ok) {
-    const song = await result.json();
-    dispatch(load(list.songs));
+    const list = await result.json();
+    console.log(list.Songs);
+    dispatch(load(list.Songs));
   }
 };
 
-const songsReducer = (state = [], action) => {
+const songsReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_SONGS:
       const newState = { ...state };
@@ -26,6 +27,8 @@ const songsReducer = (state = [], action) => {
         newState[song.id] = song;
       });
       return newState;
+    default:
+      return state;
   }
 };
 

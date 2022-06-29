@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SignupFormModal from "./components/SignupFormModal";
+import AllSongs from "./components/AllSongs";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,7 +16,13 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {isLoaded && <Switch></Switch>}
+      {isLoaded && (
+        <Switch>
+          <Route path="/songs">
+            <AllSongs />
+          </Route>
+        </Switch>
+      )}
     </>
   );
 }

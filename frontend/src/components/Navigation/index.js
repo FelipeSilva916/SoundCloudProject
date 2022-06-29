@@ -15,7 +15,6 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <ProfileButton user={sessionUser} />;
-        <AllSongs />
       </>
     );
   } else {
@@ -39,6 +38,7 @@ function Navigation({ isLoaded }) {
           <NavLink exact to="/">
             Home
           </NavLink>
+          <NavLink to="/songs">Songs</NavLink>
         </div>
         <div className="search-bar">
           <input
