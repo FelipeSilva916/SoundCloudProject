@@ -15,7 +15,8 @@ function LoginForm() {
     return dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
         const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
+        console.log(data);
+        if (data && data.errors) setErrors([data.message]);
       }
     );
   };
@@ -33,56 +34,58 @@ function LoginForm() {
   return (
     <>
       <h2>Login here </h2>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
+      <div className="login-form">
+        <form onSubmit={handleSubmit}>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error} error go here</li>
+            ))}
+          </ul>
 
-        <div className="input-wrapper">
-          <label>
-            Username or Email
-            <div>
-              <input
-                type="text"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                placeholder="Username or Email"
-                required
-              />
-            </div>
-          </label>
-        </div>
-        <div className="input-wrapper">
-          <label>
-            Password
-            <div>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
-              />
-            </div>
-          </label>
+          <div className="input-wrapper">
+            <label>
+              Username or Email
+              <div>
+                <input
+                  type="text"
+                  value={credential}
+                  onChange={(e) => setCredential(e.target.value)}
+                  placeholder="Username or Email"
+                  required
+                />
+              </div>
+            </label>
+          </div>
+          <div className="input-wrapper">
+            <label>
+              Password
+              <div>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                  required
+                />
+              </div>
+            </label>
+          </div>
+          <div>
+            <button className="login-btn" type="submit">
+              Log In
+            </button>
+          </div>
+        </form>
+        <div className="auth-separator">
+          <span>or</span>
         </div>
         <div>
-          <button className="login-btn" type="submit">
-            Log In
-          </button>
+          <form onSubmit={handleDemoUser} className="guest-login-form">
+            <button className="guest-login-btn" type="submit">
+              Demo Login
+            </button>
+          </form>
         </div>
-      </form>
-      <div className="auth-separator">
-        <span>or</span>
-      </div>
-      <div>
-        <form onSubmit={handleDemoUser} className="guest-login-form">
-          <button className="guest-login-btn" type="submit">
-            Demo Login
-          </button>
-        </form>
       </div>
     </>
   );
