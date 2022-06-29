@@ -1,0 +1,10 @@
+.stream-page-button {
+  background-color: #4b8188;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}

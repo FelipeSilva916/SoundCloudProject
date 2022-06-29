@@ -11,14 +11,11 @@
   color: #fff;
   font-weight: 700;
 }
-nav {
-  /* background-color: aqua; */
-  padding: 0;
-  width: 100%;
-}
 
 .nav-li {
   color: blue;
+  display: flex;
+  flex-direction: column;
 }
 
 nav a {
@@ -108,6 +105,17 @@ nav a {
 .logo-image {
   width: 5%;
   height: 5%;
+}
+
+.profile-dropdown {
+  background-color: #ff5501;
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 1260px) {

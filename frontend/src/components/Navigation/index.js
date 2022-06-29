@@ -5,13 +5,19 @@ import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import "./Navigation.css";
+import AllSongs from "../AllSongs";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = <ProfileButton user={sessionUser} />;
+    sessionLinks = (
+      <>
+        <ProfileButton user={sessionUser} />;
+        <AllSongs />
+      </>
+    );
   } else {
     sessionLinks = (
       <>
@@ -46,6 +52,9 @@ function Navigation({ isLoaded }) {
             <li className="nav-li">{isLoaded && sessionLinks}</li>
           </ul>
         </div>
+      </div>
+      <div>
+        <button className="stream-button">Stream Songs</button>
       </div>
     </nav>
   );
