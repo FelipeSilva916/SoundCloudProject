@@ -54,8 +54,8 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .input-wrapper {
