@@ -30,7 +30,9 @@ const AllSongs = () => {
     <div className="songs-list-full-wrapper">
       <h2>Go ahead, enjoy some music.</h2>
       <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
-      <div>{/* <Player currentSong={currentSong} /> */}</div>
+      <div>
+        <Player currentSong={currentSong} />
+      </div>
       <div>
         {songs.map((song) => (
           <li key={song.id} className="song-card">
