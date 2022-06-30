@@ -1,7 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const SongsButton = () => {
-  return <button>Songs</button>;
+  return <NavLink to="/songs">Songs</NavLink>;
 };
 
 export default SongsButton;
