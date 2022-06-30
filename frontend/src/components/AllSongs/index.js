@@ -24,7 +24,7 @@ const AllSongs = () => {
           <li key={song.id} className="song-card">
             <div
               className="card-img-wrapper"
-              style={{ backgroundImage: "url(" + song.imageUrl + ")" }}
+              style={{ backgroundImage: "url(" + song.previewImage + ")" }}
             >
               <div className="play-action-overlay">
                 <button

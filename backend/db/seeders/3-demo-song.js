@@ -74,7 +74,8 @@ module.exports = {
         description:
           "“Ten Thousand Hours,” the album's opening song, is largely based on Malcolm Gladwell's 2008 book Outliers: The Story of Success. In the book, Gladwell puts forward the “10,000-Hour Rule.",
         url: "www.theheist.com",
-        previewImage: "www.theheistimage.com",
+        previewImage:
+          "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/theHeist.jpg",
         userId: 4,
         albumId: 5
       },
