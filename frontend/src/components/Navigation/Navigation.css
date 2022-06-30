@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  /* box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2); */
 }
 .active {
   color: #fff;
@@ -20,13 +21,6 @@
 
 nav a {
   color: white;
-}
-
-.navigation {
-  background-image: url(https://a-v2.sndcdn.com/assets/images/sc_landing_header_web_b@2x-7e5ff471.jpg);
-  height: 500px;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .nav-right button + button {
@@ -103,10 +97,19 @@ nav a {
 }
 
 .logo-image {
-  width: 5%;
-  height: 5%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 15px;
+  align-items: flex-start;
+  height: 1.6em;
 }
 
+.logo-container {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: space-around;
+}
 .profile-dropdown {
   background-color: #ff5501;
   color: white;
@@ -122,4 +125,12 @@ nav a {
   nav {
     padding-right: 20px;
   }
+}
+
+.banner-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  background-image: url(https://a-v2.sndcdn.com/assets/images/sc_landing_header_web_b@2x-7e5ff471.jpg);
+  background-size: cover;
+  height: 450px;
 }

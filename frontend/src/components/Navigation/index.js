@@ -17,55 +17,50 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <>
+      <nav className="top-splash">
         <HomeButton />
         <SongsButton />
         <AlbumsButton />
         <SearchBar />
-        <ProfileButton user={sessionUser} />;
-      </>
+        <ProfileButton user={sessionUser} />
+      </nav>
     );
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <SignupFormModal />
+        <div className="banner-container">
+          <nav className="navigation">
+            <div className="top-splash">
+              <div className="logo-container">
+                <img
+                  className="logo-image"
+                  src={require("../../images/logo.png")}
+                  alt="logo"
+                />
+              </div>
+              <div className="search-bar">
+                <input
+                  className="search-input"
+                  type="text"
+                  placeholder="Search for artists, bands, tracks..."
+                />
+              </div>
+              <div className="nav-right">
+                <ul>
+                  <li className="nav-li">
+                    <LoginFormModal />
+                    <SignupFormModal />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
       </>
     );
   }
 
-  return (
-    <nav className="navigation">
-      <div className="top-splash">
-        <img
-          className="logo-image"
-          src={require("../../images/logo.png")}
-          alt="logo"
-        />
-        <div className="nav-left">
-          <NavLink exact to="/">
-            Home
-          </NavLink>
-          <NavLink to="/songs">Songs</NavLink>
-        </div>
-        <div className="search-bar">
-          <input
-            className="search-input"
-            type="text"
-            placeholder="Search for artists, bands, tracks..."
-          />
-        </div>
-        <div className="nav-right">
-          <ul>
-            <li className="nav-li">{isLoaded && sessionLinks}</li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <button className="stream-button">Stream Songs</button>
-      </div>
-    </nav>
-  );
+  return <>{isLoaded && sessionLinks}</>;
 }
 
 export default Navigation;
