@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
@@ -9,6 +9,7 @@ import Player from "../Player";
 const AllSongs = () => {
   const dispatch = useDispatch();
   const songs = useSelector((state) => Object.values(state.songs));
+  const [currentSong, setCurrentSong] = useState(null);
 
   useEffect(() => {
     dispatch(getAllSongs());
@@ -29,7 +30,7 @@ const AllSongs = () => {
     <div className="songs-list-full-wrapper">
       <h2>Go ahead, enjoy some music.</h2>
       <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
-      <div>{/* <Player /> */}</div>
+      <div>{/* <Player currentSong={currentSong} /> */}</div>
       <div>
         {songs.map((song) => (
           <li key={song.id} className="song-card">

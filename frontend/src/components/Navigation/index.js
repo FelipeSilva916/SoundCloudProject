@@ -8,6 +8,8 @@ import HomeButton from "./HomeButton";
 import AlbumsButton from "./AlbumsButton";
 import SearchBar from "./SearchBar";
 import SongsButton from "./SongsButton";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -53,6 +55,10 @@ function Navigation({ isLoaded }) {
             <p className="top-splash-header">
               What's next in music is first on SoundCloud!
             </p>
+            <AudioPlayer
+              src="https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/DemoSong.wav"
+              onPlay={(e) => console.log("onPlay")}
+            />
           </div>
         </div>
       </>
