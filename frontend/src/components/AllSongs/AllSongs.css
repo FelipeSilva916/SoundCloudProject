@@ -78,3 +78,8 @@
 .fa-play {
   padding: 1rem;
 }
+
+.player-box {
+  margin-top: 20px;
+  background-color: aqua;
+}

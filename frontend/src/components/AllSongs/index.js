@@ -29,8 +29,7 @@ const AllSongs = () => {
   return (
     <div className="songs-list-full-wrapper">
       <h2>Go ahead, enjoy some music.</h2>
-      <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
-      <div>
+      <div className="player-box">
         <Player currentSong={currentSong} />
       </div>
       <div>
@@ -55,12 +54,12 @@ const AllSongs = () => {
             >
               <p>{song.title}</p>
             </Link>
-            <Link
+            {/* <Link
               className="song-user-link-text"
               to={{ pathname: `/users/${song.User?.id}` }}
             >
               {song.User?.username}
-            </Link>
+            </Link> */}
           </li>
         ))}
       </div>
