@@ -8,7 +8,8 @@ module.exports = {
         title: "Demo Album",
         description: "An album about demotion",
         userId: 1,
-        previewImage: "www.imagepreview.com"
+        previewImage:
+          "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/demoAlbum.jpeg"
       },
       {
         //2
@@ -16,7 +17,8 @@ module.exports = {
         description:
           "Hybrid Theory is the debut studio album by American rock band Linkin Park, released on October 24, 2000, through Warner Bros.",
         userId: 3,
-        previewImage: "www.imagepreview.com"
+        previewImage:
+          "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/hybridTheory.jpeg"
       },
       {
         //3
@@ -24,7 +26,8 @@ module.exports = {
         description:
           "Meteora is the second studio album by American rock band Linkin Park. It was released on March 25, 2003, through Warner Bros.",
         userId: 3,
-        previewImage: "www.imagepreview.com"
+        previewImage:
+          "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/meteora.jpeg"
       },
       {
         //4
@@ -32,7 +35,8 @@ module.exports = {
         description:
           "The Colour and the Shape is the second studio album by American rock band Foo Fighters, released on May 20, 1997, through Roswell and Capitol Records.",
         userId: 5,
-        previewImage: "www.imagepreview.com"
+        previewImage:
+          "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/theColourAndTheShape.jpeg"
       },
       {
         //5
@@ -40,7 +44,8 @@ module.exports = {
         description:
           "The Heist is the debut studio album by American hip hop duo Macklemore & Ryan Lewis. It was released on October 9, 2012, by Macklemore LLC.",
         userId: 4,
-        previewImage: "www.imagepreview.com"
+        previewImage:
+          "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/theHeist.jpg"
       }
     ]);
   },

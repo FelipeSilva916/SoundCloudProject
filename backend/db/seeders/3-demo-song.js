@@ -29,7 +29,7 @@ module.exports = {
         title: "Crawling",
         description:
           "'Crawling' is a song by American rock band Linkin Park. It is the third single from their debut album, Hybrid Theory, and is the fifth track on the album.",
-        url: "www.hybridtheory.com",
+        url: "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/hybridTheory.jpeg",
         previewImage:
           "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/hybridTheory.jpeg",
         userId: 3,
@@ -145,7 +145,7 @@ module.exports = {
         albumId: 3
       },
       {
-        //song 14 --
+        //song 14
         title: "In The End",
         description:
           "'In the End' is a song by American rock band Linkin Park. It is the eighth track on their debut album, Hybrid Theory (2000), and was released as the album's fourth and final single.",
@@ -156,7 +156,7 @@ module.exports = {
         albumId: 2
       },
       {
-        //song 15 --
+        //song 15
         title: "Faint",
         description:
           "'Faint' is a song by American rock band Linkin Park from their second studio album, Meteora. The song was released as the album's second single on June 9, 2003, and is the seventh track.",
