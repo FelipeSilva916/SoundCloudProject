@@ -24,23 +24,27 @@ nav a {
   color: white;
 }
 
-.nav-right button + button {
+.signup-nav-li {
   background-color: #ff5501;
   border-color: #ff5501;
   color: #fff;
   height: 30px;
   margin: 5px;
-  padding: 4px 15px;
   border: 1px solid #ff5501;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  line-height: 20px;
   white-space: nowrap;
-  font-family: sans-serif;
   text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
+}
+
+.nav-right-ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 30px;
 }
 
 .nav-right button {
@@ -57,12 +61,11 @@ nav a {
   font-size: 14px;
   line-height: 20px;
   white-space: nowrap;
-  font-family: sans-serif;
   text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
 }
-
+/*
 .nav-left {
   background-color: transparent;
   border-color: white;
@@ -80,7 +83,7 @@ nav a {
   text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
-}
+} */
 
 .search-bar {
   border: 1px solid #ff5501;
@@ -104,7 +107,7 @@ nav a {
   flex-direction: row;
   margin: 10px 15px;
   align-items: flex-start;
-  height: 1.6em;
+  height: 2em;
 }
 
 .logo-container {
@@ -143,7 +146,10 @@ nav a {
   height: 450px;
 }
 .nav-right {
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: aquamarine; */
 }
 
 .logged-in-banner {

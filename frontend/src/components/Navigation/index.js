@@ -46,9 +46,11 @@ function Navigation({ isLoaded }) {
                 />
               </div>
               <div className="nav-right">
-                <ul>
-                  <li className="nav-li">
+                <ul className="nav-right-ul">
+                  <li className="login-nav-li">
                     <LoginFormModal />
+                  </li>
+                  <li className="signup-nav-li">
                     <SignupFormModal />
                   </li>
                 </ul>
