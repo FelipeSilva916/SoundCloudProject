@@ -40,14 +40,14 @@ function Navigation({ isLoaded }) {
               </div>
               <SearchBar />
               <div className="nav-right">
-                <ul className="nav-right-ul">
-                  <li className="login-nav-li">
+                <div className="nav-right-ul">
+                  <div className="login-nav-li">
                     <LoginFormModal />
-                  </li>
-                  <li className="signup-nav-li">
+                  </div>
+                  <div className="signup-nav-li">
                     <SignupFormModal />
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </nav>
