@@ -1,0 +1,78 @@
+.songs-list-full-wrapper {
+  background: rgb(255, 255, 255);
+  padding: 60px 10px 120px;
+}
+
+.songs-list-full-wrapper h2 {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.songs-list-full-wrapper > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1260px;
+}
+
+.song-card {
+  width: 294px;
+  margin: 10px 10px 14px 10px;
+}
+
+.song-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+}
+
+.card-img-wrapper {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 294px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+}
+
+.play-action-overlay {
+  align-items: center;
+  background: linear-gradient(180deg, rgba(69, 73, 74, 0) 35.94%, #0f1010 100%);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  transition: all 250ms;
+  width: 100%;
+}
+
+.play-action-overlay:hover {
+  opacity: 1;
+}
+
+.play-action-overlay .list-style-play-btn {
+  margin-bottom: 0;
+}
+
+.song-link-text {
+  color: #0f1010;
+  transition: all 250ms;
+}
+
+.song-link-text:hover {
+  color: #ff5501;
+  font-weight: 700;
+}
+
+.song-user-link-text {
+  color: #c4c4c4;
+}
