@@ -33,9 +33,9 @@ function LoginForm() {
 
   return (
     <>
-      <h2>Login here </h2>
+      <h2>Welcome back </h2>
       <div className="login-form">
-        <form onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit}>
           <ul>
             {errors.map((error, idx) => (
               <li key={idx}>{error} error go here</li>
@@ -47,6 +47,7 @@ function LoginForm() {
               Username or Email
               <div>
                 <input
+                  className="login-input"
                   type="text"
                   value={credential}
                   onChange={(e) => setCredential(e.target.value)}
@@ -56,11 +57,13 @@ function LoginForm() {
               </div>
             </label>
           </div>
+
           <div className="input-wrapper">
             <label>
               Password
               <div>
                 <input
+                  className="login-input"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -70,6 +73,7 @@ function LoginForm() {
               </div>
             </label>
           </div>
+
           <div>
             <button className="login-btn" type="submit">
               Log In

@@ -50,8 +50,15 @@
   left: 0.7em;
   width: 43%;
 }
+.login-input {
+  width: 320px;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+}
 
-.login-form {
+/* .login-form {
   display: flex;
   flex-direction: column;
   font-size: 16px;
@@ -64,4 +71,4 @@
   font-family: "Abel", sans-serif;
   font-size: 16px;
   padding: 10px;
-}
+} */
