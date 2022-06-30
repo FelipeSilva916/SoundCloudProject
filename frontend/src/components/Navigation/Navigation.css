@@ -182,3 +182,23 @@ nav a {
   color: black;
   box-shadow: #ff5501 1px 1px 2px;
 }
+
+.banner-words {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.top-splash-header {
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  box-shadow: #000000 0px 0px 15px 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 10px;
+}

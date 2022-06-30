@@ -57,6 +57,11 @@ function Navigation({ isLoaded }) {
               </div>
             </div>
           </nav>
+          <div className="banner-words">
+            <p className="top-splash-header">
+              What's next in music is first on SoundCloud!
+            </p>
+          </div>
         </div>
       </>
     );
