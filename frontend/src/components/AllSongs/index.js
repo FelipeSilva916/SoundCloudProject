@@ -21,9 +21,31 @@ const AllSongs = () => {
       <h2>Listen to the latest uploads below.</h2>
       <div>
         {songs.map((song) => (
-          <li key={song.id}>
-            <Link className="song-link-text" to={`/songs/${song.id}`}>
-              {song.title}
+          <li key={song.id} className="song-card">
+            <div
+              className="card-img-wrapper"
+              style={{ backgroundImage: "url(" + song.imageUrl + ")" }}
+            >
+              <div className="play-action-overlay">
+                <button
+                  className="primary-play-btn list-style-play-btn"
+                  // onClick={() => playSongBtn(song)}
+                >
+                  <i className="fas fa-play"></i>
+                </button>
+              </div>
+            </div>
+            <Link
+              className="song-link-text"
+              to={{ pathname: `/songs/${song.id}` }}
+            >
+              <p>{song.title}</p>
+            </Link>
+            <Link
+              className="song-user-link-text"
+              to={{ pathname: `/users/${song.User?.id}` }}
+            >
+              {song.User?.username}
             </Link>
           </li>
         ))}
