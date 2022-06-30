@@ -14,7 +14,6 @@ export const getAllSongs = () => async (dispatch) => {
 
   if (result.ok) {
     const list = await result.json();
-    console.log(list.Songs);
     dispatch(load(list.Songs));
   }
 };
