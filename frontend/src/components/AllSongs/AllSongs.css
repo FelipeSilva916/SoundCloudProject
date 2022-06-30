@@ -18,7 +18,7 @@
 
 .song-card {
   width: 300px;
-  margin: 10px 10px 14px 10px;
+  margin: 5px 10px 15px 10px;
 }
 
 .song-card p {
@@ -74,11 +74,6 @@
   color: #ff5501;
   font-weight: 700;
 }
-
-/* .song-user-link-text {
-  color: #c4c4c4;
-  background-color: darkorchid;
-} */
 
 .fa-play {
   padding: 1rem;
