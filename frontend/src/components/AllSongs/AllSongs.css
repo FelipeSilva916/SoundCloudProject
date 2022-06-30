@@ -1,4 +1,4 @@
-.songs-list-full-wrapper {
+.all-songs-wrapper {
   background: white;
   padding: 60px 10px 120px;
 }
@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.songs-list-full-wrapper > div {
+.all-songs-wrapper > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -79,7 +79,7 @@
   padding: 1rem;
 }
 
-.player-box {
+/* .player-box {
   margin-top: 20px;
   background-color: aqua;
-}
+} */

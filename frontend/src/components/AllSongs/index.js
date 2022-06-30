@@ -27,7 +27,7 @@ const AllSongs = () => {
   }
 
   return (
-    <div className="songs-list-full-wrapper">
+    <div className="all-songs-wrapper">
       <h2>Go ahead, enjoy some music.</h2>
       <div className="player-box">
         <Player currentSong={currentSong} />
@@ -40,10 +40,7 @@ const AllSongs = () => {
               style={{ backgroundImage: "url(" + song.previewImage + ")" }}
             >
               <div className="play-action-overlay">
-                <button
-                  className="primary-play-btn list-style-play-btn"
-                  onClick={() => SongBtn(song)}
-                >
+                <button onClick={() => SongBtn(song)}>
                   <i className="fas fa-play"></i>
                 </button>
               </div>
@@ -54,12 +51,6 @@ const AllSongs = () => {
             >
               <p>{song.title}</p>
             </Link>
-            {/* <Link
-              className="song-user-link-text"
-              to={{ pathname: `/users/${song.User?.id}` }}
-            >
-              {song.User?.username}
-            </Link> */}
           </li>
         ))}
       </div>
