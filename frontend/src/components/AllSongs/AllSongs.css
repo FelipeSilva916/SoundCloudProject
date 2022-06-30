@@ -1,10 +1,10 @@
 .songs-list-full-wrapper {
-  background: rgb(255, 255, 255);
+  background: white;
   padding: 60px 10px 120px;
 }
 
 .songs-list-full-wrapper h2 {
-  margin-bottom: 28px;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .song-card {
-  width: 294px;
+  width: 300px;
   margin: 10px 10px 14px 10px;
 }
 
@@ -27,6 +27,8 @@
   white-space: nowrap;
   display: flex;
   justify-content: center;
+  padding: 3px;
+  font-weight: 700;
 }
 
 .card-img-wrapper {
@@ -45,7 +47,7 @@
 
 .play-action-overlay {
   align-items: center;
-  background: linear-gradient(180deg, rgba(69, 73, 74, 0) 35.94%, #0f1010 100%);
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0) 40%, #0f1010 100%);
   display: flex;
   height: 100%;
   justify-content: center;
@@ -73,9 +75,10 @@
   font-weight: 700;
 }
 
-.song-user-link-text {
+/* .song-user-link-text {
   color: #c4c4c4;
-}
+  background-color: darkorchid;
+} */
 
 .fa-play {
   padding: 1rem;

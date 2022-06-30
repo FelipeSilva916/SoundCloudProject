@@ -18,7 +18,7 @@ const AllSongs = () => {
 
   return (
     <div className="songs-list-full-wrapper">
-      <h2>Listen to the latest uploads below.</h2>
+      <h2>Go ahead, enjoy some music.</h2>
       <div>
         {songs.map((song) => (
           <li key={song.id} className="song-card">
