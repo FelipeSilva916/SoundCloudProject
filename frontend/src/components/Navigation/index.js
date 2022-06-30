@@ -56,11 +56,6 @@ function Navigation({ isLoaded }) {
               What's next in music is first on SoundCloud!
             </p>
           </div>
-          <AudioPlayer
-            className="guest-audio-player"
-            src="https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/DemoSong.wav"
-            onPlay={(e) => console.log("onPlay")}
-          />
         </div>
       </>
     );
