@@ -75,3 +75,7 @@
   margin-top: 5px;
   background-color: aqua;
 }
+
+.guest-login-form {
+  padding: 1rem;
+}

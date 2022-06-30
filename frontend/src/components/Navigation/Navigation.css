@@ -65,25 +65,6 @@ nav a {
   vertical-align: middle;
   box-sizing: border-box;
 }
-/*
-.nav-left {
-  background-color: transparent;
-  border-color: white;
-  color: rgb(255, 255, 255);
-  height: 30px;
-  margin: 0;
-  padding: 4px 15px;
-  border: 1px solid white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 20px;
-  white-space: nowrap;
-  font-family: sans-serif;
-  text-align: center;
-  vertical-align: middle;
-  box-sizing: border-box;
-} */
 
 .search-bar {
   border: 1px solid #ff5501;
