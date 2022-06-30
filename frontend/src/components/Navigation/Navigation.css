@@ -114,7 +114,9 @@ nav a {
   justify-content: space-around;
 }
 .profile-dropdown {
-  position: relative;
+  position: absolute;
+  right: 2%;
+  top: 3%;
   background-color: #ff5501;
   color: white;
   border-radius: 5px;
@@ -123,6 +125,8 @@ nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100px;
+  padding: 1em;
 }
 
 @media screen and (max-width: 1260px) {
@@ -142,15 +146,9 @@ nav a {
   margin: 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 .logged-in-banner {
   display: flex;
   background-color: rgb(66, 62, 62);
-  height: 43px;
   justify-content: space-around;
   align-items: center;
   box-shadow: black 5px 5px 20px;
@@ -163,6 +161,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 2.5rem;
 }
 
 #root > nav > button {
