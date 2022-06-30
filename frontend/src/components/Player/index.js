@@ -10,7 +10,7 @@ const Player = () => {
   return (
     <div>
       <AudioPlayer
-        src={song.url}
+        src={song?.url}
         onPlay={(e) => console.log("onPlay")}
         // other props here
       />
