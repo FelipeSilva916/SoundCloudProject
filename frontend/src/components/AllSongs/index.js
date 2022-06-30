@@ -5,6 +5,8 @@ import { getAllSongs } from "../../store/song";
 import { playSong } from "../../store/player";
 import "./AllSongs.css";
 // import Player from "../Player";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 const AllSongs = () => {
   const dispatch = useDispatch();
@@ -30,6 +32,12 @@ const AllSongs = () => {
       <h2>Go ahead, enjoy some music.</h2>
       <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
       <div>{/* <Player /> */}</div>
+      <AudioPlayer
+        src="https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/StartingOver.mp3"
+        onPlay={(e) => console.log("onPlay")}
+        // other props here
+      />
+      )
       <div>
         {songs.map((song) => (
           <li key={song.id} className="song-card">

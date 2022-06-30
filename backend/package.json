@@ -27,6 +27,7 @@
     "morgan": "^1.10.0",
     "per-env": "^1.0.2",
     "pg": "^8.7.3",
+    "react-h5-audio-player": "^3.8.4",
     "sequelize": "^6.19.0",
     "sequelize-cli": "^6.4.1",
     "sqlite3": "^5.0.8"
