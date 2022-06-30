@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
+import { playSong } from "../../store/player";
 import "./AllSongs.css";
+import ReactAudioPlayer from "react-audio-player";
 
 const AllSongs = () => {
   const dispatch = useDispatch();
@@ -12,6 +14,13 @@ const AllSongs = () => {
     dispatch(getAllSongs());
   }, [dispatch]);
 
+  const SongBtn = useCallback(
+    (song) => {
+      dispatch(playSong(song));
+    },
+    [dispatch]
+  );
+
   if (!songs) {
     return null;
   }
@@ -19,6 +28,11 @@ const AllSongs = () => {
   return (
     <div className="songs-list-full-wrapper">
       <h2>Go ahead, enjoy some music.</h2>
+      <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
+      <ReactAudioPlayer
+        src="https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/6FeetUnder_by_JohnCoggins_Artlist.wav"
+        controls
+      />
       <div>
         {songs.map((song) => (
           <li key={song.id} className="song-card">
@@ -29,7 +43,7 @@ const AllSongs = () => {
               <div className="play-action-overlay">
                 <button
                   className="primary-play-btn list-style-play-btn"
-                  // onClick={() => playSongBtn(song)}
+                  onClick={() => SongBtn(song)}
                 >
                   <i className="fas fa-play"></i>
                 </button>

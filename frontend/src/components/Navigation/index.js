@@ -63,14 +63,7 @@ function Navigation({ isLoaded }) {
               What's next in music is first on SoundCloud!
             </p>
           </div>
-          <div>
-            <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
-            <ReactAudioPlayer
-              src="https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/6FeetUnder_by_JohnCoggins_Artlist.wav"
-              autoPlay
-              controls
-            />
-          </div>
+          <div></div>
         </div>
       </>
     );
