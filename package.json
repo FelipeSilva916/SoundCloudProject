@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/FelipeSilva916/SoundCloudProject/issues"
   },
-  "homepage": "https://github.com/FelipeSilva916/SoundCloudProject#readme"
+  "homepage": "https://github.com/FelipeSilva916/SoundCloudProject#readme",
+  "dependencies": {
+    "react-audio-player": "^0.17.0"
+  }
 }

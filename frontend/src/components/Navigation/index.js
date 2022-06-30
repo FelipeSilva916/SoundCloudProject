@@ -10,6 +10,7 @@ import HomeButton from "./HomeButton";
 import AlbumsButton from "./AlbumsButton";
 import SearchBar from "./SearchBar";
 import SongsButton from "./SongsButton";
+import ReactAudioPlayer from "react-audio-player";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -61,6 +62,14 @@ function Navigation({ isLoaded }) {
             <p className="top-splash-header">
               What's next in music is first on SoundCloud!
             </p>
+          </div>
+          <div>
+            <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
+            <ReactAudioPlayer
+              src="https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/6FeetUnder_by_JohnCoggins_Artlist.wav"
+              autoPlay
+              controls
+            />
           </div>
         </div>
       </>
