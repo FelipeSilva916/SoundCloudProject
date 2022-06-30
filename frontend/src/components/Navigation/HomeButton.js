@@ -1,4 +1,6 @@
+import { NavLink } from "react-router-dom";
+
 const HomeButton = () => {
-  return <button>Home</button>;
+  return <NavLink to="/">Home</NavLink>;
 };
 export default HomeButton;

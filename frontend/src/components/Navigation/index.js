@@ -17,7 +17,7 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <nav className="top-splash">
+      <nav className="logged-in-banner">
         <HomeButton />
         <SongsButton />
         <AlbumsButton />
