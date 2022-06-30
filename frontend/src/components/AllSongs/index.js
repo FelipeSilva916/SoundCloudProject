@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
 import { playSong } from "../../store/player";
 import "./AllSongs.css";
-import Player from "../Player";
+// import Player from "../Player";
 
 const AllSongs = () => {
   const dispatch = useDispatch();
