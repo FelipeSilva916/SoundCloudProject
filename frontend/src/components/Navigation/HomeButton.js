@@ -1,6 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 const HomeButton = () => {
-  return <NavLink to="/">Home</NavLink>;
+  const history = useHistory();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    history.push("/");
+  };
+  return (
+    <NavLink to="/" onClick={handleClick}>
+      <i className="fas fa-home"></i>
+    </NavLink>
+  );
 };
+
 export default HomeButton;

@@ -36,13 +36,7 @@ function Navigation({ isLoaded }) {
                   alt="logo"
                 />
               </div>
-              <div className="search-bar">
-                <input
-                  className="search-input"
-                  type="text"
-                  placeholder="Search for artists, bands, tracks..."
-                />
-              </div>
+              <SearchBar />
               <div className="nav-right">
                 <ul className="nav-right-ul">
                   <li className="login-nav-li">
@@ -60,7 +54,6 @@ function Navigation({ isLoaded }) {
               What's next in music is first on SoundCloud!
             </p>
           </div>
-          <div></div>
         </div>
       </>
     );
