@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import DemoUser from "../DemoUser/DemoUser";
 import "./LoginForm.css";
 
 function LoginForm() {
@@ -21,16 +22,6 @@ function LoginForm() {
         if (data && data.errors) setErrors([data.message]);
       }
     );
-  };
-
-  const handleDemoUser = (e) => {
-    e.preventDefault();
-    return dispatch(
-      sessionActions.login({ credential: "Demo-lition", password: "password" })
-    ).catch(async (res) => {
-      const data = await res.json();
-      if (data && data.errors) setErrors(data.errors);
-    });
   };
 
   return (
@@ -87,12 +78,8 @@ function LoginForm() {
         <div className="auth-separator">
           <span>or</span>
         </div>
-        <div>
-          <form onSubmit={handleDemoUser} className="guest-login-form">
-            <button className="guest-login-btn" type="submit">
-              Demo Login
-            </button>
-          </form>
+        <div className="guest-login-form">
+          <DemoUser />
         </div>
       </div>
     </>
