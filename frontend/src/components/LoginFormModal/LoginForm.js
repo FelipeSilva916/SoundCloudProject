@@ -11,7 +11,9 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setErrors([]);
+
     return dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
         const data = await res.json();
@@ -33,14 +35,16 @@ function LoginForm() {
 
   return (
     <>
-      <h2>Welcome back </h2>
       <div className="login-form">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error, idx) => (
-              <li key={idx}>{error} error go here</li>
-            ))}
-          </ul>
+        <h2>Welcome back </h2>
+        <form onSubmit={handleSubmit}>
+          <div className="error-msg">
+            <ul>
+              {errors.map((error, idx) => (
+                <li key={idx}>{error}</li>
+              ))}
+            </ul>
+          </div>
 
           <div className="input-wrapper">
             <label>

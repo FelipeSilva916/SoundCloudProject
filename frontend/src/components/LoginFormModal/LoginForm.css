@@ -68,3 +68,10 @@
   font-size: 16px;
   padding: 10px;
 }
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  background-color: aqua;
+}
