@@ -32,3 +32,8 @@ form {
   font-size: 16px;
   font-weight: 600;
 }
+
+.signup-form ul {
+  list-style: none;
+  padding: 0;
+}
