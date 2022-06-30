@@ -58,17 +58,13 @@
   border: 1px solid rgb(0, 0, 0);
 }
 
-/* .login-form {
-  display: flex;
-  flex-direction: column;
+.login-form {
   font-size: 16px;
   font-weight: 600;
 }
 
 .input-wrapper {
-  display: flex;
-  flex-direction: column;
   font-family: "Abel", sans-serif;
   font-size: 16px;
   padding: 10px;
-} */
+}
