@@ -29,7 +29,7 @@ module.exports = {
         title: "Crawling",
         description:
           "'Crawling' is a song by American rock band Linkin Park. It is the third single from their debut album, Hybrid Theory, and is the fifth track on the album.",
-        url: "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/hybridTheory.jpeg",
+        url: "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Crawling.mp3",
         previewImage:
           "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/hybridTheory.jpeg",
         userId: 3,
