@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
 import { playSong } from "../../store/player";
 import "./AllSongs.css";
-import ReactAudioPlayer from "react-audio-player";
+import Player from "../Player";
 
 const AllSongs = () => {
   const dispatch = useDispatch();
@@ -29,10 +29,7 @@ const AllSongs = () => {
     <div className="songs-list-full-wrapper">
       <h2>Go ahead, enjoy some music.</h2>
       <h3 style={{ backgroundColor: "white" }}>Play Demo Song </h3>
-      <ReactAudioPlayer
-        src="https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/6FeetUnder_by_JohnCoggins_Artlist.wav"
-        controls
-      />
+      <div>{/* <Player /> */}</div>
       <div>
         {songs.map((song) => (
           <li key={song.id} className="song-card">

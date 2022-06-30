@@ -7,7 +7,7 @@ module.exports = {
         //song 1
         title: "Song Demo",
         description: "The best demo-ever",
-        url: "www.thissong.com",
+        url: "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/6FeetUnder_by_JohnCoggins_Artlist.wav",
         previewImage:
           "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/demoAlbum.jpeg",
         userId: 1,
