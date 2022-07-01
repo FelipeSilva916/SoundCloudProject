@@ -13,7 +13,7 @@ const EditSongButton = () => {
     editSongPage = <EditSongPage />;
   }
 
-  return <div>Edit song goes here</div>;
+  return <div>{editSongPage} Edit song goes here</div>;
 };
 
 export default EditSongButton;
