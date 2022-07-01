@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 export const LOAD_SONGS = "songs/loadSongs";
 export const LOAD_SONG = "songs/loadSong";
 export const DELETE_SONG = "songs/deleteSong";
+export const UPDATE_SONG = "songs/updateSong";
 
 //==================================================
 const load = (list) => {
@@ -22,6 +23,13 @@ const loadSong = (song) => {
 const removedSong = (song) => {
   return {
     type: DELETE_SONG,
+    song
+  };
+};
+
+const updateSong = (song) => {
+  return {
+    type: UPDATE_SONG,
     song
   };
 };
@@ -55,6 +63,22 @@ export const deleteSong = (songId) => async (dispatch) => {
     dispatch(removedSong(song));
   }
 };
+
+export const editSong = (data) => async (dispatch) => {
+  const result = await csrfFetch(`/songs/${data.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  if (result.ok) {
+    const song = await result.json();
+    dispatch(updateSong(song));
+  }
+};
+//return result here?
 
 //===================================================
 
