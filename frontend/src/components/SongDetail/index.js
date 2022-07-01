@@ -9,34 +9,19 @@ const SongDetails = () => {
   const { songId } = useParams();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
-  const songs = useSelector((state) => state.songs);
+  //   const songs = useSelector((state) => state.songs);
   const history = useHistory();
+  const songs = useSelector((state) => Object.values(state.songs));
 
   useEffect(() => {
     dispatch(getAllSongs());
   }, [dispatch, songId]);
 
   const song = songs[songId];
-
+  console.log(songs.id);
   const handleEditBtn = (songId) => {
     history.push(`/songs/${songId}/edit`);
   };
-
-  let songEditBtns;
-
-  if (song?.userId === user?.id) {
-    songEditBtns = (
-      <>
-        <button
-          className="portal-edit-btn"
-          onClick={() => handleEditBtn(songId)}
-        >
-          Edit
-        </button>
-        {/* <SongDelete songId={songId} /> */}
-      </>
-    );
-  }
 
   const playSongBtn = useCallback(
     (song) => {
@@ -66,7 +51,6 @@ const SongDetails = () => {
               </Link>
             </div>
           </div>
-          <div>{songEditBtns}</div>
         </div>
         <div
           className="song-img-lrg"
