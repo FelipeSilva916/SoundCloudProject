@@ -19,8 +19,7 @@ function LoginForm() {
       sessionActions.login({ credential, password })
     ).catch(async (res) => {
       const data = await res.json();
-      if (data && data.errors) setErrors([data.message]);
-      console.log(data);
+      if (data) setErrors([data.message]);
     });
     if (results) {
       return results;
@@ -35,7 +34,7 @@ function LoginForm() {
           <div className="error-msg">
             <ul>
               {errors.map((error, idx) => (
-                <li key={idx}>{error}error</li>
+                <li key={idx}>{error}</li>
               ))}
             </ul>
           </div>
