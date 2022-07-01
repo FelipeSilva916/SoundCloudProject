@@ -1,3 +1,6 @@
-.song-detail-footer {
-  background-color: chartreuse;
+.song-detail-footer a {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
 }

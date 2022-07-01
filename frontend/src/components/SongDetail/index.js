@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
 import { playSong } from "../../store/player";
-// import SongDelete from "../SongDelete";
+import DeleteSongButton from "../DeleteSongButton";
+
 import "./SongDetail.css";
 
 const SongDetails = () => {
@@ -27,7 +28,7 @@ const SongDetails = () => {
 
   console.log(song.userId);
   if (song?.userId === user?.id) {
-    userManipulateButton = <Link to={`/songs/${songId}/delete`}>delete</Link>;
+    userManipulateButton = <DeleteSongButton songId={songId} />;
   }
 
   return (
@@ -43,7 +44,6 @@ const SongDetails = () => {
         <div className="song-detail-body-right">
           <p>{song.description}</p>
           <p>{song.lyrics}</p>
-          <p>{song.genre}</p>
         </div>
       </div>
       <div className="song-detail-footer">{userManipulateButton}Test</div>
