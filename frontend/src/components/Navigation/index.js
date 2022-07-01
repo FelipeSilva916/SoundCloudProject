@@ -8,6 +8,7 @@ import HomeButton from "./HomeButton";
 import AlbumsButton from "./AlbumsButton";
 import SearchBar from "./SearchBar";
 import SongsButton from "./SongsButton";
+import Welcome from "./Welcome";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
@@ -17,13 +18,16 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <nav className="logged-in-banner">
-        <HomeButton />
-        <SongsButton />
-        <AlbumsButton />
-        <SearchBar />
-        <ProfileButton user={sessionUser} />
-      </nav>
+      <>
+        <nav className="logged-in-banner">
+          <HomeButton />
+          <SongsButton />
+          <AlbumsButton />
+          <SearchBar />
+          <ProfileButton user={sessionUser} />
+        </nav>
+        <Welcome />
+      </>
     );
   } else {
     sessionLinks = (

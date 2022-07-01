@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 const UploadSongForm = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
-  let uploadForm;
-
   return <div></div>;
 };
 

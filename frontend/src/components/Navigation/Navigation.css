@@ -182,3 +182,17 @@ nav a {
   padding: 10px;
   border-radius: 10px;
 }
+
+.banner-container-welcome {
+  background-size: cover;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.welcome-comp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
