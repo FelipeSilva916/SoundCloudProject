@@ -191,8 +191,33 @@ nav a {
 }
 
 .welcome-comp {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  background-image: url(https://guardian.ng/wp-content/uploads/2017/12/Soundcloud.jpg);
+}
+
+.welcome-text {
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1rem;
+  box-shadow: #000000 0px 0px 15px 5px;
+  border-radius: 10px;
+}
+
+.welcome-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.welcome-upload-btn {
+  background-color: aqua;
 }
