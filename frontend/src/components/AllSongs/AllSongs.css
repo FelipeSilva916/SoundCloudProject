@@ -82,13 +82,12 @@
 .player-box {
   padding: 1rem;
   margin-top: 20px;
-  /* background-color: aqua; */
 }
 
 .play-button-allsongs {
   color: white;
   align-items: center;
-  background: #ff5501;
+  background: black;
   border: 1px solid white;
   border-radius: 50%;
   display: flex;
@@ -99,6 +98,12 @@
 }
 
 .play-button-allsongs:hover {
-  border: 1px solid #fff;
-  transform: scale(1.4);
+  /* border: 1px solid #fff;
+  transform: scale(1.4); */
+  background-color: #ff5501;
+  cursor: pointer;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
 }
