@@ -10,18 +10,21 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setErrors([]);
 
-    return dispatch(sessionActions.login({ credential, password })).catch(
-      async (res) => {
-        const data = await res.json();
-        console.log(data);
-        if (data && data.errors) setErrors([data.message]);
-      }
-    );
+    const results = await dispatch(
+      sessionActions.login({ credential, password })
+    ).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors([data.message]);
+      console.log(data);
+    });
+    if (results) {
+      return results;
+    }
   };
 
   return (
@@ -32,7 +35,7 @@ function LoginForm() {
           <div className="error-msg">
             <ul>
               {errors.map((error, idx) => (
-                <li key={idx}>{error}</li>
+                <li key={idx}>{error}error</li>
               ))}
             </ul>
           </div>
