@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import AllSongs from "./components/AllSongs";
 import SongDetail from "./components/SongDetail";
+import EditSongPage from "./components/EditSongButton/EditSongPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,9 @@ function App() {
           <Route exact path="/songs/:songId">
             <SongDetail />
             <AllSongs />
+          </Route>
+          <Route exact path="/songs/:songId/edit">
+            <EditSongPage />
           </Route>
         </Switch>
       )}

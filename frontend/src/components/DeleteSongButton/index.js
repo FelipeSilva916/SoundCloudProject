@@ -11,6 +11,7 @@ const DeleteSongButton = ({ songId }) => {
     dispatch(actions.deleteSong(songId));
     history.push("/songs");
   };
+
   return (
     <>
       <button onClick={() => handleDelete(songId)}>Delete</button>
