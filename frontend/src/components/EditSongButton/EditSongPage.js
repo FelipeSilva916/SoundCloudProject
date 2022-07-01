@@ -67,8 +67,16 @@ const EditSongPage = () => {
               onChange={(e) => setPreviewImage(e.target.value)}
             />
           </div>
-            <div>
+          <div>
             <label htmlFor="url">URL</label>
+            <input
+              type="text"
+              id="url"
+              name="url"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+            />
+          </div>
         </div>
       </form>
     </div>
