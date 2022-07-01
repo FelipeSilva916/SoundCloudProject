@@ -42,6 +42,35 @@ const EditSongPage = () => {
   return (
     <div>
       <h1>Edit Song Page</h1>
+      <form onSubmit={handleSubmit}>
+        <ul>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+        <div>
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <div>
+            <label htmlFor="previewImage">Preview Image</label>
+            <input
+              type="text"
+              id="previewImage"
+              name="previewImage"
+              value={previewImage}
+              onChange={(e) => setPreviewImage(e.target.value)}
+            />
+          </div>
+            <div>
+            <label htmlFor="url">URL</label>
+        </div>
+      </form>
     </div>
   );
 };
