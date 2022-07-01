@@ -4,6 +4,7 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
 import { playSong } from "../../store/player";
 import DeleteSongButton from "../DeleteSongButton";
+import EditSongButton from "../EditSongButton";
 
 import "./SongDetail.css";
 
@@ -31,7 +32,12 @@ const SongDetails = () => {
   let userManipulateButton;
 
   if (song?.userId === user?.id) {
-    userManipulateButton = <DeleteSongButton songId={songId} />;
+    userManipulateButton = (
+      <>
+        <DeleteSongButton songId={songId} />
+        <EditSongButton song={songId} />
+      </>
+    );
   }
 
   return (
