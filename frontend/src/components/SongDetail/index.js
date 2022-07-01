@@ -30,7 +30,6 @@ const SongDetails = () => {
 
   let userManipulateButton;
 
-  console.log(song.userId);
   if (song?.userId === user?.id) {
     userManipulateButton = <DeleteSongButton songId={songId} />;
   }
