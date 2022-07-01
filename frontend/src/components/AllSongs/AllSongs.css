@@ -86,6 +86,7 @@
 }
 
 .play-button-allsongs {
+  color: white;
   align-items: center;
   background: #ff5501;
   border: 1px solid white;
@@ -93,7 +94,11 @@
   display: flex;
   height: 40px;
   justify-content: center;
-  /* margin-bottom: 30px; */
   position: relative;
   width: 40px;
+}
+
+.play-button-allsongs:hover {
+  border: 1px solid #fff;
+  transform: scale(1.4);
 }
