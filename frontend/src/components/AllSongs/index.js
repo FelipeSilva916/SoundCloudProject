@@ -40,7 +40,10 @@ const AllSongs = () => {
               style={{ backgroundImage: "url(" + song.previewImage + ")" }}
             >
               <div className="play-action-overlay">
-                <button onClick={() => SongBtn(song)}>
+                <button
+                  className="play-button-allsongs"
+                  onClick={() => SongBtn(song)}
+                >
                   <i className="fas fa-play"></i>
                 </button>
               </div>
