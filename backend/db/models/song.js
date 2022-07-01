@@ -22,9 +22,15 @@ module.exports = (sequelize, DataTypes) => {
   Song.init(
     {
       userId: { type: DataTypes.INTEGER, allowNull: false },
-      albumId: { type: DataTypes.INTEGER, allowNull: false },
+      albumId: {
+        type: DataTypes.INTEGER
+        // allowNull: false
+      },
       title: { type: DataTypes.STRING, allowNull: false },
-      description: { type: DataTypes.STRING, allowNull: false },
+      description: {
+        type: DataTypes.STRING
+        // allowNull: false
+      },
       url: { type: DataTypes.STRING, allowNull: false },
       previewImage: { type: DataTypes.STRING, allowNull: false }
     },

@@ -4,6 +4,7 @@ export const LOAD_SONGS = "songs/loadSongs";
 export const LOAD_SONG = "songs/loadSong";
 export const DELETE_SONG = "songs/deleteSong";
 export const UPDATE_SONG = "songs/updateSong";
+export const CREATE_SONG = "songs/createSong";
 
 //==================================================
 const load = (list) => {
@@ -33,7 +34,29 @@ const updateSong = (song) => {
     song
   };
 };
+
+const addSong = (song) => ({
+  type: CREATE_SONG,
+  song
+});
+
 //==================================================
+
+export const createSong = (data) => async (dispatch) => {
+  const res = await csrfFetch("/songs", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+  if (res.ok) {
+    const song = await res.json();
+    dispatch(addSong(song));
+
+    return song;
+  }
+};
 
 export const getAllSongs = () => async (dispatch) => {
   const result = await csrfFetch("/songs");
@@ -109,6 +132,13 @@ const songsReducer = (state = {}, action) => {
         [action.song.id]: action.song
       };
     }
+
+    case CREATE_SONG:
+      return {
+        ...state,
+        [action.song.id]: action.song
+      };
+
     default:
       return state;
   }

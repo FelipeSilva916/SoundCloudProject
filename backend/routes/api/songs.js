@@ -12,24 +12,20 @@ const isProduction = environment === "production";
 const { requireAuth, restoreUser } = require("../../utils/auth");
 
 //============= Create song route ====================//
-router.post(
-  "/",
-  requireAuth,
-  validateSongCreation(async (req, res) => {
-    const { user } = req;
-    const { title, description, url, previewImage } = req.body;
+router.post("/", requireAuth, validateSongCreation, async (req, res) => {
+  const { user } = req;
+  const { title, description, url, previewImage } = req.body;
 
-    const newSong = await Song.create({
-      userId: user.id,
-      title,
-      description,
-      url,
-      previewImage
-    });
-    res.status(201);
-    res.json(newSong);
-  })
-);
+  const newSong = await Song.create({
+    userId: user.id,
+    title,
+    description,
+    url,
+    previewImage
+  });
+  res.status(201);
+  res.json(newSong);
+});
 
 //========== Create a comment for song by ID =========//
 router.post(

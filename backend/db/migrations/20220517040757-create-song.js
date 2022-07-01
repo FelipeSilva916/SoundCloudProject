@@ -13,8 +13,8 @@ module.exports = {
         allowNull: false
       },
       description: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
+        // allowNull: false
       },
       url: {
         type: Sequelize.STRING,
