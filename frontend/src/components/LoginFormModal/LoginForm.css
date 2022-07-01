@@ -72,9 +72,12 @@
 .error-msg {
   color: red;
   font-size: 12px;
-  background-color: aqua;
 }
 
+.error-msg ul {
+  list-style-type: none;
+  margin: auto;
+}
 .guest-login-form {
   padding: 1rem;
 }
