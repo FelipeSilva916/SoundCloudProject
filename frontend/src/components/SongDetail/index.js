@@ -14,9 +14,13 @@ const SongDetails = () => {
   const songObject = useSelector((state) => state.songs);
   const user = useSelector((state) => state.session.user);
 
-  useEffect(() => {
-    dispatch(getAllSongs());
-  }, [dispatch]);
+  useEffect(
+    () => {
+      dispatch(getAllSongs());
+    },
+    [dispatch],
+    songId
+  );
 
   const song = songObject[songId];
 
