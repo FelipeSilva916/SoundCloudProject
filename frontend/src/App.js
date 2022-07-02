@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation";
 import AllSongs from "./components/AllSongs";
 import SongDetail from "./components/SongDetail";
 import EditSongPage from "./components/EditSongButton/EditSongPage";
-import UploadSongPage from "./components/CreateSong";
+import UploadSongModal from "./components/UploadSongModal";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,9 +30,9 @@ function App() {
           <Route exact path="/songs/:songId/edit">
             <EditSongPage />
           </Route>
-          <Route exact path="/upload">
-            <UploadSongPage />
-          </Route>
+          {/* <Route exact path="/upload">
+            <UploadSongModal />
+          </Route> */}
         </Switch>
       )}
     </>
