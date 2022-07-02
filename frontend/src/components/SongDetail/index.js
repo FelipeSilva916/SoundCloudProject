@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory, Link } from "react-router-dom";
-import { getAllSongs } from "../../store/song";
+import { getSong } from "../../store/song";
 import { playSong } from "../../store/player";
 import DeleteSongButton from "../DeleteSongButton";
 import EditSongButton from "../EditSongButton";
@@ -17,7 +17,7 @@ const SongDetails = () => {
 
   useEffect(
     () => {
-      dispatch(getAllSongs());
+      dispatch(getSong(songId));
     },
     [dispatch],
     songId
@@ -40,11 +40,12 @@ const SongDetails = () => {
     );
   }
 
+  console.log(song);
   return (
     <div className="song-detail">
       <div className="song-detail-header">
         <h1>{song.title}</h1>
-        <h2>{song.artist}</h2>
+        <h2>{song?.Artist?.username}</h2>
       </div>
       <div className="song-detail-body">
         <div className="song-detail-body-left">

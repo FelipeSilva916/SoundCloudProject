@@ -21,10 +21,10 @@ const loadSong = (song) => {
   };
 };
 
-const removedSong = (song) => {
+const removedSong = (id) => {
   return {
     type: DELETE_SONG,
-    song
+    id
   };
 };
 
@@ -76,14 +76,13 @@ export const getSong = (songId) => async (dispatch) => {
   }
 };
 
-export const deleteSong = (songId) => async (dispatch) => {
-  const result = await csrfFetch(`/songs/${songId}`, {
+export const deleteSong = (id) => async (dispatch) => {
+  const result = await csrfFetch(`/songs/${id}`, {
     method: "DELETE"
   });
 
   if (result.ok) {
-    const song = await result.json();
-    dispatch(removedSong(song));
+    dispatch(removedSong(id));
   }
 };
 
@@ -104,11 +103,12 @@ export const editSong = (data) => async (dispatch) => {
 //return result here?
 
 //===================================================
+let newState = {};
 
 const songsReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_SONGS:
-      const newState = { ...state };
+      newState = { ...state };
       action.list.forEach((song) => {
         newState[song.id] = song;
       });
@@ -121,7 +121,7 @@ const songsReducer = (state = {}, action) => {
       };
 
     case DELETE_SONG: {
-      const newState = { ...state };
+      newState = { ...state };
       delete newState[action.id];
       return newState;
     }

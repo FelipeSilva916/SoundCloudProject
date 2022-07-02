@@ -25,12 +25,12 @@ function App() {
           </Route>
           <Route exact path="/songs/:songId">
             <SongDetail />
-            <AllSongs />
+            {/* <AllSongs /> */}
           </Route>
           <Route exact path="/songs/:songId/edit">
             <EditSongPage />
           </Route>
-          <Route>
+          <Route exact path="/upload">
             <UploadSongPage />
           </Route>
         </Switch>
