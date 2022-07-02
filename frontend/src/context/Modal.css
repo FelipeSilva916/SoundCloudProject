@@ -37,3 +37,8 @@
 .label-div {
   padding: 5px 2px;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
