@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import * as actions from "../../store/song";
 
-const EditSongForm = () => {
+const EditSongForm = ({ setShowModal }) => {
   const { songId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -15,12 +15,12 @@ const EditSongForm = () => {
   const [url, setUrl] = useState(song.url);
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setErrors([]);
 
-    dispatch(
+    await dispatch(
       actions.editSong({
         id: songId,
         title,
@@ -29,7 +29,10 @@ const EditSongForm = () => {
         userId
       })
     )
-      .then(() => history.push(`/songs/${songId}`))
+      .then(() => {
+        setShowModal(false);
+        history.push(`/songs`);
+      })
       .catch(async (res) => {
         const error = await res.json();
         if (error) {
