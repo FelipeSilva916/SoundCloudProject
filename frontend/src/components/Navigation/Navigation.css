@@ -81,11 +81,19 @@ nav a {
   width: 50%;
   display: flex;
   align-items: center;
+  height: 2.5rem;
+  justify-content: center;
 }
 
 .search-input {
-  width: 100%;
+  width: 90%;
   padding: 3px;
+  border: none;
+  height: 1.5rem;
+}
+
+.search-input:focus {
+  outline: none;
 }
 
 .logo-image {
@@ -102,6 +110,7 @@ nav a {
   height: auto;
   justify-content: space-around;
 }
+
 .profile-dropdown {
   position: absolute;
   right: 2%;
@@ -163,7 +172,7 @@ nav a {
   margin: 1rem;
   border-color: white;
   color: #fff;
-  height: 30px;
+  height: 2.5rem;
   margin: 0;
   padding: 4px 15px;
   border: 1px solid white;
