@@ -8,12 +8,10 @@ function UploadSongModal() {
 
   return (
     <>
-      <NavLink to="/upload" onClick={() => setShowModal(true)}>
-        Upload
-      </NavLink>
+      <button onClick={() => setShowModal(true)}>Upload</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UploadSongForm />
+          <UploadSongForm setShowModal={setShowModal} />
         </Modal>
       )}
     </>

@@ -4,7 +4,7 @@ import * as actions from "../../store/song";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
-const UploadSongForm = () => {
+const UploadSongForm = ({ setShowModal }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
   const dispatch = useDispatch();
@@ -22,12 +22,12 @@ const UploadSongForm = () => {
     setUrl("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setErrors([]);
 
-    dispatch(
+    await dispatch(
       actions.createSong({
         userId,
         title,
@@ -35,7 +35,10 @@ const UploadSongForm = () => {
         url
       })
     )
-      .then(() => history.push(`/songs`))
+      .then(() => {
+        setShowModal(false);
+        history.push(`/songs`);
+      })
       .catch(async (res) => {
         const data = await res.json();
 
@@ -45,6 +48,12 @@ const UploadSongForm = () => {
       });
 
     reset();
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    setShowModal(false);
+    history.push("/songs");
   };
 
   return (
@@ -84,10 +93,8 @@ const UploadSongForm = () => {
           />
         </div>
         <div className="form-btn-wrapper">
-          <button>Upload</button>
-          <Link className="main-btn" to={"/songs"}>
-            Cancel
-          </Link>
+          <button type="submit">Upload</button>
+          <button onClick={handleCancel}>Cancel</button>
         </div>
       </form>
     </div>
