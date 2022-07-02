@@ -1,0 +1,53 @@
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 600;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.edit-input {
+  width: 320px;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.edit-button {
+  display: inline-block;
+  text-align: center;
+  background-color: #f50;
+  color: #fff;
+  height: 2.3rem;
+  font-size: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.edit-button:hover {
+  color: black;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 1.5;
+}

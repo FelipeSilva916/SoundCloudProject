@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import * as actions from "../../store/song";
+import "./EditSongForm.css";
 
 const EditSongForm = ({ setShowModal }) => {
   const { songId } = useParams();
@@ -42,26 +43,28 @@ const EditSongForm = ({ setShowModal }) => {
   };
 
   return (
-    <div>
-      <h1>Edit Song Page</h1>
+    <div className="edit-form">
+      <h1>Make Some Changes</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {Object.values(errors).map((error) => (
             <li key={error}>{error}</li>
           ))}
         </ul>
-        <div>
+        <div className="input-wrapper">
           <label htmlFor="title">Title</label>
           <input
+            className="edit-input"
             type="text"
             id="title"
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <div>
+          <div className="input-wrapper">
             <label htmlFor="previewImage">Preview Image</label>
             <input
+              className="edit-input"
               type="text"
               id="previewImage"
               name="previewImage"
@@ -69,9 +72,10 @@ const EditSongForm = ({ setShowModal }) => {
               onChange={(e) => setPreviewImage(e.target.value)}
             />
           </div>
-          <div>
+          <div className="input-wrapper">
             <label htmlFor="url">URL</label>
             <input
+              className="edit-input"
               type="text"
               id="url"
               name="url"
@@ -80,7 +84,9 @@ const EditSongForm = ({ setShowModal }) => {
             />
           </div>
           <div>
-            <button>Save</button>
+            <button className="edit-button" type="submit">
+              Save
+            </button>
           </div>
         </div>
       </form>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import EditSongForm from "./EditSongForm";
+import "./EditSongForm.css";
 
 function EditSongModal() {
   const [showModal, setShowModal] = useState(false);
