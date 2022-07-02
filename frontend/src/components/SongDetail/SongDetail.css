@@ -1,8 +1,11 @@
 .song-detail {
-  background-color: rgba(158, 155, 155, 0.15);
-  border-radius: 6px;
-  margin: 0 auto;
-  width: auto;
+  display: grid;
+  width: 100vh;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-column-gap: 25px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
 }
 
 .song-detail > div {
