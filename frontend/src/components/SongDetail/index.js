@@ -40,27 +40,25 @@ const SongDetails = () => {
   }
 
   return (
-    <div className="detail-wrapper">
-      <div className="song-detail">
-        <div className="song-detail-header">
-          <h1>{song.title}</h1>
-          <h2>{song?.Artist?.username}</h2>
-        </div>
-        <div className="song-detail-body">
-          <div className="song-detail-body-left">
-            <img
-              className="song-preview-image"
-              src={song.previewImage}
-              alt={song.title}
-            />
-          </div>
-          <div className="song-detail-body-right">
-            <p>{song.description}</p>
-            <p>{song.lyrics}</p>
-          </div>
-        </div>
-        <div className="song-detail-footer">{userManipulateButton}</div>
+    <div className="song-detail">
+      <div className="song-detail-header">
+        <h1>{song.title}</h1>
+        <h2>{song?.Artist?.username}</h2>
       </div>
+      <div className="song-detail-body">
+        <div className="song-detail-body-left">
+          <img
+            className="song-preview-image"
+            src={song.previewImage}
+            alt={song.title}
+          />
+        </div>
+        <div className="song-detail-body-right">
+          <p>{song.description}</p>
+          <p>{song.lyrics}</p>
+        </div>
+      </div>
+      <div className="song-detail-footer">{userManipulateButton}Test</div>
     </div>
   );
 };
