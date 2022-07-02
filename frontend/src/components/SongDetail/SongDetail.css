@@ -1,6 +1,38 @@
-/* .song-detail-footer {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px;
-} */
+.song-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: chartreuse;
+  padding: 20px;
+}
+
+.song-detail-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #f5f5f5;
+  background-color: brown;
+}
+
+.song-detail-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  background-color: orange;
+}
+
+.song-detail-body-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: #f5f5f5;
+  background-color: rgb(149, 0, 255);
+}
