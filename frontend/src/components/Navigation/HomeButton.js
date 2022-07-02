@@ -8,7 +8,7 @@ const HomeButton = () => {
     history.push("/");
   };
   return (
-    <NavLink to="/" onClick={handleClick}>
+    <NavLink exact to="/" onClick={handleClick}>
       <i className="fas fa-home"></i>
     </NavLink>
   );

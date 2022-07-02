@@ -12,6 +12,8 @@ import Welcome from "./Welcome";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import { NavLink } from "react-router-dom";
+import UploadSongModal from "../UploadSongModal";
+import AllSongs from "../AllSongs";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -25,8 +27,8 @@ function Navigation({ isLoaded }) {
             <div className="logged-in-banner">
               <HomeButton />
               <SongsButton />
+              <UploadSongModal />
               <AlbumsButton />
-              <NavLink to="/upload">Upload</NavLink>
               <SearchBar />
               <ProfileButton user={sessionUser} />
             </div>
