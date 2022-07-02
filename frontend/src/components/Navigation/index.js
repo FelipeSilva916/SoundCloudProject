@@ -20,15 +20,19 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <nav className="logged-in-banner">
-          <HomeButton />
-          <SongsButton />
-          <AlbumsButton />
-          <NavLink to="/upload">Upload</NavLink>
-          <SearchBar />
-          <ProfileButton user={sessionUser} />
-        </nav>
-        <Welcome />
+        <div className="banner-container">
+          <nav className="logged-in-nav">
+            <div className="logged-in-banner">
+              <HomeButton />
+              <SongsButton />
+              <AlbumsButton />
+              <NavLink to="/upload">Upload</NavLink>
+              <SearchBar />
+              <ProfileButton user={sessionUser} />
+            </div>
+          </nav>
+          <Welcome />
+        </div>
       </>
     );
   } else {

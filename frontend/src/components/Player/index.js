@@ -11,7 +11,6 @@ const Player = () => {
     <div>
       <AudioPlayer
         src={song?.url}
-        onPlay={(e) => console.log("onPlay")}
         header={song?.title}
         showSkipControls={true}
       />

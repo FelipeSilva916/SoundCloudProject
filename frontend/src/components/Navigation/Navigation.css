@@ -108,36 +108,54 @@ nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: auto;
   padding: 1em;
 }
 
-@media screen and (max-width: 1260px) {
+/* @media screen and (max-width: 1260px) {
   nav {
     padding-right: 20px;
   }
+} */
+.logged-in-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .banner-container {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  background-image: url(https://a-v2.sndcdn.com/assets/images/sc_landing_header_web_b@2x-7e5ff471.jpg);
+  background-image: url(../../images/caught-in-joy-ptVBlniJi50-unsplash.jpg);
   background-size: cover;
-  height: 450px;
+  height: 100vh;
 }
 .nav-right {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-
 .logged-in-banner {
+  background-color: transparent;
+  margin: 1rem;
   display: flex;
-  background-color: rgb(66, 62, 62);
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  box-shadow: black 5px 5px 20px;
+  width: 100%;
 }
+
+/* .banner-container-loggedin {
+  background-color: transparent;
+  padding: 0 10px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+} */
 
 .logged-in-banner a {
   color: white;
@@ -147,9 +165,9 @@ nav a {
   align-items: center;
   justify-content: center;
   height: 2.5rem;
-  border-right: white 1px solid;
-  border-left: white 1px solid;
   padding: 0 1.3rem;
+  border-radius: 5px;
+  border: #ffffff 1px solid;
 }
 
 #root > nav > button {
@@ -158,9 +176,14 @@ nav a {
 }
 
 .logged-in-banner a:hover {
-  background-color: #ff5501;
   color: black;
-  box-shadow: #ff5501 1px 1px 2px;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 
 .banner-words {
@@ -193,10 +216,15 @@ nav a {
 .welcome-comp {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  background-size: cover;
-  height: 500px;
-  width: 100%;
-  background-image: url(https://guardian.ng/wp-content/uploads/2017/12/Soundcloud.jpg);
+
+  height: 100vh;
+  background-size: auto 100%;
+  /* background-image: url(../../images/caught-in-joy-ptVBlniJi50-unsplash.jpg); */
+}
+
+html,
+body {
+  height: 100%;
 }
 
 .welcome-text {
