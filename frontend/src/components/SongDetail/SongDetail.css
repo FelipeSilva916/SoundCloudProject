@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  background-color: rgba(158, 155, 155, 0.15);
   background-color: chartreuse;
   padding: 20px;
 }

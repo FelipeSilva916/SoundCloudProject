@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/song";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import "./UploadSong.css";
 
 const UploadSongForm = ({ setShowModal }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -57,7 +58,7 @@ const UploadSongForm = ({ setShowModal }) => {
   };
 
   return (
-    <div>
+    <div className="upload-form">
       <h2>Upload Your New Song Below.</h2>
       <form onSubmit={handleSubmit}>
         <ul>
@@ -68,6 +69,7 @@ const UploadSongForm = ({ setShowModal }) => {
         <div className="input-wrapper">
           <label htmlFor="title">Title</label>
           <input
+            className="upload-input"
             type="text"
             name="title"
             value={title}
@@ -77,6 +79,7 @@ const UploadSongForm = ({ setShowModal }) => {
         <div className="input-wrapper">
           <label htmlFor="previewImage">Image Url</label>
           <input
+            className="upload-input"
             type="text"
             name="imagePreview"
             placeholder="Default Cover"
@@ -86,6 +89,7 @@ const UploadSongForm = ({ setShowModal }) => {
         <div className="input-wrapper">
           <label htmlFor="url">Song Url</label>
           <input
+            className="upload-input"
             type="text"
             name="url"
             value={url}
@@ -93,8 +97,12 @@ const UploadSongForm = ({ setShowModal }) => {
           />
         </div>
         <div className="form-btn-wrapper">
-          <button type="submit">Upload</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button className="upload-button" type="submit">
+            Upload
+          </button>
+          <button className="cancel-button" onClick={handleCancel}>
+            Cancel
+          </button>
         </div>
       </form>
     </div>

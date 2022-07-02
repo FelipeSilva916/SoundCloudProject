@@ -25,14 +25,10 @@ function App() {
           </Route>
           <Route exact path="/songs/:songId">
             <SongDetail />
-            {/* <AllSongs /> */}
           </Route>
           <Route exact path="/songs/:songId/edit">
             <EditSongPage />
           </Route>
-          {/* <Route exact path="/upload">
-            <UploadSongModal />
-          </Route> */}
         </Switch>
       )}
     </>
