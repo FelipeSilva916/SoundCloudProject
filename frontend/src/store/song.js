@@ -98,9 +98,8 @@ export const editSong = (data) => async (dispatch) => {
   if (result.ok) {
     const song = await result.json();
     dispatch(updateSong(song));
-  }
+  } //return result here?
 };
-//return result here?
 
 //===================================================
 let newState = {};

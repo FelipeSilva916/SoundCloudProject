@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import EditSongPage from "./EditSongPage";
 
@@ -15,7 +15,7 @@ const EditSongButton = () => {
 
   return (
     <div>
-      <button>Edit song</button>
+      <NavLink to={`/songs/${songId}/edit`}>EDIT</NavLink>
     </div>
   );
 };

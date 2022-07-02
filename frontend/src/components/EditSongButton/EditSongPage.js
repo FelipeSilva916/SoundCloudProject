@@ -43,11 +43,11 @@ const EditSongPage = () => {
     <div>
       <h1>Edit Song Page</h1>
       <form onSubmit={handleSubmit}>
-        <ul>
+        {/* <ul>
           {errors.map((error) => (
             <li key={error}>{error}</li>
           ))}
-        </ul>
+        </ul> */}
         <div>
           <label htmlFor="title">Title</label>
           <input

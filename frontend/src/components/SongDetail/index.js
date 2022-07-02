@@ -15,18 +15,18 @@ const SongDetails = () => {
   const songObject = useSelector((state) => state.songs);
   const user = useSelector((state) => state.session.user);
 
-  useEffect(
-    () => {
-      dispatch(getSong(songId));
-    },
-    [dispatch],
-    songId
-  );
+  useEffect(() => {
+    dispatch(getSong(songId));
+  }, [dispatch, songId]);
 
   const song = songObject[songId];
 
   if (!song) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
   }
 
   let userManipulateButton;
@@ -40,7 +40,6 @@ const SongDetails = () => {
     );
   }
 
-  console.log(song);
   return (
     <div className="song-detail">
       <div className="song-detail-header">
