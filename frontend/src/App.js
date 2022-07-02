@@ -5,8 +5,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import AllSongs from "./components/AllSongs";
 import SongDetail from "./components/SongDetail";
-import EditSongPage from "./components/EditSongButton/EditSongPage";
 import UploadSongModal from "./components/UploadSongModal";
+import EditSongModal from "./components/EditSongModal";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,9 +26,9 @@ function App() {
           <Route exact path="/songs/:songId">
             <SongDetail />
           </Route>
-          <Route exact path="/songs/:songId/edit">
-            <EditSongPage />
-          </Route>
+          {/* <Route exact path="/songs/:songId/edit">
+            <EditSongModal />
+          </Route> */}
         </Switch>
       )}
     </>

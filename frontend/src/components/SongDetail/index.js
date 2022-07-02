@@ -4,8 +4,7 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import { getSong } from "../../store/song";
 import { playSong } from "../../store/player";
 import DeleteSongButton from "../DeleteSongButton";
-import EditSongButton from "../EditSongButton";
-
+import EditSongModal from "../EditSongModal";
 import "./SongDetail.css";
 
 const SongDetails = () => {
@@ -35,7 +34,7 @@ const SongDetails = () => {
     userManipulateButton = (
       <>
         <DeleteSongButton songId={songId} />
-        <EditSongButton song={songId} />
+        <EditSongModal song={songId} />
       </>
     );
   }
@@ -48,7 +47,11 @@ const SongDetails = () => {
       </div>
       <div className="song-detail-body">
         <div className="song-detail-body-left">
-          <img src={song.previewImage} alt={song.title} />
+          <img
+            className="song-preview-image"
+            src={song.previewImage}
+            alt={song.title}
+          />
         </div>
         <div className="song-detail-body-right">
           <p>{song.description}</p>

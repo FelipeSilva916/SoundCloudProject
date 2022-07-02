@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import * as actions from "../../store/song";
 
-const EditSongPage = () => {
+const EditSongForm = () => {
   const { songId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -13,7 +13,7 @@ const EditSongPage = () => {
   const [title, setTitle] = useState(song.title);
   const [previewImage, setPreviewImage] = useState(song.previewImage);
   const [url, setUrl] = useState(song.url);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +33,6 @@ const EditSongPage = () => {
       .catch(async (res) => {
         const error = await res.json();
         if (error) {
-          //possible error.errors
           setErrors(error.errors);
         }
       });
@@ -43,11 +42,11 @@ const EditSongPage = () => {
     <div>
       <h1>Edit Song Page</h1>
       <form onSubmit={handleSubmit}>
-        {/* <ul>
-          {errors.map((error) => (
+        <ul>
+          {Object.values(errors).map((error) => (
             <li key={error}>{error}</li>
           ))}
-        </ul> */}
+        </ul>
         <div>
           <label htmlFor="title">Title</label>
           <input
@@ -86,4 +85,4 @@ const EditSongPage = () => {
   );
 };
 
-export default EditSongPage;
+export default EditSongForm;

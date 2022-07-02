@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/song";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
 import "./UploadSong.css";
 
 const UploadSongForm = ({ setShowModal }) => {
