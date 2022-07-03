@@ -6,7 +6,6 @@ import { playSong } from "../../store/player";
 import DeleteSongButton from "../DeleteSongButton";
 import EditSongModal from "../EditSongModal";
 import "./SongDetail.css";
-import Player from "../Player";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
