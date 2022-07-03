@@ -32,9 +32,7 @@ function Navigation({ isLoaded }) {
             </div>
           </nav>
           <Welcome />
-          {/* <SongDetails /> */}
         </div>
-        {/* <SongDetails /> */}
       </>
     );
   } else {

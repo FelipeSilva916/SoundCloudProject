@@ -54,12 +54,12 @@ const SongDetails = () => {
             <h1>Title: {song.title}</h1>
             <h2>Artist: {song?.Artist?.username}</h2>
             <p>Description: {song.description}</p>
+            <div className="song-detail-footer">{userManipulateButton}</div>
           </div>
         </div>
         <div>
           <Player onClick={() => playSongBtn(song)} />
         </div>
-        <div className="song-detail-footer">{userManipulateButton}Test</div>
       </div>
     </>
   );

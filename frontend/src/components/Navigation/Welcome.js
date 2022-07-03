@@ -1,4 +1,6 @@
 import React from "react";
+import Player from "../Player";
+import SongDetails from "../SongDetail";
 
 const Welcome = () => {
   return (
@@ -7,9 +9,7 @@ const Welcome = () => {
         <div className="welcome-container">
           <p className="welcome-text">Welcome to SoundCloud!</p>
         </div>
-        {/* <div className="welcome-upload-btn">
-          <h1>Upload Songs</h1>
-        </div> */}
+        {/* <SongDetails /> */}
       </div>
     </>
   );

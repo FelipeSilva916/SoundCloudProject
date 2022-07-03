@@ -88,6 +88,13 @@
   margin-top: 20px;
 }
 
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: chartreuse;
+}
+
 .play-button-allsongs {
   color: white;
   align-items: center;
