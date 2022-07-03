@@ -9,11 +9,9 @@ import AlbumsButton from "./AlbumsButton";
 import SearchBar from "./SearchBar";
 import SongsButton from "./SongsButton";
 import Welcome from "./Welcome";
-import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import { NavLink } from "react-router-dom";
 import UploadSongModal from "../UploadSongModal";
-import AllSongs from "../AllSongs";
+import SongDetails from "../SongDetail";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -34,7 +32,9 @@ function Navigation({ isLoaded }) {
             </div>
           </nav>
           <Welcome />
+          {/* <SongDetails /> */}
         </div>
+        {/* <SongDetails /> */}
       </>
     );
   } else {

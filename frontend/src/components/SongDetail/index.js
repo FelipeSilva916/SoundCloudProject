@@ -1,11 +1,12 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { getSong } from "../../store/song";
 import { playSong } from "../../store/player";
 import DeleteSongButton from "../DeleteSongButton";
 import EditSongModal from "../EditSongModal";
 import "./SongDetail.css";
+import Player from "../Player";
 
 const SongDetails = () => {
   const { songId } = useParams();
@@ -20,13 +21,12 @@ const SongDetails = () => {
 
   const song = songObject[songId];
 
-  if (!song) {
-    return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
+  const playSongBtn = useCallback(
+    (song) => {
+      dispatch(playSong(song));
+    },
+    [dispatch]
+  );
 
   let userManipulateButton;
 
@@ -40,26 +40,28 @@ const SongDetails = () => {
   }
 
   return (
-    <div className="song-detail">
-      <div className="song-detail-header">
-        <h1>{song.title}</h1>
-        <h2>{song?.Artist?.username}</h2>
-      </div>
-      <div className="song-detail-body">
-        <div className="song-detail-body-left">
-          <img
-            className="song-preview-image"
-            src={song.previewImage}
-            alt={song.title}
-          />
+    <>
+      <div className="song-detail-container">
+        <div className="song-detail-body song-detail-container-div">
+          <div className="song-detail-body-left song-detail-container-div">
+            <img
+              className="song-preview-image song-detail-container-div"
+              src={song.previewImage}
+              alt={song.title}
+            />
+          </div>
+          <div className="song-detail-body-right song-detail-container-div">
+            <h1>Title: {song.title}</h1>
+            <h2>Artist: {song?.Artist?.username}</h2>
+            <p>Description: {song.description}</p>
+          </div>
         </div>
-        <div className="song-detail-body-right">
-          <p>{song.description}</p>
-          <p>{song.lyrics}</p>
+        <div>
+          <Player onClick={() => playSongBtn(song)} />
         </div>
+        <div className="song-detail-footer">{userManipulateButton}Test</div>
       </div>
-      <div className="song-detail-footer">{userManipulateButton}Test</div>
-    </div>
+    </>
   );
 };
 
