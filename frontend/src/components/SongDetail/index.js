@@ -7,6 +7,8 @@ import DeleteSongButton from "../DeleteSongButton";
 import EditSongModal from "../EditSongModal";
 import "./SongDetail.css";
 import Player from "../Player";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 const SongDetails = () => {
   const { songId } = useParams();
@@ -58,7 +60,11 @@ const SongDetails = () => {
           </div>
         </div>
         <div>
-          <Player onClick={() => playSongBtn(song)} />
+          <AudioPlayer
+            src={song.url}
+            header={song.title}
+            showSkipControls={true}
+          />
         </div>
       </div>
     </>
