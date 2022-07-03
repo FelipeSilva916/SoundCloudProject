@@ -47,22 +47,23 @@ const SongDetails = () => {
           <div className="song-detail-body-left song-detail-container-div">
             <img
               className="song-preview-image song-detail-container-div"
-              src={song.previewImage}
-              alt={song.title}
+              src={song?.previewImage}
+              alt={song?.title}
             />
           </div>
           <div className="song-detail-body-right song-detail-container-div">
-            <h1>Title: {song.title}</h1>
+            <h1>Title: {song?.title}</h1>
             <h2>Artist: {song?.Artist?.username}</h2>
-            <p>Description: {song.description}</p>
+            <p>Description: {song?.description}</p>
             <div className="song-detail-footer">{userManipulateButton}</div>
           </div>
         </div>
         <div>
           <AudioPlayer
-            src={song.url}
-            header={song.title}
+            src={song?.url}
+            header={song?.title}
             showSkipControls={true}
+            autoPlay={false}
           />
         </div>
       </div>
