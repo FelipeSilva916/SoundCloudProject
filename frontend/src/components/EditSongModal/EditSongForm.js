@@ -44,7 +44,7 @@ const EditSongForm = ({ setShowModal }) => {
 
   return (
     <div className="edit-form">
-      <h1>Make Some Changes</h1>
+      <h1>Make Some Changes Here:</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {Object.values(errors).map((error) => (
@@ -73,7 +73,7 @@ const EditSongForm = ({ setShowModal }) => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="url">URL</label>
+            <label htmlFor="url">Song URL</label>
             <input
               className="edit-input"
               type="text"
