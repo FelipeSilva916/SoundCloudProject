@@ -11,7 +11,6 @@ import SongsButton from "./SongsButton";
 import Welcome from "./Welcome";
 import "react-h5-audio-player/lib/styles.css";
 import UploadSongModal from "../UploadSongModal";
-import SongDetails from "../SongDetail";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);

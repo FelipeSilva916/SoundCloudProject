@@ -28,7 +28,7 @@ const AllSongs = () => {
 
   return (
     <div className="all-songs-wrapper">
-      <h2>Go ahead, enjoy some music.</h2>
+      <h2>Go ahead, enjoy some music. DELETE LATER</h2>
       <div className="player-box">
         <Player currentSong={currentSong} />
       </div>

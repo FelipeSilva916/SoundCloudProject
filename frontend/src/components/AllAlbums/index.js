@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import "./AllAlbums.css";
 
 const AllAlbums = () => {
-  return <div></div>;
+  return (
+    <div>
+      <h1>All Albums</h1>
+    </div>
+  );
 };
 
 export default AllAlbums;
