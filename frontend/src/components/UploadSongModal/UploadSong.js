@@ -10,7 +10,7 @@ const UploadSongForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [previewImage, setPreviewImage] = useState(
-    "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_15a69c89ead36177074484ed6c6e6e89/soundcloud.png"
+    "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/defaultLogo.png"
   );
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
