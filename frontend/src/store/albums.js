@@ -1,12 +1,13 @@
 import { csrfFetch } from "./csrf";
 
-const LOAD_ALBUM = "albums/loadAlbum";
+const LOAD_ALBUMS = "albums/loadAlbums";
+const SINGLE_ALBUM = "albums/singleAlbum";
 
 // =========================================//
 
 const loadAllAlbums = (albums) => {
   return {
-    type: LOAD_ALBUM,
+    type: LOAD_ALBUMS,
     albums
   };
 };
@@ -28,7 +29,7 @@ let newState = {};
 
 const albumsReducer = (state = {}, action) => {
   switch (action.type) {
-    case LOAD_ALBUM:
+    case LOAD_ALBUMS:
       newState = { ...state };
       action.albums.forEach((album) => {
         newState[album.id] = album;
@@ -39,3 +40,5 @@ const albumsReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default albumsReducer;
