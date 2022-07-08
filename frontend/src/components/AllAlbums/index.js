@@ -3,11 +3,11 @@ import * as albumActions from "../../store/albums";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const AllAlbums = () => {
+const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
   const albums = useSelector((state) => Object.values(state.albums));
   const [currentAlbum, setCurrentAlbum] = useState(null);
-
+  console.log(albums);
   useEffect(() => {
     dispatch(albumActions.loadAlbums());
   }, [dispatch]);
@@ -33,4 +33,4 @@ const AllAlbums = () => {
   );
 };
 
-export default AllAlbums;
+export default AllAlbumsComponent;
