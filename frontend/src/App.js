@@ -7,7 +7,7 @@ import AllSongs from "./components/AllSongs";
 import SongDetail from "./components/SongDetail";
 import UploadSongModal from "./components/UploadSongModal";
 import EditSongModal from "./components/EditSongModal";
-
+import AllAlbums from "./components/AllAlbums";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/songs/:songId">
             <SongDetail />
+          </Route>
+          <Route exact path="/albums">
+            <AllAlbums />
           </Route>
           {/* <Route exact path="/songs/:songId/edit">
             <EditSongModal />
