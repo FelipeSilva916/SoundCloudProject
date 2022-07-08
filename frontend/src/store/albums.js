@@ -12,6 +12,12 @@ const loadAllAlbums = (albums) => {
   };
 };
 
+const loadAlbum = (album) => {
+  return {
+    type: SINGLE_ALBUM,
+    album
+  };
+};
 //==========================================//
 
 export const loadAlbums = () => async (dispatch) => {
@@ -20,6 +26,15 @@ export const loadAlbums = () => async (dispatch) => {
     const albums = await res.json();
     dispatch(loadAllAlbums(albums));
     return res;
+  }
+};
+
+export const getAlbum = (id) => async (dispatch) => {
+  const res = await csrfFetch(`/albums/${id}`);
+  if (res.ok) {
+    const album = await res.json();
+    dispatch(loadAlbum(album));
+    // return album;
   }
 };
 
@@ -35,6 +50,12 @@ const albumsReducer = (state = {}, action) => {
         newState[album.id] = album;
       });
       return newState;
+
+    case SINGLE_ALBUM:
+      return {
+        ...state,
+        [action.album.id]: action.album
+      };
 
     default:
       return state;
