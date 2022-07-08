@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
-  const albums = useSelector((state) => Object.values(state.albums));
+  const albums = Object.values(useSelector((state) => state.albums));
   const [currentAlbum, setCurrentAlbum] = useState(null);
   console.log(albums);
   useEffect(() => {
