@@ -8,6 +8,7 @@ import EditSongModal from "../EditSongModal";
 import "./SongDetail.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import Player from "../Player";
 
 const SongDetails = () => {
   const { songId } = useParams();
@@ -64,10 +65,8 @@ const SongDetails = () => {
             </div>
           </div>
         </div>
-        <div>
-          <AudioPlayer src={song?.url} header={song?.title} autoPlay={false} />
-        </div>
       </div>
+      <Player />
     </>
   );
 };

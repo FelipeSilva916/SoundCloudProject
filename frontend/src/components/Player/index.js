@@ -12,7 +12,7 @@ const Player = () => {
       <AudioPlayer
         src={song?.url}
         header={song?.title}
-        showSkipControls={true}
+        showSkipControls={false}
       />
     </div>
   );
