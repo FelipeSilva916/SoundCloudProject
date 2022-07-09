@@ -10,7 +10,7 @@ const SearchBar = () => {
 
   const activeResults = songs.filter((song) => {
     return (
-      song.User?.username?.toLowerCase().includes(search.toLowerCase()) ||
+      song.Artist?.username?.toLowerCase().includes(search.toLowerCase()) ||
       song.title.toLowerCase().includes(search.toLowerCase())
     );
   });
@@ -24,7 +24,7 @@ const SearchBar = () => {
         className="search-result-link"
       >
         <div className="search-result-li">
-          <div className="search-result-li-title">{song.title}</div>
+          <div className="search-result-li-title">{song.title}</div>{" "}
           <div className="search-result-li-artist">
             {song?.Artist?.username}
           </div>
@@ -38,7 +38,6 @@ const SearchBar = () => {
       <form className="search-bar-form">
         <div className="search-bar">
           <input
-            // className="search-bar-input"
             type="text"
             placeholder="Search"
             value={search}

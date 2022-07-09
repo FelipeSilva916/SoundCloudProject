@@ -71,3 +71,11 @@ search-bar-container {
   visibility: visible;
   transform: scale(1);
 }
+
+.search-result-li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
