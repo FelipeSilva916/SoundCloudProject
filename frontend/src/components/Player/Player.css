@@ -3,4 +3,46 @@
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+  color: black;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  margin: 0 auto;
+}
+
+.media-player {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.rhap_main-controls button {
+  color: white;
+}
+
+.rhap_button-clear {
+  color: white;
+}
+
+.rhap_volume-indicator {
+  color: white;
+}
+
+#rhap_current-time {
+  color: white;
+}
+
+.rhap_header {
+  background-color: black;
+  width: fit-content;
+  box-sizing: border-box;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
 }

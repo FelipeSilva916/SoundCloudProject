@@ -1,5 +1,7 @@
 .all-songs-wrapper {
   padding: 60px 10px 120px;
+  display: flex;
+  justify-content: center;
 }
 
 .all-songs-wrapper > div {
@@ -7,7 +9,6 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1280px;
 }
 
 .song-card {
@@ -78,14 +79,10 @@
 }
 
 .player-box {
-  padding: 1rem;
-  margin-top: 20px;
-}
-
-.player {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .play-button-allsongs {
