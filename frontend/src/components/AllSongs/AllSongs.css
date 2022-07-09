@@ -1,11 +1,5 @@
 .all-songs-wrapper {
-  background: white;
   padding: 60px 10px 120px;
-}
-
-.songs-list-full-wrapper h2 {
-  margin-bottom: 1.5rem;
-  text-align: center;
 }
 
 .all-songs-wrapper > div {
@@ -92,7 +86,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: chartreuse;
 }
 
 .play-button-allsongs {

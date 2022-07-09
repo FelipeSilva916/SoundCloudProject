@@ -68,26 +68,6 @@
   box-sizing: border-box;
 }
 
-.search-bar {
-  border: 1px solid #ff5501;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
-  padding: 3px;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  height: 2.5rem;
-  justify-content: center;
-}
-
-.search-input {
-  width: 90%;
-  padding: 3px;
-  border: none;
-  height: 1.5rem;
-}
-
 .search-input:focus {
   outline: none;
 }
