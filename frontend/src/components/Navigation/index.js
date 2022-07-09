@@ -30,7 +30,8 @@ function Navigation({ isLoaded }) {
               <ProfileButton user={sessionUser} />
             </div>
           </nav>
-          <Welcome />
+          {/* <Welcome /> */}
+          {/* <SongDetails /> */}
         </div>
       </>
     );

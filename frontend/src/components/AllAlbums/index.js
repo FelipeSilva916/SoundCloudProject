@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as albumActions from "../../store/albums";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "./AllAlbums.css";
 
 const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
@@ -21,9 +22,12 @@ const AllAlbumsComponent = () => {
             <div
               className="card-img-wrapper"
               style={{ backgroundImage: `url(${album.previewImage})` }}
-            >
-              Each album goes here
-              <Link to={{ pathname: `/albums/${album.id}` }}>
+            ></div>
+            <div>
+              <Link
+                className="album-link-text"
+                to={{ pathname: `/albums/${album.id}` }}
+              >
                 <p>{album.title}</p>
               </Link>
             </div>
