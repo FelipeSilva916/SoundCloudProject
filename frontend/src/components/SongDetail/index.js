@@ -33,10 +33,14 @@ const SongDetails = () => {
 
   if (song?.userId === user?.id) {
     userManipulateButton = (
-      <>
-        <DeleteSongButton songId={songId} />
-        <EditSongModal song={songId} />
-      </>
+      <div className="user-buttons">
+        <div className="user-delete-button">
+          <DeleteSongButton songId={songId} />
+        </div>
+        <div className="user-edit-button">
+          <EditSongModal song={songId} />
+        </div>
+      </div>
     );
   }
 
@@ -55,16 +59,13 @@ const SongDetails = () => {
             <h1>Title: {song?.title}</h1>
             <h2>Artist: {song?.Artist?.username}</h2>
             <p>Description: {song?.description}</p>
-            <div className="song-detail-footer">{userManipulateButton}</div>
+            <div className="footer-container">
+              <div className="song-detail-footer">{userManipulateButton}</div>
+            </div>
           </div>
         </div>
         <div>
-          <AudioPlayer
-            src={song?.url}
-            header={song?.title}
-            showSkipControls={true}
-            autoPlay={false}
-          />
+          <AudioPlayer src={song?.url} header={song?.title} autoPlay={false} />
         </div>
       </div>
     </>

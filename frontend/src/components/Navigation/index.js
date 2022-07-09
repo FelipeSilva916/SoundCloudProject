@@ -11,10 +11,10 @@ import SongsButton from "./SongsButton";
 import Welcome from "./Welcome";
 import "react-h5-audio-player/lib/styles.css";
 import UploadSongModal from "../UploadSongModal";
+import SongDetails from "../SongDetail";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -24,9 +24,9 @@ function Navigation({ isLoaded }) {
             <div className="logged-in-banner">
               <HomeButton />
               <SongsButton />
-              <UploadSongModal />
               <AlbumsButton />
               <SearchBar />
+              <UploadSongModal />
               <ProfileButton user={sessionUser} />
             </div>
           </nav>

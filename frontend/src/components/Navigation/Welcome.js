@@ -1,4 +1,5 @@
 import React from "react";
+import AllSongs from "../AllSongs";
 
 const Welcome = () => {
   return (
