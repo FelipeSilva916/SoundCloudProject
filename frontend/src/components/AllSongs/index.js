@@ -29,7 +29,7 @@ const AllSongs = () => {
   return (
     <div className="all-songs-wrapper">
       <div className="player-box">
-        <Player currentSong={currentSong} />
+        {/* <Player currentSong={currentSong} /> */}
       </div>
       <div>
         {songs.map((song) => (

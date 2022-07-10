@@ -146,38 +146,6 @@
   align-items: center;
   width: 100%;
 }
-/*
-.logged-in-banner button {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1.9em;
-  padding: 1px 10px;
-  border-radius: 5px;
-  border: #ffffff 1px solid;
-  background-color: transparent;
-  font-size: 16px;
-  margin: 2px;
-  font-weight: 100;
-}
-
-.logged-in-banner a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1.9em;
-  padding: 1px 10px;
-  border-radius: 5px;
-  border: #ffffff 1px solid;
-  background-color: transparent;
-  font-size: 16px;
-  margin: 2px;
-  font-weight: 100;
-} */
 
 .logged-in-banner button:hover {
   color: black;
@@ -236,10 +204,10 @@
   background-size: auto 100%;
 }
 
-html,
+/* html,
 body {
   height: 100%;
-}
+} */
 
 .welcome-text {
   background-color: transparent;
@@ -278,4 +246,11 @@ body {
   background-color: transparent;
   font-size: 16px;
   font-weight: 300;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
 }

@@ -1,7 +1,7 @@
 .song-detail-container-div {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 70px;
 }
 
 .song-detail-body {
@@ -9,6 +9,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin: 30px;
 }
 .song-preview-image {
   background-position: center;

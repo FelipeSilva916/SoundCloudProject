@@ -13,6 +13,7 @@ import "react-h5-audio-player/lib/styles.css";
 import UploadSongModal from "../UploadSongModal";
 import SongDetails from "../SongDetail";
 import SearchBar from "../SearchBar";
+import Player from "../Player";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -31,9 +32,10 @@ function Navigation({ isLoaded }) {
               <ProfileButton user={sessionUser} />
             </div>
           </nav>
-          <Welcome />
-          {/* <SongDetails /> */}
         </div>
+        <footer className="footer">
+          <Player />
+        </footer>
       </>
     );
   } else {
