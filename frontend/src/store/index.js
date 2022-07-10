@@ -4,6 +4,7 @@ import sessionReducer from "./session";
 import songsReducer from "./song";
 import playerReducer from "./player";
 import albumsReducer from "./albums";
+import usersReducer from "./users";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
