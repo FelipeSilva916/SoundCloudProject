@@ -186,19 +186,6 @@
   padding: 10px;
   border-radius: 10px;
 }
-/*
-.welcome-comp {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-
-  height: 100vh;
-  background-size: auto 100%;
-} */
-
-/* html,
-body {
-  height: 100%;
-} */
 
 .welcome-text {
   background-color: transparent;
@@ -244,4 +231,13 @@ body {
   width: 100%;
   bottom: 0;
   z-index: 1;
+}
+
+html {
+  background: url(../../images/caught-in-joy-ptVBlniJi50-unsplash.jpg) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

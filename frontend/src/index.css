@@ -10,3 +10,12 @@ li {
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  background: url(./images/caught-in-joy-ptVBlniJi50-unsplash.jpg) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

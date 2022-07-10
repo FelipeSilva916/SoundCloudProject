@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
 import { playSong } from "../../store/player";
 import "./AllSongs.css";
-import Player from "../Player";
 
 const AllSongs = () => {
   const dispatch = useDispatch();
@@ -28,9 +27,7 @@ const AllSongs = () => {
 
   return (
     <div className="all-songs-wrapper">
-      <div className="player-box">
-        {/* <Player currentSong={currentSong} /> */}
-      </div>
+      <div className="player-box"></div>
       <div>
         {songs.map((song) => (
           <li key={song.id} className="song-card">
@@ -52,7 +49,6 @@ const AllSongs = () => {
               to={{ pathname: `/songs/${song.id}` }}
             >
               <p>{song.title}</p>
-              <p>{song?.Artist?.username}</p>
             </Link>
           </li>
         ))}
