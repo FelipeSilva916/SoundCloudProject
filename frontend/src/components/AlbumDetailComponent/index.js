@@ -34,10 +34,16 @@ const AlbumDetail = ({ albums }) => {
           <h2 className="album-artist">{artist?.username}</h2>
           <p className="album-description">{album?.description}</p>
         </div>
-      </div>
-      <div className="album-song-list-wrapper">
-        <div className="album-song-list-header">
-          <h1>Songs</h1>
+        <div className="album-song-list-wrapper">
+          <div className="album-song-list-header">
+            {albumSongs?.map((song, idx) => (
+              <div className="album-song-list-item" key={idx}>
+                <li key={idx}>
+                  {idx + 1}. {song.title} TESTING
+                </li>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
