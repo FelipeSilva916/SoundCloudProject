@@ -8,6 +8,7 @@ import "./AllAlbums.css";
 const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
   const albums = useSelector((state) => Object.values(state.albums));
+  const users = useSelector((state) => Object.values(state.users));
 
   useEffect(() => {
     dispatch(userActions.fetchUsers());
@@ -28,7 +29,10 @@ const AllAlbumsComponent = () => {
                 className="album-link-text"
                 to={{ pathname: `/albums/${album.id}` }}
               >
-                <p>{album.title}</p>
+                <p>
+                  {album.title} -{" "}
+                  {users.find((user) => user.id === album.userId).username}
+                </p>
               </Link>
             </div>
           </li>
