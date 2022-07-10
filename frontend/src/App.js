@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation";
 import AllSongs from "./components/AllSongs";
 import SongDetail from "./components/SongDetail";
 import AllAlbumsComponent from "./components/AllAlbums";
-import AlbumDetailComponent from "./components/AlbumDetail";
+import AlbumDetailComponent from "./components/AlbumDetailComponent";
 //
 //
 
