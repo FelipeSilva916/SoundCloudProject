@@ -15,6 +15,9 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  const songs = Object.values(useSelector((state) => state.songs));
+  const albums = Object.values(useSelector((state) => state.albums));
+
   return (
     <>
       <Navigation isLoaded={isLoaded} />
