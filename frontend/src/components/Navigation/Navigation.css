@@ -120,14 +120,12 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 10px 10px;
 }
 
 .banner-container {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  background-image: url(../../images/caught-in-joy-ptVBlniJi50-unsplash.jpg);
+  background-color: #000000;
   background-size: cover;
-  height: 100vh;
   background-attachment: fixed;
 }
 
@@ -188,21 +186,14 @@
   padding: 10px;
   border-radius: 10px;
 }
-
-.banner-container-welcome {
-  background-size: cover;
-  width: 100%;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-}
-
+/*
 .welcome-comp {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
 
   height: 100vh;
   background-size: auto 100%;
-}
+} */
 
 /* html,
 body {

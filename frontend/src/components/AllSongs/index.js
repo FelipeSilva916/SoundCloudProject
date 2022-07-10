@@ -52,6 +52,7 @@ const AllSongs = () => {
               to={{ pathname: `/songs/${song.id}` }}
             >
               <p>{song.title}</p>
+              <p>{song?.Artist?.username}</p>
             </Link>
           </li>
         ))}

@@ -2,6 +2,9 @@
   padding: 60px 10px 120px;
   display: flex;
   justify-content: center;
+  background-image: url(../../images/caught-in-joy-ptVBlniJi50-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .all-songs-wrapper > div {
@@ -14,6 +17,8 @@
 .song-card {
   width: 300px;
   margin: 5px 10px 15px 10px;
+  background-color: white;
+  padding: 10px;
 }
 
 .song-card p {

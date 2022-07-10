@@ -14,29 +14,32 @@ import UploadSongModal from "../UploadSongModal";
 import SongDetails from "../SongDetail";
 import SearchBar from "../SearchBar";
 import Player from "../Player";
+import AllSongs from "../AllSongs";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <>
-        <div className="banner-container">
-          <nav className="logged-in-nav">
-            <div className="logged-in-banner">
-              <HomeButton />
-              <SongsButton />
-              <AlbumsButton />
-              <SearchBar />
-              <UploadSongModal />
-              <ProfileButton user={sessionUser} />
-            </div>
-          </nav>
+      <div className="whole-page">
+        <div className="background-image">
+          <div className="banner-container">
+            <nav className="logged-in-nav">
+              <div className="logged-in-banner">
+                <HomeButton />
+                <SongsButton />
+                <AlbumsButton />
+                <SearchBar />
+                <UploadSongModal />
+                <ProfileButton user={sessionUser} />
+              </div>
+            </nav>
+          </div>
         </div>
         <footer className="footer">
           <Player />
         </footer>
-      </>
+      </div>
     );
   } else {
     sessionLinks = (
