@@ -65,4 +65,10 @@ router.delete("/logout", (_req, res) => {
   return res.json({ message: "Logout Successful!" });
 });
 //
+
+router.get("/users", async (req, res) => {
+  const users = await User.findAll();
+  return res.json(users);
+});
+
 module.exports = router;
