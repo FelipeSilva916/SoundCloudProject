@@ -29,6 +29,16 @@ const AlbumDetail = ({ albums }) => {
         <div className="image-wrapper">
           <img src={album?.previewImage} alt="album cover" />
         </div>
+        <div className="album-info-wrapper">
+          <h1 className="album-title">{album?.title}</h1>
+          <h2 className="album-artist">{artist?.username}</h2>
+          <p className="album-description">{album?.description}</p>
+        </div>
+      </div>
+      <div className="album-song-list-wrapper">
+        <div className="album-song-list-header">
+          <h1>Songs</h1>
+        </div>
       </div>
     </div>
   );
