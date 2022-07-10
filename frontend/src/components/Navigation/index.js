@@ -22,19 +22,17 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <div className="whole-page">
-        <div className="background-image">
-          <div className="banner-container">
-            <nav className="logged-in-nav">
-              <div className="logged-in-banner">
-                <HomeButton />
-                <SongsButton />
-                <AlbumsButton />
-                <SearchBar />
-                <UploadSongModal />
-                <ProfileButton user={sessionUser} />
-              </div>
-            </nav>
-          </div>
+        <div className="banner-container">
+          <nav className="logged-in-nav">
+            <div className="logged-in-banner">
+              <HomeButton />
+              <SongsButton />
+              <AlbumsButton />
+              <SearchBar />
+              <UploadSongModal />
+              <ProfileButton user={sessionUser} />
+            </div>
+          </nav>
         </div>
         <footer className="footer">
           <Player />

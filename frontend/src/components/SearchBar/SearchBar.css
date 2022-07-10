@@ -64,6 +64,7 @@ search-bar-container {
   transition: all 200ms;
   max-width: 200px;
   color: black;
+  z-index: 1;
 }
 
 .results-active {
