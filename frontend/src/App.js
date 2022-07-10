@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import AllSongs from "./components/AllSongs";
 import SongDetail from "./components/SongDetail";
 import AllAlbumsComponent from "./components/AllAlbums";
+import AlbumDetailComponent from "./components/AlbumDetail";
 //
 //
 
@@ -27,11 +28,17 @@ function App() {
           <Route exact path="/songs">
             <AllSongs />
           </Route>
+
           <Route exact path="/songs/:songId">
             <SongDetail />
           </Route>
+
           <Route exact path="/albums">
             <AllAlbumsComponent />
+          </Route>
+
+          <Route exact path="/albums/:albumId">
+            <AlbumDetailComponent albums={albums} />
           </Route>
         </Switch>
       )}
