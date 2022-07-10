@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as albumActions from "../../store/albums";
+import * as userActions from "../../store/users";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./AllAlbums.css";
@@ -7,10 +8,11 @@ import "./AllAlbums.css";
 const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
   const albums = useSelector((state) => Object.values(state.albums));
-  const [currentAlbum, setCurrentAlbum] = useState(null);
-  console.log(albums);
+  // const [currentAlbum, setCurrentAlbum] = useState(null);
+  // console.log(albums);
 
   useEffect(() => {
+    dispatch(userActions.fetchUsers());
     dispatch(albumActions.loadAlbums());
   }, [dispatch]);
 

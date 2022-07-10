@@ -2,19 +2,20 @@ import { csrfFetch } from "./csrf";
 
 const ALL_USERS = "users/getAllUsers";
 
-export const getAllUsers = (users) => {
+const load = (list) => {
   return {
     type: ALL_USERS,
-    users
+    list
   };
 };
 
 export const fetchUsers = () => async (dispatch) => {
-  const result = await csrfFetch("/api/users");
+  const result = await csrfFetch("/users");
+  console.log(result);
 
   if (result.ok) {
     const users = await result.json();
-    dispatch(getAllUsers(users));
+    dispatch(load(users));
   }
 };
 
@@ -22,7 +23,7 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case ALL_USERS:
       let userState = { ...state };
-      action.payload.forEach((user) => {
+      action.list.forEach((user) => {
         userState[user.id] = user;
       });
       return userState;
