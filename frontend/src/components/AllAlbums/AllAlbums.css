@@ -13,6 +13,10 @@
 .album-card {
   width: 300px;
   margin: 5px 10px 15px 10px;
+  background-color: transparent;
+  border: 3px solid #fff;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .album-card p {
@@ -24,7 +28,7 @@
   padding: 3px;
   font-weight: 700;
   border: black 1px solid;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.76);
   border-radius: 6px;
 }
 

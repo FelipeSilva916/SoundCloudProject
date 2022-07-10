@@ -17,6 +17,7 @@
   background-color: transparent;
   border: 3px solid #fff;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .song-card p {
@@ -27,7 +28,7 @@
   justify-content: center;
   padding: 3px;
   font-weight: 700;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.76);
   border-radius: 6px;
 }
 
