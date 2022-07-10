@@ -8,8 +8,6 @@ import "./AllAlbums.css";
 const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
   const albums = useSelector((state) => Object.values(state.albums));
-  // const [currentAlbum, setCurrentAlbum] = useState(null);
-  // console.log(albums);
 
   useEffect(() => {
     dispatch(userActions.fetchUsers());
