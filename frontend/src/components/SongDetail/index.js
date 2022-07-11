@@ -9,6 +9,7 @@ import "./SongDetail.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import Player from "../Player";
+import H5AudioPlayer from "react-h5-audio-player";
 
 const SongDetails = () => {
   const { songId } = useParams();
@@ -60,10 +61,15 @@ const SongDetails = () => {
             <h1>Title: {song?.title}</h1>
             <h2>Artist: {song?.Artist?.username}</h2>
             <p>Description: {song?.description}</p>
+
             <div className="footer-container">
               <div className="song-detail-footer">{userManipulateButton}</div>
             </div>
           </div>
+        </div>
+
+        <div className="footer-player">
+          <H5AudioPlayer src={song?.url} />
         </div>
       </div>
     </>

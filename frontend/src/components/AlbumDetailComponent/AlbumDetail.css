@@ -9,10 +9,6 @@
   background-color: transparent;
 }
 
-.album-detail-body-left {
-  /* background-color: aqua; */
-}
-
 .album-detail-body-right {
   display: flex;
   flex-direction: column;
@@ -55,6 +51,17 @@
   border: 1px solid black;
 }
 
+.album-song-list-item:hover {
+  color: black;
+  background-color: #ffffff;
+  transform: scale(1.1);
+  cursor: pointer;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+
 .album-song-list-header {
   flex-wrap: wrap;
   display: flex;
@@ -73,8 +80,10 @@
 
 .fa-circle-play {
   font-size: 3em;
+  color: white;
 }
 
 .fa-solid {
-  /* background-color: transparent; */
+  background-color: transparent;
+  border: none;
 }

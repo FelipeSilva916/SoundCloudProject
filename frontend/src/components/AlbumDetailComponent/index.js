@@ -41,7 +41,14 @@ const AlbumDetail = ({ albums }) => {
         <div className="album-detail-body-right">
           <div className="album-song-list-header">
             {albumSongs?.map((song, idx) => (
-              <div className="album-song-list-item" key={idx}>
+              <div
+                className="album-song-list-item"
+                key={idx}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setUrl(song.url);
+                }}
+              >
                 <li key={idx}>
                   {idx + 1}. {song.title}
                 </li>
