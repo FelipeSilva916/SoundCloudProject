@@ -34,9 +34,12 @@ function Navigation({ isLoaded }) {
             </div>
           </nav>
         </div>
-        <footer className="footer">
+        {/* <div className="footer-player">
           <Player />
-        </footer>
+        </div> */}
+        {/* <footer className="footer">
+          <Player />
+        </footer> */}
       </div>
     );
   } else {
