@@ -20,7 +20,7 @@ const AlbumDetail = ({ albums }) => {
   const [currentSongUrl, setCurrentSongUrl] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  console.log(currentUser.id);
+  console.log(artist);
 
   useEffect(() => {
     dispatch(albumActions?.loadAlbums());
@@ -30,7 +30,7 @@ const AlbumDetail = ({ albums }) => {
 
   let userManipulateButton;
 
-  if (albums?.userId === currentUser?.id) {
+  if (album?.userId === currentUser?.id) {
     userManipulateButton = (
       <div className="user-buttons">
         <div className="user-delete-button">
