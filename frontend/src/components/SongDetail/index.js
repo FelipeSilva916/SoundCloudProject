@@ -66,7 +66,6 @@ const SongDetails = () => {
           </div>
         </div>
       </div>
-      {/* <Player /> */}
     </>
   );
 };

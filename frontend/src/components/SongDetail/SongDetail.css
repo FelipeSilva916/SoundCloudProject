@@ -1,7 +1,7 @@
 .song-detail-container-div {
   display: flex;
   justify-content: space-around;
-  padding: 70px;
+  padding: 40px;
 }
 
 .song-detail-body {
@@ -15,8 +15,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 6px;
-  height: 18rem;
-  width: 18rem;
+  height: 25em;
+  width: 25em;
 }
 
 .play-button {
@@ -48,8 +48,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.807);
+  border-radius: 10px;
 }
 .song-detail-container {
   background-color: transparent;
@@ -112,4 +114,9 @@
 
 .footer-container {
   width: 300px;
+}
+
+.song-detail-body-right,
+.song-detail-container-div {
+  line-height: 1.5;
 }
