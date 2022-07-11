@@ -11,7 +11,6 @@ const load = (list) => {
 
 export const fetchUsers = () => async (dispatch) => {
   const result = await csrfFetch("/users");
-  console.log(result);
 
   if (result.ok) {
     const users = await result.json();
