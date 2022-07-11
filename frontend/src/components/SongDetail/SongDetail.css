@@ -1,6 +1,7 @@
 .song-detail-container-div {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
 }
 

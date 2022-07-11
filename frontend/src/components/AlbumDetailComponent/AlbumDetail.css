@@ -1,0 +1,58 @@
+.album-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(17, 255, 0, 0.807);
+  border-radius: 10px;
+}
+
+.album-detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.footer-player {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: rgba(128, 0, 255, 0.807);
+  border-radius: 10px;
+}
+
+.image-wrapper img {
+  width: 30%;
+  height: 30%;
+  border-radius: 10px;
+}
+.album-info-wrapper {
+  max-width: 400em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 0, 230, 0.807);
+  border-radius: 10px;
+}
+
+.album-song-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 208, 0, 0.807);
+  border-radius: 10px;
+  max-width: 20em;
+}

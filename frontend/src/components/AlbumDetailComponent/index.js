@@ -27,14 +27,16 @@ const AlbumDetail = ({ albums }) => {
 
   return (
     <div className="album-detail-wrapper">
-      <div className="album-detail-img-wrapper">
-        <div className="image-wrapper">
-          <img src={album?.previewImage} alt="album cover" />
-        </div>
-        <div className="album-info-wrapper">
-          <h1 className="album-title">{album?.title}</h1>
-          <h2 className="album-artist">{artist?.username}</h2>
-          <p className="album-description">{album?.description}</p>
+      <div className="album-detail-container">
+        <div className="album-detail-img-wrapper">
+          <div className="image-wrapper">
+            <img src={album?.previewImage} alt="album cover" />
+          </div>
+          <div className="album-info-wrapper">
+            <h1 className="album-title">{album?.title}</h1>
+            <h2 className="album-artist">{artist?.username}</h2>
+            <p className="album-description">{album?.description}</p>
+          </div>
         </div>
         <div className="album-song-list-wrapper">
           <div className="album-song-list-header">
@@ -53,10 +55,10 @@ const AlbumDetail = ({ albums }) => {
               </div>
             ))}
           </div>
-          <div className="footer-player">
-            <H5AudioPlayer src={url} autoPlay={false} />
-          </div>
         </div>
+      </div>
+      <div className="footer-player">
+        <H5AudioPlayer src={url} autoPlay={false} />
       </div>
     </div>
   );
