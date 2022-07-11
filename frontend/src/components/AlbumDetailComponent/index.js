@@ -5,6 +5,7 @@ import * as albumActions from "../../store/albums";
 import * as songActions from "../../store/song";
 import * as userActions from "../../store/users";
 import H5AudioPlayer from "react-h5-audio-player";
+import "./AlbumDetail.css";
 
 const AlbumDetail = ({ albums }) => {
   const { albumId } = useParams();
