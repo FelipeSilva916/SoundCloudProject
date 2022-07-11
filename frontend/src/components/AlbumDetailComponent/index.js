@@ -12,6 +12,7 @@ const AlbumDetail = ({ albums }) => {
   const dispatch = useDispatch();
   const users = Object.values(useSelector((state) => state.users));
   const songs = Object.values(useSelector((state) => state.songs));
+  const currentUser = useSelector((state) => state.session.user);
   const [url, setUrl] = useState("");
   const albumSongs = songs?.filter((song) => song.albumId === +albumId);
   const album = albums?.find((album) => album.id === +albumId);
@@ -19,7 +20,7 @@ const AlbumDetail = ({ albums }) => {
   const [currentSongUrl, setCurrentSongUrl] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  console.log(albums.userId);
+  console.log(currentUser.id);
 
   useEffect(() => {
     dispatch(albumActions?.loadAlbums());
@@ -29,7 +30,7 @@ const AlbumDetail = ({ albums }) => {
 
   let userManipulateButton;
 
-  if (albums?.userId === users?.id) {
+  if (albums?.userId === currentUser?.id) {
     userManipulateButton = (
       <div className="user-buttons">
         <div className="user-delete-button">
@@ -79,7 +80,7 @@ const AlbumDetail = ({ albums }) => {
               </div>
             ))}
           </div>
-          <div>{userManipulateButton}</div>
+          <div>{userManipulateButton} Test</div>
         </div>
       </div>
       <div className="footer-player">
