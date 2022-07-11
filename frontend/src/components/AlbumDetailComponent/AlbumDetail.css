@@ -1,58 +1,80 @@
-.album-detail-wrapper {
+.album-detail-container-div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: rgba(17, 255, 0, 0.807);
-  border-radius: 10px;
+  padding: 3em;
 }
 
 .album-detail-container {
+  background-color: transparent;
+}
+
+.album-detail-body-left {
+  /* background-color: aqua; */
+}
+
+.album-detail-body-right {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.807);
+  border-radius: 10px;
+}
+
+.album-preview-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  height: 25em;
+  width: 25em;
+}
+
+.album-preview-image img {
+  width: 20em;
+}
+
+.album-detail-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background-color: black;
-  flex-direction: column;
-  /* justify-content: space-between; */
-}
-
-.footer-player {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  z-index: 1;
-}
-
-.image-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  background-color: rgba(128, 0, 255, 0.807);
+  margin: 5em 3em;
+  background-color: rgba(255, 255, 255, 0.828);
   border-radius: 10px;
+  line-height: 1.4;
 }
 
-.image-wrapper img {
-  width: 30%;
-  height: 30%;
-  border-radius: 10px;
-}
-.album-info-wrapper {
-  max-width: 400em;
-  display: flex;
-  flex-direction: column;
+.album-song-list-item {
   align-items: center;
-  width: 100%;
-  background-color: rgba(255, 0, 230, 0.807);
-  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+  border: 1px solid black;
 }
 
-.album-song-list-wrapper {
+.album-song-list-header {
+  flex-wrap: wrap;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 208, 0, 0.807);
-  border-radius: 10px;
-  max-width: 20em;
+  color: white;
+  border: 1px solid black;
+  width: 18em;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    140deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 60%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+.fa-circle-play {
+  font-size: 3em;
+}
+
+.fa-solid {
+  /* background-color: transparent; */
 }

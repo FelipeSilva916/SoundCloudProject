@@ -26,10 +26,10 @@ const AlbumDetail = ({ albums }) => {
   }, [dispatch]);
 
   return (
-    <div className="album-detail-wrapper">
-      <div className="album-detail-container">
-        <div className="album-detail-img-wrapper">
-          <div className="image-wrapper">
+    <div className="album-detail-container">
+      <div className="album-detail-body-left album-detail-container-div">
+        <div className="album-detail-img-wrapper album-detail-container-div">
+          <div className="album-preview-image album-detail-container-div">
             <img src={album?.previewImage} alt="album cover" />
           </div>
           <div className="album-info-wrapper">
@@ -38,12 +38,12 @@ const AlbumDetail = ({ albums }) => {
             <p className="album-description">{album?.description}</p>
           </div>
         </div>
-        <div className="album-song-list-wrapper">
+        <div className="album-detail-body-right">
           <div className="album-song-list-header">
             {albumSongs?.map((song, idx) => (
               <div className="album-song-list-item" key={idx}>
                 <li key={idx}>
-                  {idx + 1}. {song.title} TESTING
+                  {idx + 1}. {song.title}
                 </li>
                 <button
                   className="fa-solid fa-circle-play"
