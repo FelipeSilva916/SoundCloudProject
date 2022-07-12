@@ -67,10 +67,6 @@ const SongDetails = () => {
             </div>
           </div>
         </div>
-
-        <div className="footer-player">
-          <H5AudioPlayer src={song?.url} />
-        </div>
       </div>
     </>
   );

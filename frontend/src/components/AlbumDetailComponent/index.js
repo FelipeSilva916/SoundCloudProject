@@ -7,6 +7,7 @@ import * as userActions from "../../store/users";
 import { playSong } from "../../store/player";
 import "./AlbumDetail.css";
 import DeleteAlbumButton from "../DeleteAlbumButton";
+import EditAlbumModal from "../EditAlbumModal";
 
 const AlbumDetail = ({ albums }) => {
   const { albumId } = useParams();
@@ -41,7 +42,7 @@ const AlbumDetail = ({ albums }) => {
           <DeleteAlbumButton albumId={albumId} />
         </div>
         <div className="user-edit-button">
-          <button>Edit Album</button>
+          <EditAlbumModal album={albumId} />
         </div>
       </div>
     );

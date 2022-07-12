@@ -1,17 +1,17 @@
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editAlbum } from "../../store/albums";
 
-const editAlbumForm = ({ setShowModal }) => {
-  const { songId } = useParams();
+const EditAlbumForm = ({ setShowModal }) => {
+  const { albumId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
-  const userId = sessionUser.id;
-  const song = useSelector((state) => state.songs[`${songId}`]);
-  const [title, setTitle] = useState(song.title);
-  const [previewImage, setPreviewImage] = useState(song.previewImage);
-  const [description, setDescription] = useState(song.description);
+  const album = useSelector((state) => state.albums[`${albumId}`]);
+  const [title, setTitle] = useState(album.title);
+  const [previewImage, setPreviewImage] = useState(album.previewImage);
+  const [description, setDescription] = useState(album.description);
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = async (e) => {
@@ -21,7 +21,7 @@ const editAlbumForm = ({ setShowModal }) => {
 
     await dispatch(
       editAlbum({
-        id: album.id,
+        id: albumId,
         title,
         previewImage,
         description
@@ -74,9 +74,9 @@ const editAlbumForm = ({ setShowModal }) => {
             <input
               className="edit-input"
               type="text"
-              id="url"
-              name="url"
-              value={url}
+              id="description"
+              name="description"
+              value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
@@ -90,3 +90,5 @@ const editAlbumForm = ({ setShowModal }) => {
     </div>
   );
 };
+
+export default EditAlbumForm;

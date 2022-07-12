@@ -31,7 +31,7 @@ const AllAlbumsComponent = () => {
               >
                 <p>
                   {album.title} -{" "}
-                  {users.find((user) => user.id === album.userId).username}
+                  {users?.find((user) => user.id === album.userId)?.username}
                 </p>
               </Link>
             </div>

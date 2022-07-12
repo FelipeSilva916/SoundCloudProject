@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import EditAlbumModal from "./EditAlbumModal";
+import EditAlbumForm from "./EditAlbumForm";
 
 const EditAlbumModal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -10,7 +10,7 @@ const EditAlbumModal = () => {
       <button onClick={() => setShowModal(true)}>EDIT</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditAlbumModal setShowModal={setShowModal} />
+          <EditAlbumForm setShowModal={setShowModal} />
         </Modal>
       )}
     </>
