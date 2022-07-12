@@ -44,16 +44,16 @@ const AlbumDetail = ({ albums }) => {
 
   return (
     <div className="album-detail-container">
-      <div className="album-detail-body-left album-detail-container-div">
-        <div className="album-detail-img-wrapper album-detail-container-div">
-          <div className="album-preview-image album-detail-container-div">
+      <div className="album-detail-body-left">
+        <div className="album-detail-img-wrapper ">
+          <div className="album-preview-image ">
             <img src={album?.previewImage} alt="album cover" />
           </div>
-          <div className="album-info-wrapper">
-            <h1 className="album-title">{album?.title}</h1>
-            <h2 className="album-artist">{artist?.username}</h2>
-            <p className="album-description">{album?.description}</p>
-          </div>
+        </div>
+        <div className="album-info-wrapper">
+          <h1 className="album-title">{album?.title}</h1>
+          <h2 className="album-artist">{artist?.username}</h2>
+          <p className="album-description">{album?.description}</p>
         </div>
         <div className="album-detail-body-right">
           <div className="album-song-list-header">
@@ -79,7 +79,7 @@ const AlbumDetail = ({ albums }) => {
               </div>
             ))}
           </div>
-          <div>{userManipulateButton} Test</div>
+          <div>{userManipulateButton}</div>
         </div>
       </div>
       <div className="footer-player">
