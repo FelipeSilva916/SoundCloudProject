@@ -1,11 +1,19 @@
 import React from "react";
+import { Modal } from "../../context/Modal";
 import EditAlbumModal from "./EditAlbumModal";
 
 const EditAlbumModal = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <div>
-      <h1>Edit Album</h1>
-    </div>
+    <>
+      <button onClick={() => setShowModal(true)}>EDIT</button>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <EditAlbumModal setShowModal={setShowModal} />
+        </Modal>
+      )}
+    </>
   );
 };
 
