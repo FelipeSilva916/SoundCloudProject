@@ -11,12 +11,12 @@ const artistRouter = require("./api/artist");
 const userRouter = require("./api/users");
 //
 // router.use(apiRouter); //keep
-router.use("/albums", albumRouter);
-router.use("/songs", songRouter);
-router.use("/comments", commentRouter);
-router.use("/playlists", playlistsRouter);
-router.use("/my", myRouter);
-router.use("/artists", artistRouter);
+router.use("/api/albums", albumRouter);
+router.use("/api/songs", songRouter);
+router.use("/api/comments", commentRouter);
+router.use("/api/playlists", playlistsRouter);
+router.use("/api/my", myRouter);
+router.use("/api/artists", artistRouter);
 router.use(userRouter);
 
 // Static routes

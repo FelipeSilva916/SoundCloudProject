@@ -10,7 +10,7 @@ const load = (list) => {
 };
 
 export const fetchUsers = () => async (dispatch) => {
-  const result = await csrfFetch("/users");
+  const result = await csrfFetch("/api/users");
 
   if (result.ok) {
     const users = await result.json();
