@@ -4,6 +4,7 @@ export const LOAD_ALBUMS = "albums/loadAlbums";
 export const SINGLE_ALBUM = "albums/singleAlbum";
 export const DELETE_ALBUM = "albums/deleteAlbum";
 export const UPDATE_ALBUM = "albums/updateAlbum";
+export const CREATE_ALBUM = "albums/createSong";
 
 // =========================================//
 
@@ -34,6 +35,12 @@ const updateAlbum = (album) => {
     album
   };
 };
+
+const addAlbum = (album) => ({
+  type: CREATE_ALBUM,
+  album
+});
+
 //==========================================//
 
 export const loadAlbums = () => async (dispatch) => {
@@ -77,6 +84,22 @@ export const editAlbum = (album) => async (dispatch) => {
     dispatch(updateAlbum(newAlbum));
   }
 };
+
+export const createAlbum = (data) => async (dispatch) => {
+  const res = await csrfFetch("/api/albums", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+  if (res.ok) {
+    const album = await res.json();
+    dispatch(createAlbum(album));
+    return album;
+  }
+};
+
 //=======================================//
 
 let newState = {};
@@ -109,6 +132,11 @@ const albumsReducer = (state = {}, action) => {
       };
     }
 
+    case CREATE_ALBUM:
+      return {
+        ...state,
+        [action.album.id]: action.album
+      };
     default:
       return state;
   }

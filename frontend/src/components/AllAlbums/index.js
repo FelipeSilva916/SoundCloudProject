@@ -4,6 +4,7 @@ import * as userActions from "../../store/users";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./AllAlbums.css";
+import UploadAlbumModal from "../UploadAlbumModal";
 
 const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
@@ -37,6 +38,9 @@ const AllAlbumsComponent = () => {
             </div>
           </li>
         ))}
+      </div>
+      <div>
+        <UploadAlbumModal />
       </div>
     </div>
   );
