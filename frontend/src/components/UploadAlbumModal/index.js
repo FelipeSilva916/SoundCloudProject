@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { Modal } from "../../context/Modal";
+import UploadAlbumForm from "./UploadAlbum";
 
 const UploadAlbumModal = () => {
+  const [showModal, setShowModal] = useState();
   return (
-    <div>
-      <button>Create Album</button>
-    </div>
+    <>
+      <button onClick={() => setShowModal(true)}> Create Album</button>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <UploadAlbumForm setShowModal={setShowModal} />
+        </Modal>
+      )}
+    </>
   );
 };
 
