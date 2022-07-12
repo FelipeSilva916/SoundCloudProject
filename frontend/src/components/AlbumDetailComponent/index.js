@@ -6,6 +6,7 @@ import * as songActions from "../../store/song";
 import * as userActions from "../../store/users";
 import H5AudioPlayer from "react-h5-audio-player";
 import "./AlbumDetail.css";
+import DeleteAlbumButton from "../DeleteAlbumButton";
 
 const AlbumDetail = ({ albums }) => {
   const { albumId } = useParams();
@@ -34,7 +35,7 @@ const AlbumDetail = ({ albums }) => {
     userManipulateButton = (
       <div className="user-buttons">
         <div className="user-delete-button">
-          <button>Delete album</button>
+          <DeleteAlbumButton albumId={albumId} />
         </div>
         <div className="user-edit-button">
           <button>Edit Album</button>

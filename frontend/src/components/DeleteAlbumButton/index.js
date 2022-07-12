@@ -12,7 +12,11 @@ const DeleteAlbumButton = ({ albumId }) => {
     dispatch(deleteAlbum(albumId));
     history.push("/albums");
   };
-  return <div></div>;
+  return (
+    <div>
+      <button onClick={() => handleDelete(albumId)}>Delete</button>
+    </div>
+  );
 };
 
 export default DeleteAlbumButton;
