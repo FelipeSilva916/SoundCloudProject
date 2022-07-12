@@ -1,19 +1,14 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getSong } from "../../store/song";
-import { playSong } from "../../store/player";
+// import { playSong } from "../../store/player";
 import DeleteSongButton from "../DeleteSongButton";
 import EditSongModal from "../EditSongModal";
 import "./SongDetail.css";
-import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
-import Player from "../Player";
-import H5AudioPlayer from "react-h5-audio-player";
 
 const SongDetails = () => {
   const { songId } = useParams();
-  const history = useHistory();
   const dispatch = useDispatch();
   const songObject = useSelector((state) => state.songs);
   const user = useSelector((state) => state.session.user);
@@ -24,12 +19,12 @@ const SongDetails = () => {
 
   const song = songObject[songId];
 
-  const playSongBtn = useCallback(
-    (song) => {
-      dispatch(playSong(song));
-    },
-    [dispatch]
-  );
+  // const playSongBtn = useCallback(
+  //   (song) => {
+  //     dispatch(playSong(song));
+  //   },
+  //   [dispatch]
+  // );
 
   let userManipulateButton;
 

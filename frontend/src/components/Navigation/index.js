@@ -6,15 +6,11 @@ import SignupFormModal from "../SignupFormModal";
 import "./Navigation.css";
 import HomeButton from "./HomeButton";
 import AlbumsButton from "./AlbumsButton";
-// import SearchBar from "./SearchBar";
 import SongsButton from "./SongsButton";
-import Welcome from "./Welcome";
 import "react-h5-audio-player/lib/styles.css";
 import UploadSongModal from "../UploadSongModal";
-import SongDetails from "../SongDetail";
 import SearchBar from "../SearchBar";
 import Player from "../Player";
-import AllSongs from "../AllSongs";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);

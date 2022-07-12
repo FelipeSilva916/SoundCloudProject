@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import * as albumActions from "../../store/albums";
 import * as userActions from "../../store/users";
 import { useDispatch, useSelector } from "react-redux";

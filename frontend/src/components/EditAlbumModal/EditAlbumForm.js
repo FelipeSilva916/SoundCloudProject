@@ -7,7 +7,6 @@ const EditAlbumForm = ({ setShowModal }) => {
   const { albumId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
-  const sessionUser = useSelector((state) => state.session.user);
   const album = useSelector((state) => state.albums[`${albumId}`]);
   const [title, setTitle] = useState(album.title);
   const [previewImage, setPreviewImage] = useState(album.previewImage);
