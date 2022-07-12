@@ -44,4 +44,10 @@
   border-radius: 8px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.media-player {
+  text-align: center;
 }

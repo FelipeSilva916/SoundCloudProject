@@ -34,6 +34,9 @@ function Navigation({ isLoaded }) {
             </div>
           </nav>
         </div>
+        <div className="footer-player">
+          <Player />
+        </div>
       </div>
     );
   } else {

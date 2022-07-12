@@ -57,9 +57,6 @@ const AllSongs = () => {
           </li>
         ))}
       </div>
-      <div className="footer-player">
-        <H5AudioPlayer src={currentSong} />
-      </div>
     </div>
   );
 };
