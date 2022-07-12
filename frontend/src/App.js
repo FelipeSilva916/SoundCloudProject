@@ -7,6 +7,7 @@ import AllSongs from "./components/AllSongs";
 import SongDetail from "./components/SongDetail";
 import AllAlbumsComponent from "./components/AllAlbums";
 import AlbumDetailComponent from "./components/AlbumDetailComponent";
+import Welcome from "./components/Navigation/Welcome";
 //
 //
 
@@ -25,6 +26,10 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/">
+            <Welcome />
+          </Route>
+
           <Route exact path="/songs">
             <AllSongs />
           </Route>

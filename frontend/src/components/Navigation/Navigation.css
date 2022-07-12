@@ -1,6 +1,6 @@
 .top-splash {
   background-color: transparent;
-  padding: 0 10px;
+  padding: 0 2em;
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -121,12 +121,6 @@
   align-items: center;
   width: 100%;
   padding: 10px 10px;
-}
-
-.banner-container {
-  background-color: transparent;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .nav-right {
