@@ -9,7 +9,7 @@ const HomeButton = () => {
   };
   return (
     <NavLink exact to="/" onClick={handleClick}>
-      <i class="fa-solid fa-house-chimney"></i>
+      <i className="fa-solid fa-house-chimney"></i>
     </NavLink>
   );
 };

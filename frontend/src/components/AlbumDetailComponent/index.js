@@ -82,9 +82,6 @@ const AlbumDetail = ({ albums }) => {
           <div>{userManipulateButton}</div>
         </div>
       </div>
-      <div className="footer-player">
-        <H5AudioPlayer src={url} autoPlay={false} />
-      </div>
     </div>
   );
 };

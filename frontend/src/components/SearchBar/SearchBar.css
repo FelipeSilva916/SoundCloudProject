@@ -16,9 +16,6 @@
   padding: 0;
   width: 100%;
 }
-.search-bar {
-  background-color: aqua;
-}
 
 .search-bar-form input {
   border: 1px solid #000;

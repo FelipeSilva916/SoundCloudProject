@@ -206,10 +206,6 @@
   justify-content: center;
 }
 
-.welcome-upload-btn {
-  background-color: aqua;
-}
-
 .logged-in-banner a,
 .logged-in-banner button {
   color: white;
@@ -244,6 +240,5 @@ html {
 
 .search-bar-container {
   align-items: center;
-  background-color: chartreuse;
   width: 20em;
 }
