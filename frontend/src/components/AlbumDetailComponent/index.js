@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as albumActions from "../../store/albums";
 import * as songActions from "../../store/song";
 import * as userActions from "../../store/users";
-import H5AudioPlayer from "react-h5-audio-player";
+import { playSong } from "../../store/player";
 import "./AlbumDetail.css";
 import DeleteAlbumButton from "../DeleteAlbumButton";
 
@@ -19,13 +19,18 @@ const AlbumDetail = ({ albums }) => {
   const album = albums?.find((album) => album.id === +albumId);
   const artist = users?.find((user) => album?.userId === user.id);
 
-  console.log(artist);
-
   useEffect(() => {
     dispatch(albumActions?.loadAlbums());
     dispatch(songActions?.getAllSongs());
     dispatch(userActions?.fetchUsers());
   }, [dispatch]);
+
+  const playSongButton = useCallback(
+    (song) => {
+      dispatch(playSong(song));
+    },
+    [dispatch]
+  );
 
   let userManipulateButton;
 
@@ -73,7 +78,7 @@ const AlbumDetail = ({ albums }) => {
                   className="fa-solid fa-circle-play"
                   onClick={(e) => {
                     e.preventDefault();
-                    setUrl(song.url);
+                    playSongButton(song);
                   }}
                 ></button>
               </div>
