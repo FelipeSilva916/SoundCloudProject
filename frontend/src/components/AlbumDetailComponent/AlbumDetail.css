@@ -10,7 +10,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 11rem;
+  margin: 0 5em;
   margin-top: 7rem;
 }
 
@@ -98,7 +98,6 @@
   justify-content: space-around;
   border-radius: 10px;
   padding: 1em;
-  margin-bottom: 4rem;
 }
 
 .album-info-wrapper {
@@ -118,7 +117,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-top: 1em;
 }
 
 .user-delete-button {
@@ -144,4 +142,11 @@
 
 .user-edit-button {
   margin: 1em 2em;
+}
+
+.album-detail-page-content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }

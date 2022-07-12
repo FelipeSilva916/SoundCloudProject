@@ -48,43 +48,45 @@ const AlbumDetail = ({ albums }) => {
   }
 
   return (
-    <div className="album-detail-container">
-      <div className="album-detail-body-left">
-        <div className="album-detail-img-wrapper ">
-          <div className="album-preview-image ">
-            <img src={album?.previewImage} alt="album cover" />
+    <div className="album-detail-page-content">
+      <div className="album-detail-container">
+        <div className="album-detail-body-left">
+          <div className="album-detail-img-wrapper ">
+            <div className="album-preview-image ">
+              <img src={album?.previewImage} alt="album cover" />
+            </div>
+          </div>
+          <div className="album-info-wrapper">
+            <h1 className="album-title">{album?.title}</h1>
+            <h2 className="album-artist">{artist?.username}</h2>
+            <p className="album-description">{album?.description}</p>
           </div>
         </div>
-        <div className="album-info-wrapper">
-          <h1 className="album-title">{album?.title}</h1>
-          <h2 className="album-artist">{artist?.username}</h2>
-          <p className="album-description">{album?.description}</p>
-        </div>
-        <div className="album-detail-body-right">
-          <div className="album-song-list-header">
-            {albumSongs?.map((song, idx) => (
-              <div
-                className="album-song-list-item"
-                key={idx}
-                onClick={() => {
+      </div>
+      <div className="album-detail-body-right">
+        <div className="album-song-list-header">
+          {albumSongs?.map((song, idx) => (
+            <div
+              className="album-song-list-item"
+              key={idx}
+              onClick={() => {
+                playSongButton(song);
+              }}
+            >
+              <li key={idx}>
+                {idx + 1}. {song.title}
+              </li>
+              <button
+                className="fa-solid fa-circle-play"
+                onClick={(e) => {
+                  e.preventDefault();
                   playSongButton(song);
                 }}
-              >
-                <li key={idx}>
-                  {idx + 1}. {song.title}
-                </li>
-                <button
-                  className="fa-solid fa-circle-play"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    playSongButton(song);
-                  }}
-                ></button>
-              </div>
-            ))}
-          </div>
-          <div>{userManipulateButton}</div>
+              ></button>
+            </div>
+          ))}
         </div>
+        <div>{userManipulateButton}</div>
       </div>
     </div>
   );
