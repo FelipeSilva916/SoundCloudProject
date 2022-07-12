@@ -15,7 +15,6 @@ const AlbumDetail = ({ albums }) => {
   const users = Object.values(useSelector((state) => state.users));
   const songs = Object.values(useSelector((state) => state.songs));
   const currentUser = useSelector((state) => state.session.user);
-  const [url, setUrl] = useState("");
   const albumSongs = songs?.filter((song) => song.albumId === +albumId);
   const album = albums?.find((album) => album.id === +albumId);
   const artist = users?.find((user) => album?.userId === user.id);
@@ -67,9 +66,8 @@ const AlbumDetail = ({ albums }) => {
               <div
                 className="album-song-list-item"
                 key={idx}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setUrl(song.url);
+                onClick={() => {
+                  playSongButton(song);
                 }}
               >
                 <li key={idx}>
