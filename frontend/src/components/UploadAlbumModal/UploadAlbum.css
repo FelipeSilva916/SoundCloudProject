@@ -21,3 +21,19 @@
     rgba(252, 176, 69, 1) 100%
   );
 }
+
+.upload-album-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 1.5;
+}
