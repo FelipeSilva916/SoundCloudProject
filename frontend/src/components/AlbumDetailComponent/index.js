@@ -18,8 +18,6 @@ const AlbumDetail = ({ albums }) => {
   const albumSongs = songs?.filter((song) => song.albumId === +albumId);
   const album = albums?.find((album) => album.id === +albumId);
   const artist = users?.find((user) => album?.userId === user.id);
-  const [currentSongUrl, setCurrentSongUrl] = useState(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   console.log(artist);
 
