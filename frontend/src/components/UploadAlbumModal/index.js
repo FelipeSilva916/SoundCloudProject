@@ -3,7 +3,7 @@ import React from "react";
 const UploadAlbumModal = () => {
   return (
     <div>
-      <button>Upload Here</button>
+      <button>Create Album</button>
     </div>
   );
 };
