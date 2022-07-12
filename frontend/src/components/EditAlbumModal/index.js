@@ -9,5 +9,4 @@ const EditAlbumModal = () => {
   );
 };
 
-export default EditAlbumM;
-odal;
+export default EditAlbumModal;
