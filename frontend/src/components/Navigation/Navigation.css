@@ -244,7 +244,6 @@ html {
 
 .search-bar-container {
   align-items: center;
-  position: relative;
   background-color: chartreuse;
   width: 20em;
 }
