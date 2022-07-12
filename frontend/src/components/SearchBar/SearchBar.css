@@ -9,28 +9,23 @@
 .search-result-link > div {
   border-radius: 4px;
   padding: 8px;
-}
-
-search-bar-container {
-  align-items: center;
-  display: flex;
-  flex-grow: 1;
-  max-width: 100%;
-  position: relative;
+  width: 100%;
 }
 
 .search-bar-form {
   padding: 0;
   width: 100%;
 }
+.search-bar {
+  background-color: aqua;
+}
 
 .search-bar-form input {
   border: 1px solid #000;
   border-radius: 4px;
   font-size: 16px;
-  margin-left: 8px;
   outline: none;
-  padding: 4px 32px 4px 8px;
+  padding: 0.4em;
   transition: border 200ms;
   width: 100%;
 }

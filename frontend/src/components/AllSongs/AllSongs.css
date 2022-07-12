@@ -1,5 +1,6 @@
 .all-songs-wrapper {
-  padding: 60px 10px 120px;
+  /* padding: 60px 30px 120px; */
+  padding: 10rem 10rem 10rem;
   display: flex;
   justify-content: center;
 }

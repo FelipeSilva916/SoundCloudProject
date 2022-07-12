@@ -218,7 +218,7 @@
   align-items: center;
   justify-content: center;
   height: 35px;
-  padding: 0 10px;
+  padding: 1rem 2rem;
   border-radius: 5px;
   border: #ffffff 1px solid;
   background-color: transparent;
@@ -240,4 +240,11 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.search-bar-container {
+  align-items: center;
+  position: relative;
+  background-color: chartreuse;
+  width: 20em;
 }
