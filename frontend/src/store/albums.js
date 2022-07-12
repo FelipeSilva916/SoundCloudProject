@@ -95,7 +95,7 @@ export const createAlbum = (data) => async (dispatch) => {
   });
   if (res.ok) {
     const album = await res.json();
-    dispatch(createAlbum(album));
+    dispatch(addAlbum(album));
     return album;
   }
 };

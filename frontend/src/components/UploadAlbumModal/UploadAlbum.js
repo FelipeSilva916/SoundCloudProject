@@ -13,13 +13,11 @@ const UploadAlbumForm = ({ setShowModal }) => {
     "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/defaultLogo.png"
   );
   const [description, setDescription] = useState("");
-  const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
 
   const reset = () => {
     setTitle("");
     setPreviewImage("");
-    setUrl("");
     setDescription("");
   };
 
