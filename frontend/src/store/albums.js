@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 export const LOAD_ALBUMS = "albums/loadAlbums";
 export const SINGLE_ALBUM = "albums/singleAlbum";
 export const DELETE_ALBUM = "albums/deleteAlbum";
+export const UPDATE_ALBUM = "albums/updateAlbum";
 
 // =========================================//
 
@@ -27,6 +28,12 @@ const removedAlbum = (id) => {
   };
 };
 
+const updateAlbum = (album) => {
+  return {
+    type: UPDATE_ALBUM,
+    album
+  };
+};
 //==========================================//
 
 export const loadAlbums = () => async (dispatch) => {
@@ -35,7 +42,6 @@ export const loadAlbums = () => async (dispatch) => {
   if (res.ok) {
     const albums = await res.json();
     dispatch(loadAllAlbums(albums.Albums));
-    // return res;
   }
 };
 
@@ -45,7 +51,6 @@ export const getAlbum = (albumId) => async (dispatch) => {
   if (res.ok) {
     const album = await res.json();
     dispatch(loadAlbum(album));
-    // return album;
   }
 };
 
@@ -56,6 +61,20 @@ export const deleteAlbum = (albumId) => async (dispatch) => {
 
   if (res.ok) {
     dispatch(removedAlbum(albumId));
+  }
+};
+
+export const editAlbum = (album) => async (dispatch) => {
+  const result = await csrfFetch(`/albums/${album.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(album)
+  });
+  if (result.ok) {
+    const newAlbum = await result.json();
+    dispatch(updateAlbum(newAlbum));
   }
 };
 //=======================================//
@@ -81,6 +100,13 @@ const albumsReducer = (state = {}, action) => {
       newState = { ...state };
       delete newState[action.id];
       return newState;
+    }
+
+    case UPDATE_ALBUM: {
+      return {
+        ...state,
+        [action.album.id]: action.album
+      };
     }
 
     default:
