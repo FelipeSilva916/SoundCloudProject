@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./AllAlbums.css";
 import UploadAlbumModal from "../UploadAlbumModal";
+import "../UploadAlbumModal/UploadAlbum.css";
 
 const AllAlbumsComponent = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const AllAlbumsComponent = () => {
           </li>
         ))}
       </div>
-      <div>
+      <div className="create-album-btn">
         <UploadAlbumModal />
       </div>
     </div>
