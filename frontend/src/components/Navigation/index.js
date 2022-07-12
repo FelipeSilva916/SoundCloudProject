@@ -37,7 +37,7 @@ function Navigation({ isLoaded }) {
     );
   } else {
     sessionLinks = (
-      <>
+      <div className="home-screen-content">
         <div className="banner-container">
           <nav className="navigation">
             <div className="top-splash">
@@ -61,13 +61,13 @@ function Navigation({ isLoaded }) {
               </div>
             </div>
           </nav>
-          <div className="banner-words">
-            <p className="top-splash-header">
-              What's next in music is first on SoundCloud!
-            </p>
-          </div>
         </div>
-      </>
+        <div className="banner-words">
+          <p className="top-splash-header">
+            🎧 What's next in music is first on SoundCloud!
+          </p>
+        </div>
+      </div>
     );
   }
 
