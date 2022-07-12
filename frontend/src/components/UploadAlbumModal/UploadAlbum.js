@@ -66,6 +66,7 @@ const UploadAlbumForm = ({ setShowModal }) => {
         <div className="input-container">
           <label htmlFor="title">Title</label>
           <input
+            className="upload-input"
             type="text"
             name="title"
             value={title}
@@ -75,6 +76,7 @@ const UploadAlbumForm = ({ setShowModal }) => {
         <div className="input-container">
           <label htmlFor="previewImage">Image</label>
           <input
+            className="upload-input"
             type="text"
             name="previewImage"
             placeholder="Default Cover"
@@ -84,6 +86,7 @@ const UploadAlbumForm = ({ setShowModal }) => {
         <div className="input-container">
           <label htmlFor="description">Description</label>
           <input
+            className="upload-input"
             type="text"
             name="description"
             value={description}
@@ -91,8 +94,10 @@ const UploadAlbumForm = ({ setShowModal }) => {
           />
         </div>
         <div className="form-btn-container">
-          <button>Create</button>
-          <button className="main-btn" onClick={(e) => handleCancel(e)}>
+          <button type="submit" className="create-album-btn-modal">
+            Create
+          </button>
+          <button className="cancel-button" onClick={(e) => handleCancel(e)}>
             Cancel
           </button>
         </div>

@@ -37,3 +37,39 @@
   width: 100%;
   line-height: 1.5;
 }
+
+.form-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-btn-container button {
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 50%;
+  font-size: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 0 2rem;
+  padding: 0.5em;
+}
+
+.create-album-btn-modal {
+  background-color: #f50;
+}
+
+.create-album-btn-modal:hover {
+  font-weight: 700;
+  color: black;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    120deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
