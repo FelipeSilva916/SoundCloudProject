@@ -18,13 +18,15 @@
 }
 
 .search-bar-form input {
+  border: none;
+  display: flex;
   border: 1px solid #000;
   border-radius: 4px;
   font-size: 16px;
   outline: none;
   padding: 0.4em;
   transition: border 200ms;
-  width: 100%;
+  min-width: 275px;
 }
 
 .search-bar-form > div {
@@ -46,7 +48,7 @@
   border-radius: 4px;
   box-shadow: 0 10px 25px rgb(0 0 0 / 30%), 0 20px 48px rgb(0 0 0 / 16%),
     0 1px 4px rgb(0 0 0 / 12%);
-  max-height: 400px;
+  max-height: 20em;
   opacity: 0;
   overflow-y: scroll;
   padding: 16px;
@@ -54,9 +56,10 @@
   visibility: hidden;
   transform: scale(1.1);
   transition: all 200ms;
-  max-width: 200px;
+  max-width: 15em;
   color: black;
   z-index: 1;
+  right: 38%;
 }
 
 .results-active {
