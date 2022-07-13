@@ -66,6 +66,7 @@
 }
 
 .album-song-list-header {
+  margin: 2em 0;
   flex-wrap: wrap;
   display: flex;
   flex-direction: column;
@@ -114,34 +115,42 @@
 
 .user-buttons {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
+  width: 100%;
   align-items: center;
 }
 
 .user-delete-button {
-  margin: 1em 2em;
+  margin: 2em 0 7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-delete-button button {
+  display: flex;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 0.5em;
   border: none;
-  padding: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 2rem;
 }
 
 .user-edit-button button {
-  border: none;
-  padding: 1em;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.user-edit-button {
-  margin: 1em 2em;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 0 2rem;
+  background-color: #f50;
+  padding: 0.5em;
 }
 
 .album-detail-page-content {
@@ -149,4 +158,27 @@
   align-content: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.user-upload-button button {
+  display: flex;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 0 2rem;
+  background-color: #f50;
+  padding: 0.5em;
+}
+
+.user-upload-button button:hover {
+  color: black;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }

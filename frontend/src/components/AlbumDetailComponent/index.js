@@ -37,17 +37,19 @@ const AlbumDetail = ({ albums }) => {
 
   if (album?.userId === currentUser?.id) {
     userManipulateButton = (
-      <div className="user-buttons">
-        <div>
-          <UploadSongModal albumId={albumId} />
+      <>
+        <div className="user-buttons">
+          <div className="user-upload-button">
+            <UploadSongModal albumId={albumId} />
+          </div>
+          <div className="user-edit-button">
+            <EditAlbumModal album={albumId} />
+          </div>
         </div>
         <div className="user-delete-button">
           <DeleteAlbumButton albumId={albumId} />
         </div>
-        <div className="user-edit-button">
-          <EditAlbumModal album={albumId} />
-        </div>
-      </div>
+      </>
     );
   }
 
