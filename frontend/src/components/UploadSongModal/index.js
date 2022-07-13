@@ -7,7 +7,7 @@ function UploadSongModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Upload</button>
+      <button onClick={() => setShowModal(true)}>Upload Song</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <UploadSongForm setShowModal={setShowModal} />

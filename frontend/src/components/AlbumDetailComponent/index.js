@@ -8,6 +8,7 @@ import { playSong } from "../../store/player";
 import "./AlbumDetail.css";
 import DeleteAlbumButton from "../DeleteAlbumButton";
 import EditAlbumModal from "../EditAlbumModal";
+import UploadSongModal from "../UploadSongModal";
 
 const AlbumDetail = ({ albums }) => {
   const { albumId } = useParams();
@@ -37,6 +38,9 @@ const AlbumDetail = ({ albums }) => {
   if (album?.userId === currentUser?.id) {
     userManipulateButton = (
       <div className="user-buttons">
+        <div>
+          <UploadSongModal albumId={albumId} />
+        </div>
         <div className="user-delete-button">
           <DeleteAlbumButton albumId={albumId} />
         </div>

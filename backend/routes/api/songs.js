@@ -14,14 +14,15 @@ const { requireAuth, restoreUser } = require("../../utils/auth");
 //============= Create song route ====================//
 router.post("/", requireAuth, validateSongCreation, async (req, res) => {
   const { user } = req;
-  const { title, description, url, previewImage } = req.body;
+  const { title, description, url, previewImage, albumId } = req.body;
 
   const newSong = await Song.create({
     userId: user.id,
     title,
     description,
     url,
-    previewImage
+    previewImage,
+    albumId
   });
   res.status(201);
   res.json(newSong);

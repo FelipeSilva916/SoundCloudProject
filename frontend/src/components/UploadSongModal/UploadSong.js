@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/song";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import "./UploadSong.css";
 
 const UploadSongForm = ({ setShowModal }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
+  const { albumId } = useParams();
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [previewImage, setPreviewImage] = useState(
@@ -32,7 +33,8 @@ const UploadSongForm = ({ setShowModal }) => {
         userId,
         title,
         previewImage,
-        url
+        url,
+        albumId: +albumId
       })
     )
       .then(() => {
