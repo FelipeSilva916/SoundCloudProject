@@ -121,12 +121,19 @@
 }
 
 .user-delete-button {
-  margin: 2em 0 7em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#root
+  > div.album-detail-page-content
+  > div.album-detail-body-right
+  > div:nth-child(2)
+  > div.user-delete-button
+  > button {
+  margin: 2em 0 4em;
+}
 .user-delete-button button {
   display: flex;
   color: #fff;
