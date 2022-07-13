@@ -250,3 +250,9 @@ html {
   display: flex;
   flex-direction: column;
 }
+
+.banner-container {
+  background-color: hsla(0, 0%, 0%, 0.702);
+  border-top: 4px solid #f50;
+  box-shadow: #000000 0px 0px 30px 4px;
+}

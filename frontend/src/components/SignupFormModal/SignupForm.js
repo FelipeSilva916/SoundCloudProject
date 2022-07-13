@@ -46,7 +46,7 @@ function SignupForm() {
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <div classname="welcome-text">
+      <div className="welcome-text">
         <h2>Welcome!</h2>
         <p>Please fill out the form below to create an account.</p>
       </div>
