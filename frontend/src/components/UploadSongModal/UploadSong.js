@@ -39,7 +39,11 @@ const UploadSongForm = ({ setShowModal }) => {
     )
       .then(() => {
         setShowModal(false);
-        history.push(`/songs`);
+        if (albumId) {
+          history.push(`/albums/${albumId}`);
+        } else {
+          history.push(`/songs`);
+        }
       })
       .catch(async (res) => {
         const data = await res.json();
