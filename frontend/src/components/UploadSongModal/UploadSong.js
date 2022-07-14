@@ -36,7 +36,8 @@ const UploadSongForm = ({ setShowModal }) => {
         title,
         previewImage,
         url,
-        albumId: +albumId
+        albumId: +albumId,
+        description
       })
     )
       .then(() => {
