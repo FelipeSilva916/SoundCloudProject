@@ -63,7 +63,6 @@ const UploadSongForm = ({ setShowModal }) => {
 
   const updateImgFile = (e) => {
     const imgFile = e.target.files[0];
-    console.log(imgFile);
     setPreviewImage(imgFile);
   };
 
