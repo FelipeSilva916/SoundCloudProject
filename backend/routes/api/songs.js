@@ -11,9 +11,7 @@ const isProduction = environment === "production";
 
 const { requireAuth, restoreUser } = require("../../utils/auth");
 const {
-  singleMulterUpload,
   singlePublicFileUpload,
-  multiplePublicFileUpload,
   multipleFileKeysUpload
 } = require("../../awsS3");
 

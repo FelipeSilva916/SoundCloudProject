@@ -14,6 +14,7 @@ const UploadSongForm = ({ setShowModal }) => {
     "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/defaultLogo.png"
   );
   const [url, setUrl] = useState(null);
+  const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
   const history = useHistory();
 
@@ -91,8 +92,9 @@ const UploadSongForm = ({ setShowModal }) => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
+
         <div className="input-wrapper">
-          <label htmlFor="previewImage">Image Url</label>
+          <label htmlFor="previewImage">Image</label>
           <input
             className="upload-input"
             type="file"
@@ -101,26 +103,28 @@ const UploadSongForm = ({ setShowModal }) => {
             onChange={(e) => updateImgFile(e)}
           />
         </div>
-        {/* <div className="input-wrapper">
-          <label htmlFor="url">Song Url</label>
+
+        <div className="input-wrapper">
+          <label>Song</label>
           <input
             className="upload-input"
             type="file"
             name="url"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={(e) => updateSongFile(e)}
           />
-        </div> */}
-        <div className="input-wrapper">
-          <label>
-            <input
-              className="upload-input"
-              type="file"
-              name="url"
-              onChange={(e) => updateSongFile(e)}
-            />
-          </label>
         </div>
+
+        <div className="input-wrapper">
+          <label htmlFor="description">Description</label>
+          <input
+            className="upload-input"
+            type="text"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+
         <div className="form-btn-wrapper">
           <button className="upload-button" type="submit">
             Upload
