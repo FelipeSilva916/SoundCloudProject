@@ -32,6 +32,22 @@
   position: relative;
 }
 
+.play-button-song-detail {
+  color: white;
+  align-items: center;
+  background: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.play-button-song-detail:hover {
+  background-color: #ff5501;
+  color: black;
+  cursor: pointer;
+}
+
 .play-button:hover {
   background-color: #ff5501;
   transform: scale(1.5);
@@ -44,6 +60,9 @@
 
 .play-button i {
   font-size: 2rem;
+}
+.play-btn button {
+  margin: 30px;
 }
 
 .song-detail-body-right {
