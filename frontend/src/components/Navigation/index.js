@@ -11,8 +11,10 @@ import "react-h5-audio-player/lib/styles.css";
 import UploadSongModal from "../UploadSongModal";
 import SearchBar from "../SearchBar";
 import Player from "../Player";
+import { useHistory } from "react-router-dom";
 
 function Navigation({ isLoaded }) {
+  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   let sessionLinks;
   if (sessionUser) {
@@ -41,14 +43,13 @@ function Navigation({ isLoaded }) {
         <div className="banner-container">
           <nav className="navigation">
             <div className="top-splash">
-              <div className="logo-container">
+              <div className="logo-container" onClick={history.push("/")}>
                 <img
                   className="logo-image"
                   src={require("../../images/logo.png")}
                   alt="logo"
                 />
               </div>
-              <SearchBar />
               <div className="nav-right">
                 <div className="nav-right-ul">
                   <div className="login-nav-li">
