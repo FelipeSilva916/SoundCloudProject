@@ -27,10 +27,6 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/">
-            <Welcome />
-          </Route>
-
           <Route exact path="/songs">
             <AllSongs />
           </Route>
@@ -45,6 +41,10 @@ function App() {
 
           <Route exact path="/albums/:albumId">
             <AlbumDetailComponent albums={albums} />
+          </Route>
+
+          <Route exact path="/">
+            <Welcome />
           </Route>
 
           <Route path="/">
