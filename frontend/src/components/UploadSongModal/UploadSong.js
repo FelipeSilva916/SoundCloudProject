@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/song";
 import { useHistory, useParams } from "react-router";
@@ -16,7 +16,6 @@ const UploadSongForm = ({ setShowModal }) => {
   const [url, setUrl] = useState(null);
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
-  const [loading, setLoading] = useState(true);
   const history = useHistory();
 
   const reset = () => {
@@ -43,7 +42,6 @@ const UploadSongForm = ({ setShowModal }) => {
     )
       .then(() => {
         setShowModal(false);
-        setLoading(false);
         if (albumId) {
           history.push(`/albums/${albumId}`);
         } else {
@@ -60,12 +58,6 @@ const UploadSongForm = ({ setShowModal }) => {
 
     reset();
   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
 
   const updateSongFile = (e) => {
     const SongFile = e.target.files[0];
