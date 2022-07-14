@@ -8,6 +8,7 @@ import SongDetail from "./components/SongDetail";
 import AllAlbumsComponent from "./components/AllAlbums";
 import AlbumDetailComponent from "./components/AlbumDetailComponent";
 import Welcome from "./components/Navigation/Welcome";
+import PageNotFound from "./components/PageNotFound";
 //
 //
 
@@ -44,6 +45,10 @@ function App() {
 
           <Route exact path="/albums/:albumId">
             <AlbumDetailComponent albums={albums} />
+          </Route>
+
+          <Route path="/">
+            <PageNotFound />
           </Route>
         </Switch>
       )}
