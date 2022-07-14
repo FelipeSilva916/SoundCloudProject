@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/FelipeSilva916/SoundCloudProject#readme",
   "dependencies": {
+    "multer": "^1.4.5-lts.1",
     "react-audio-player": "^0.17.0",
     "react-h5-audio-player": "^3.8.4"
   }

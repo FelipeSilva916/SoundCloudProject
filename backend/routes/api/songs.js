@@ -10,23 +10,32 @@ const { environment } = require("../../config");
 const isProduction = environment === "production";
 
 const { requireAuth, restoreUser } = require("../../utils/auth");
+const { singleMulterUpload, singlePublicFileUpload } = require("../../awsS3");
 
 //============= Create song route ====================//
-router.post("/", requireAuth, validateSongCreation, async (req, res) => {
-  const { user } = req;
-  const { title, description, url, previewImage, albumId } = req.body;
+router.post(
+  "/",
+  requireAuth,
+  singleMulterUpload("url"),
+  validateSongCreation,
+  async (req, res) => {
+    const { user } = req;
+    console.log(req.body);
+    const { title, description, previewImage, albumId } = req.body;
+    const url = await singlePublicFileUpload(req.file);
 
-  const newSong = await Song.create({
-    userId: user.id,
-    title,
-    description,
-    url,
-    previewImage,
-    albumId
-  });
-  res.status(201);
-  res.json(newSong);
-});
+    const newSong = await Song.create({
+      userId: user.id,
+      title,
+      description,
+      url,
+      previewImage,
+      albumId
+    });
+    res.status(201);
+    res.json(newSong);
+  }
+);
 
 //========== Create a comment for song by ID =========//
 router.post(

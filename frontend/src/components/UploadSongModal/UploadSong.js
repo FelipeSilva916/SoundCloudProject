@@ -13,14 +13,14 @@ const UploadSongForm = ({ setShowModal }) => {
   const [previewImage, setPreviewImage] = useState(
     "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/defaultLogo.png"
   );
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(null);
   const [errors, setErrors] = useState([]);
   const history = useHistory();
 
   const reset = () => {
     setTitle("");
     setPreviewImage("");
-    setUrl("");
+    setUrl(null);
   };
 
   const handleSubmit = async (e) => {
@@ -54,6 +54,11 @@ const UploadSongForm = ({ setShowModal }) => {
       });
 
     reset();
+  };
+
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    setUrl(file);
   };
 
   const handleCancel = (e) => {
@@ -91,15 +96,25 @@ const UploadSongForm = ({ setShowModal }) => {
             onChange={(e) => setPreviewImage(e.target.value)}
           />
         </div>
-        <div className="input-wrapper">
+        {/* <div className="input-wrapper">
           <label htmlFor="url">Song Url</label>
           <input
             className="upload-input"
-            type="text"
+            type="file"
             name="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
+        </div> */}
+        <div className="input-wrapper">
+          <label>
+            <input
+              className="upload-input"
+              type="file"
+              name="url"
+              onChange={(e) => updateFile(e)}
+            />
+          </label>
         </div>
         <div className="form-btn-wrapper">
           <button className="upload-button" type="submit">

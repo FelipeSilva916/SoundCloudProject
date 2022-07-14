@@ -6,10 +6,8 @@ const csurf = require("csurf");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const { ValidationError } = require("sequelize");
-
 const { environment } = require("./config");
 const isProduction = environment === "production";
-
 const routes = require("./routes");
 
 //Initialize the Express application:
@@ -18,6 +16,7 @@ const app = express();
 app.use(morgan("dev"));
 //Cookie Parse middleware for parsing cookies
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //routes
 

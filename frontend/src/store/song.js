@@ -43,12 +43,20 @@ const addSong = (song) => ({
 //==================================================
 
 export const createSong = (data) => async (dispatch) => {
+  const { title, previewImage, url, albumId, description } = data;
+  const formData = new FormData();
+  formData.append("title", title);
+  formData.append("description", description);
+  if (url) formData.append("url", url);
+  if (previewImage) formData.append("previewImage", previewImage);
+  if (albumId) formData.append("albumId", albumId);
+
   const res = await csrfFetch("/api/songs", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "multipart/form-data"
     },
-    body: JSON.stringify(data)
+    body: formData
   });
   if (res.ok) {
     const song = await res.json();
