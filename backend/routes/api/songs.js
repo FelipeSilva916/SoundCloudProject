@@ -10,19 +10,30 @@ const { environment } = require("../../config");
 const isProduction = environment === "production";
 
 const { requireAuth, restoreUser } = require("../../utils/auth");
-const { singleMulterUpload, singlePublicFileUpload } = require("../../awsS3");
+const {
+  singleMulterUpload,
+  singlePublicFileUpload,
+  multiplePublicFileUpload,
+  multipleFileKeysUpload
+} = require("../../awsS3");
 
 //============= Create song route ====================//
 router.post(
   "/",
   requireAuth,
-  singleMulterUpload("url"),
+  multipleFileKeysUpload([
+    { name: "url", maxCount: 1 },
+    { name: "previewImage", maxCount: 1 }
+  ]),
   validateSongCreation,
   async (req, res) => {
     const { user } = req;
     console.log(req.body);
-    const { title, description, previewImage, albumId } = req.body;
-    const url = await singlePublicFileUpload(req.file);
+    const { title, description, albumId } = req.body;
+    const url = await singlePublicFileUpload(req.files.url[0]);
+    const previewImage = await singlePublicFileUpload(
+      req.files.previewImage[0]
+    );
 
     const newSong = await Song.create({
       userId: user.id,

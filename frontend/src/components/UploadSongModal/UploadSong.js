@@ -56,9 +56,15 @@ const UploadSongForm = ({ setShowModal }) => {
     reset();
   };
 
-  const updateFile = (e) => {
-    const file = e.target.files[0];
-    setUrl(file);
+  const updateSongFile = (e) => {
+    const SongFile = e.target.files[0];
+    setUrl(SongFile);
+  };
+
+  const updateImgFile = (e) => {
+    const imgFile = e.target.files[0];
+    console.log(imgFile);
+    setPreviewImage(imgFile);
   };
 
   const handleCancel = (e) => {
@@ -90,10 +96,10 @@ const UploadSongForm = ({ setShowModal }) => {
           <label htmlFor="previewImage">Image Url</label>
           <input
             className="upload-input"
-            type="text"
+            type="file"
             name="imagePreview"
             placeholder="Default Cover"
-            onChange={(e) => setPreviewImage(e.target.value)}
+            onChange={(e) => updateImgFile(e)}
           />
         </div>
         {/* <div className="input-wrapper">
@@ -112,7 +118,7 @@ const UploadSongForm = ({ setShowModal }) => {
               className="upload-input"
               type="file"
               name="url"
-              onChange={(e) => updateFile(e)}
+              onChange={(e) => updateSongFile(e)}
             />
           </label>
         </div>

@@ -87,6 +87,13 @@ const singleMulterUpload = (nameOfKey) =>
   multer({ storage: storage }).single(nameOfKey);
 const multipleMulterUpload = (nameOfKey) =>
   multer({ storage: storage }).array(nameOfKey);
+// add to aws file
+const multipleFileKeysUpload = (fieldArr) =>
+  multer({ storage: storage }).fields(fieldArr);
+
+// This is how you would use this as middleware
+
+// router.post('/path', multipleFileKeysUpload([ { name: 'image', maxCount: 1 }, { name: 'song', maxCount: 1} ]), otherMiddleware, (req, res) => { //route stuff });
 
 module.exports = {
   s3,
@@ -96,5 +103,6 @@ module.exports = {
   multiplePrivateFileUpload,
   retrievePrivateFile,
   singleMulterUpload,
-  multipleMulterUpload
+  multipleMulterUpload,
+  multipleFileKeysUpload
 };
