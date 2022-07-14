@@ -54,6 +54,12 @@ const UploadAlbumForm = ({ setShowModal }) => {
     history.push("/albums");
   };
 
+  const updateImgFile = (e) => {
+    const imgFile = e.target.files[0];
+    console.log(imgFile);
+    setPreviewImage(imgFile);
+  };
+
   return (
     <div className="create-album-form">
       <h2>Create An Album</h2>
@@ -75,14 +81,14 @@ const UploadAlbumForm = ({ setShowModal }) => {
           />
         </div>
 
-        <div className="input-container">
+        <div className="input-wrapper">
           <label htmlFor="previewImage">Image</label>
           <input
             className="upload-input"
-            type="text"
-            name="previewImage"
+            type="file"
+            name="imagePreview"
             placeholder="Default Cover"
-            onChange={(e) => setPreviewImage(e.target.value)}
+            onChange={updateImgFile}
           />
         </div>
 

@@ -26,7 +26,6 @@ router.post(
   validateSongCreation,
   async (req, res) => {
     const { user } = req;
-    console.log(req.body);
     const { title, description, albumId } = req.body;
     const url = await singlePublicFileUpload(req.files.url[0]);
     const previewImage = await singlePublicFileUpload(

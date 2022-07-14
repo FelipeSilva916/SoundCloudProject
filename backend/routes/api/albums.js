@@ -6,6 +6,7 @@ const {
 } = require("../../utils/validation");
 const { requireAuth, restoreUser } = require("../../utils/auth");
 const { User, Song, Album } = require("../../db/models");
+const { singleMulterUpload, singlePublicFileUpload } = require("../../awsS3");
 
 // ========= Create Song for an Album by ID ========//
 router.post(
@@ -123,18 +124,25 @@ router.get("/", async (req, res) => {
 });
 
 // ================== Create a new Album ====================//
-router.post("/", requireAuth, validateAlbumCreation, async (req, res) => {
-  const { user } = req;
-  const { title, description, previewImage } = req.body;
-  const newAlbum = await Album.create({
-    userId: user.id,
-    title,
-    description,
-    previewImage
-  });
-  res.status(201);
-  res.json(newAlbum);
-});
+router.post(
+  "/",
+  requireAuth,
+  singleMulterUpload("previewImage"),
+  validateAlbumCreation,
+  async (req, res) => {
+    const { user } = req;
+    const { title, description } = req.body;
+    const previewImage = await singlePublicFileUpload(req.file);
+    const newAlbum = await Album.create({
+      userId: user.id,
+      title,
+      description,
+      previewImage
+    });
+    res.status(201);
+    res.json(newAlbum);
+  }
+);
 
 // ============ Delete Album ===============//
 router.delete("/:albumId", requireAuth, restoreUser, async (req, res, next) => {

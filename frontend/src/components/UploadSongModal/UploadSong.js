@@ -22,6 +22,7 @@ const UploadSongForm = ({ setShowModal }) => {
     setTitle("");
     setPreviewImage("");
     setUrl(null);
+    setDescription("");
   };
 
   const handleSubmit = async (e) => {
