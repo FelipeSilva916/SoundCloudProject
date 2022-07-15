@@ -47,3 +47,14 @@ This application was created with the use of:
 - If no image is selected, the default image is given.
 - Search bar navigates user to the current song details.
 - Navigate through the application with uninterrupted audio playback.
+
+## To-Do:
+
+- [ ] Playlists
+- [ ] Comments
+- [ ] Current user profile page
+- [ ] Current user songs and albums
+- [ ] Comments
+- [ ] Likes
+- [ ] Follows
+- [ ] Improve search bar
