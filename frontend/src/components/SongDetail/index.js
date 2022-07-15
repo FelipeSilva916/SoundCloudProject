@@ -18,7 +18,6 @@ const SongDetails = () => {
   }, [dispatch, songId]);
 
   const song = songObject[songId];
-  console.log(song);
   const playSongBtn = useCallback(
     (song) => {
       dispatch(playSong(song));
