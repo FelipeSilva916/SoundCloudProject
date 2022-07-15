@@ -13,6 +13,14 @@ Login, explore, and listen at [SoundCloud Clone](https://soundcloudcloneapp.hero
 
 ![enter image description here](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+12.04.52+PM.png)
 
+## Songs Colletions:
+
+![enter image description here](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.24.18+PM.png)
+
+## Album Collections:
+
+![enter image description here](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.28.13+PM.png)
+
 ## Technologies:
 
 This application was created with the use of:
@@ -37,4 +45,5 @@ This application was created with the use of:
 - Upload the image and audio file to the song.
 - Upload an image for an album cover to the album.
 - If no image is selected, the default image is given.
+- Search bar navigates user to the current song details.
 - Navigate through the application with uninterrupted audio playback.

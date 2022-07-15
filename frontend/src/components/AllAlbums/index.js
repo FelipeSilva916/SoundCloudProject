@@ -19,6 +19,9 @@ const AllAlbumsComponent = () => {
 
   return (
     <div className="all-albums-wrapper">
+      <div className="create-album-btn">
+        <UploadAlbumModal />
+      </div>
       <div>
         {albums.map((album) => (
           <li key={album.id} className="album-card">
@@ -39,9 +42,6 @@ const AllAlbumsComponent = () => {
             </div>
           </li>
         ))}
-      </div>
-      <div className="create-album-btn">
-        <UploadAlbumModal />
       </div>
     </div>
   );
