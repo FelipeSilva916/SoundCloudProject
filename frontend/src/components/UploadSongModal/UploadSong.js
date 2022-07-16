@@ -15,7 +15,7 @@ const UploadSongForm = ({ setShowModal }) => {
   );
   const [url, setUrl] = useState(null);
   const [description, setDescription] = useState("");
-  const [submit, setSubmit] = useState("submit");
+  const [Submit, setSubmit] = useState("Submit");
   const [errors, setErrors] = useState([]);
   const history = useHistory();
 
@@ -24,7 +24,7 @@ const UploadSongForm = ({ setShowModal }) => {
     setPreviewImage("");
     setUrl(null);
     setDescription("");
-    setSubmit("submit");
+    setSubmit("Submit");
     setErrors([]);
   };
 
@@ -56,7 +56,7 @@ const UploadSongForm = ({ setShowModal }) => {
         const data = await res.json();
 
         if (data && data.errors) {
-          setSubmit("submit");
+          setSubmit("Submit");
           setErrors(data.errors);
         }
       });
@@ -137,7 +137,7 @@ const UploadSongForm = ({ setShowModal }) => {
 
         <div className="form-btn-wrapper">
           <button className="upload-button" type="submit">
-            {submit}
+            {Submit}
           </button>
           <button className="cancel-button" onClick={handleCancel}>
             Cancel
