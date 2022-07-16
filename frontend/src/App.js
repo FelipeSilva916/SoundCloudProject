@@ -21,6 +21,7 @@ function App() {
 
   // const songs = Object.values(useSelector((state) => state.songs));
   const albums = Object.values(useSelector((state) => state.albums));
+  const sessionUser = useSelector((state) => state.session.user);
 
   return (
     <>
@@ -47,9 +48,7 @@ function App() {
             <Welcome />
           </Route>
 
-          <Route path="/">
-            <PageNotFound />
-          </Route>
+          <Route path="/">{sessionUser && <PageNotFound />}</Route>
         </Switch>
       )}
     </>
