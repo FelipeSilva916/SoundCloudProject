@@ -82,16 +82,10 @@
   border-radius: 10px;
 }
 
-.user-buttons {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
 .song-detail-footer {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 1em;
 }
 
 .user-delete-button button {
@@ -99,7 +93,6 @@
   text-align: center;
   background-color: rgb(0, 0, 0);
   color: #fff;
-  height: 2.3rem;
   font-size: 20px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
@@ -114,17 +107,6 @@
     rgba(253, 29, 29, 1) 50%,
     rgb(0, 0, 0) 100%
   );
-}
-
-.user-edit-button button {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  background-color: #f50;
-  color: #fff;
-  font-size: 20px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 5px;
 }
 
 .user-edit-button button:hover {
