@@ -13,18 +13,22 @@ const UploadAlbumForm = ({ setShowModal }) => {
     "https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/defaultLogo.png"
   );
   const [description, setDescription] = useState("");
+  const [Submit, setSubmit] = useState("Submit");
   const [errors, setErrors] = useState([]);
 
   const reset = () => {
     setTitle("");
     setPreviewImage("");
     setDescription("");
+    setSubmit("Submit");
+    setErrors([]);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     setErrors([]);
+    setSubmit(<div className="fas fa-spinner fa-pulse"></div>);
 
     dispatch(
       createAlbum({
@@ -42,6 +46,7 @@ const UploadAlbumForm = ({ setShowModal }) => {
         const data = await res.json();
 
         if (data && data.errors) {
+          setSubmit("Submit");
           setErrors(data.errors);
         }
       });
@@ -105,7 +110,7 @@ const UploadAlbumForm = ({ setShowModal }) => {
 
         <div className="form-btn-container">
           <button type="submit" className="create-album-btn-modal">
-            Create
+            {Submit}
           </button>
           <button className="cancel-button" onClick={(e) => handleCancel(e)}>
             Cancel

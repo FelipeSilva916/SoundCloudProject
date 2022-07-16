@@ -25,6 +25,7 @@ const UploadSongForm = ({ setShowModal }) => {
     setUrl(null);
     setDescription("");
     setSubmit("submit");
+    setErrors([]);
   };
 
   const handleSubmit = async (e) => {
