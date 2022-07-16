@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 4em;
 }
 
 .song-detail-body {
@@ -10,6 +10,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+#root
+  > div.song-detail-container
+  > div
+  > div.song-detail-body-right.song-detail-container-div
+  > div.play-button-song-detail {
+  margin: 1em;
 }
 
 .song-preview-image {
