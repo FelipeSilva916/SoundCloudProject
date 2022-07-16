@@ -7,19 +7,19 @@ Login, explore, and listen at [SoundCloud Clone](https://soundcloudcloneapp.hero
 
 ## Landing Page View:
 
-![SoundCloud Landing Page View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+11.59.12+AM.png)
+![SoundCloud Landing Page View](./images/landingPage.png)
 
 ## Home View:
 
-![Home Screen View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+12.04.52+PM.png)
+![Home Screen View](./images/homeScreen.png)
 
-## Songs Colletions:
+## Songs Collections:
 
-![All Songs Collections View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.24.18+PM.png)
+![All Songs Collections View](./images/allSongs.png)
 
 ## Album Collections:
 
-![All Albums Collections View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.28.13+PM.png)
+![All Albums Collections View](./images/allAlbums.png)
 
 ## Technologies:
 
