@@ -5,21 +5,21 @@ A user can log in as a 'Demo' user or create an account.
 
 Login, explore, and listen at [SoundCloud Clone](https://soundcloudcloneapp.herokuapp.com/)
 
-## Welcome View:
+## Landing Page View:
 
-![enter image description here](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+11.59.12+AM.png)
+![SoundCloud Landing Page View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+11.59.12+AM.png)
 
 ## Home View:
 
-![enter image description here](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+12.04.52+PM.png)
+![Home Screen View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+12.04.52+PM.png)
 
 ## Songs Colletions:
 
-![enter image description here](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.24.18+PM.png)
+![All Songs Collections View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.24.18+PM.png)
 
 ## Album Collections:
 
-![enter image description here](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.28.13+PM.png)
+![All Albums Collections View](https://felipesoundcloudclone.s3.us-west-1.amazonaws.com/Screen+Shot+2022-07-15+at+1.28.13+PM.png)
 
 ## Technologies:
 
