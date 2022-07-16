@@ -92,16 +92,18 @@ const UploadSongForm = ({ setShowModal }) => {
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            required
           />
         </div>
 
         <div className="input-wrapper">
           <label htmlFor="previewImage">Image</label>
           <input
-            className="upload-input"
+            className="upload-input-file"
             type="file"
             name="imagePreview"
             placeholder="Default Cover"
+            required
             onChange={(e) => updateImgFile(e)}
           />
         </div>
@@ -109,7 +111,8 @@ const UploadSongForm = ({ setShowModal }) => {
         <div className="input-wrapper">
           <label>Song</label>
           <input
-            className="upload-input"
+            required
+            className="upload-input-file"
             type="file"
             name="url"
             onChange={(e) => updateSongFile(e)}
