@@ -1,9 +1,6 @@
 .rhap_container {
-  padding: 0.9rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   color: black;
-  background: rgb(131, 58, 180);
   background: linear-gradient(
     90deg,
     rgba(131, 58, 180, 1) 0%,
@@ -11,6 +8,7 @@
     rgba(252, 176, 69, 1) 100%
   );
   margin: 0 auto;
+  width: 100%;
 }
 
 .media-player {
@@ -36,8 +34,6 @@
 }
 
 .rhap_header {
-  background-color: black;
-  max-width: 25%;
   box-sizing: border-box;
   color: white;
   padding: 0.5rem;
