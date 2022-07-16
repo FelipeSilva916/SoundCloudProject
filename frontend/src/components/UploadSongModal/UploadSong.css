@@ -26,7 +26,6 @@ form {
   text-align: center;
   background-color: #f50;
   color: #fff;
-  height: 2.3rem;
   font-size: 20px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
@@ -63,13 +62,23 @@ form {
   text-align: center;
   color: #fff;
   width: 50%;
-  height: 2.3rem;
   font-size: 20px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   margin: 0 2rem;
+  padding: 0.5em;
 }
 
 .cancel-button {
   background-color: black;
+}
+
+.upload-input-file {
+  text-align: center;
+  width: 100%;
+}
+
+.upload-input-file:hover {
+  background-color: #f50;
+  border-radius: 4px;
 }

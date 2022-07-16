@@ -34,7 +34,6 @@ const AlbumDetail = ({ albums }) => {
   );
 
   let userManipulateButton;
-  console.log(currentUser);
   if (album?.userId === currentUser?.id) {
     userManipulateButton = (
       <>
