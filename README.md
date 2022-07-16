@@ -58,3 +58,5 @@ This application was created with the use of:
 - [ ] Likes
 - [ ] Follows
 - [ ] Improve search bar
+
+[Original Design Docs](https://github.com/FelipeSilva916/SoundCloudProject/wiki/Soundcloud-Clone-Original-Design-Docs)
