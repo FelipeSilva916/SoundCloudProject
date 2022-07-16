@@ -43,7 +43,7 @@ function Navigation({ isLoaded }) {
         <div className="banner-container">
           <nav className="navigation">
             <div className="top-splash">
-              <div className="logo-container" onClick={history.push("/")}>
+              <div className="logo-container">
                 <img
                   className="logo-image"
                   src={require("../../images/logo.png")}
