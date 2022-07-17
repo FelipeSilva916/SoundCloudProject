@@ -9,8 +9,6 @@ import AllAlbumsComponent from "./components/AllAlbums";
 import AlbumDetailComponent from "./components/AlbumDetailComponent";
 import Welcome from "./components/Navigation/Welcome";
 import PageNotFound from "./components/PageNotFound";
-//
-//
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +43,7 @@ function App() {
           <Route path="/albums/:albumId">
             <AlbumDetailComponent albums={albums} />
           </Route>
+
           <Route>
             <PageNotFound />
           </Route>
