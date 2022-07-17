@@ -34,7 +34,7 @@ const EditSongForm = ({ setShowModal }) => {
     )
       .then(() => {
         setShowModal(false);
-        history.push(`/songs`);
+        history.push(`/songs/${songId}`);
       })
       .catch(async (res) => {
         const error = await res.json();
