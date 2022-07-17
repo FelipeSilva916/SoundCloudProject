@@ -14,7 +14,6 @@ import Player from "../Player";
 import { useHistory } from "react-router-dom";
 
 function Navigation({ isLoaded }) {
-  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   let sessionLinks;
   if (sessionUser) {
