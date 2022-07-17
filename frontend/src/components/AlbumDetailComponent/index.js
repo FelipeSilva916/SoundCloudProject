@@ -36,7 +36,7 @@ const AlbumDetail = ({ albums }) => {
   let userManipulateButton;
   if (album?.userId === currentUser?.id) {
     userManipulateButton = (
-      <>
+      <div className="user-manipulate-button">
         <div className="user-buttons">
           <div className="user-upload-button">
             <UploadSongModal albumId={albumId} />
@@ -48,7 +48,7 @@ const AlbumDetail = ({ albums }) => {
         <div className="user-delete-button">
           <DeleteAlbumButton albumId={albumId} />
         </div>
-      </>
+      </div>
     );
   }
 

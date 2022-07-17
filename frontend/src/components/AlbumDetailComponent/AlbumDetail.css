@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 5em;
-  margin-top: 7rem;
+  margin-top: 3rem;
 }
 
 .album-detail-body-right {
@@ -67,7 +67,7 @@
 
 .album-song-list-header {
   margin: 2em 0;
-  margin-bottom: 7em;
+  margin-bottom: 3em;
   flex-wrap: wrap;
   display: flex;
   flex-direction: column;
@@ -188,4 +188,17 @@
     rgba(253, 29, 29, 1) 50%,
     rgba(252, 176, 69, 1) 100%
   );
+}
+
+.user-manipulate-button {
+  background-color: rgba(255, 255, 255, 0.737);
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
