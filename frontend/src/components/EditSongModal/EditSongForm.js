@@ -15,6 +15,7 @@ const EditSongForm = ({ setShowModal }) => {
   const [previewImage, setPreviewImage] = useState(song.previewImage);
   const [url, setUrl] = useState(song.url);
   const [errors, setErrors] = useState([]);
+  const [description, setDescription] = useState(song.description);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,9 +26,10 @@ const EditSongForm = ({ setShowModal }) => {
       actions.editSong({
         id: songId,
         title,
+        description,
+        userId,
         previewImage,
-        url,
-        userId
+        url
       })
     )
       .then(() => {
@@ -61,7 +63,7 @@ const EditSongForm = ({ setShowModal }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <div className="input-wrapper">
+          {/* <div className="input-wrapper">
             <label htmlFor="previewImage">Preview Image</label>
             <input
               className="edit-input"
@@ -71,8 +73,8 @@ const EditSongForm = ({ setShowModal }) => {
               value={previewImage}
               onChange={(e) => setPreviewImage(e.target.value)}
             />
-          </div>
-          <div className="input-wrapper">
+          </div> */}
+          {/* <div className="input-wrapper">
             <label htmlFor="url">Song URL</label>
             <input
               className="edit-input"
@@ -81,6 +83,17 @@ const EditSongForm = ({ setShowModal }) => {
               name="url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
+            />
+          </div> */}
+          <div className="input-wrapper">
+            <label htmlFor="description">Description</label>
+            <input
+              placeholder="Edit the description here"
+              className="edit-input"
+              id="description"
+              name="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div>

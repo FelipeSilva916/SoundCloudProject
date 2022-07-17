@@ -11,7 +11,6 @@ import "react-h5-audio-player/lib/styles.css";
 import UploadSongModal from "../UploadSongModal";
 import SearchBar from "../SearchBar";
 import Player from "../Player";
-import { useHistory } from "react-router-dom";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
