@@ -30,11 +30,11 @@ const SongDetails = () => {
   if (song?.userId === user?.id) {
     userManipulateButton = (
       <div className="user-buttons">
+        <div>
+          <EditSongModal song={songId} />
+        </div>
         <div className="user-delete-button">
           <DeleteSongButton songId={songId} />
-        </div>
-        <div className="user-edit-button">
-          <EditSongModal song={songId} />
         </div>
       </div>
     );

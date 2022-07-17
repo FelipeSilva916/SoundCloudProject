@@ -8,7 +8,9 @@ function EditSongModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>EDIT</button>
+      <button className="user-edit-button" onClick={() => setShowModal(true)}>
+        EDIT
+      </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditSongForm setShowModal={setShowModal} />

@@ -63,28 +63,7 @@ const EditSongForm = ({ setShowModal }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          {/* <div className="input-wrapper">
-            <label htmlFor="previewImage">Preview Image</label>
-            <input
-              className="edit-input"
-              type="text"
-              id="previewImage"
-              name="previewImage"
-              value={previewImage}
-              onChange={(e) => setPreviewImage(e.target.value)}
-            />
-          </div> */}
-          {/* <div className="input-wrapper">
-            <label htmlFor="url">Song URL</label>
-            <input
-              className="edit-input"
-              type="text"
-              id="url"
-              name="url"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-            />
-          </div> */}
+
           <div className="input-wrapper">
             <label htmlFor="description">Description</label>
             <input
