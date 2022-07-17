@@ -41,7 +41,7 @@ const AlbumDetail = ({ albums }) => {
           <div className="user-upload-button">
             <UploadSongModal albumId={albumId} />
           </div>
-          <div className="user-edit-button">
+          <div>
             <EditAlbumModal album={albumId} />
           </div>
         </div>

@@ -7,7 +7,9 @@ const EditAlbumModal = () => {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>EDIT</button>
+      <button className="user-edit-button" onClick={() => setShowModal(true)}>
+        EDIT
+      </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditAlbumForm setShowModal={setShowModal} />

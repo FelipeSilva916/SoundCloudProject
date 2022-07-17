@@ -148,7 +148,7 @@
   align-items: center;
 }
 
-.user-edit-button button {
+.user-edit-button {
   display: flex;
   text-align: center;
   color: #fff;
