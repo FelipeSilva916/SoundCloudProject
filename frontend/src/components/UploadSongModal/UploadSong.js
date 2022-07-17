@@ -17,6 +17,7 @@ const UploadSongForm = ({ setShowModal }) => {
   const [description, setDescription] = useState("");
   const [Submit, setSubmit] = useState("Submit");
   const [errors, setErrors] = useState([]);
+  const [disableButton, setDisableButton] = useState(false);
   const history = useHistory();
 
   const reset = () => {
@@ -25,6 +26,7 @@ const UploadSongForm = ({ setShowModal }) => {
     setUrl(null);
     setDescription("");
     setSubmit("Submit");
+    setDisableButton(false);
     setErrors([]);
   };
 
@@ -32,6 +34,7 @@ const UploadSongForm = ({ setShowModal }) => {
     e.preventDefault();
 
     setErrors([]);
+    setDisableButton(true);
     setSubmit(<div className="fas fa-spinner fa-pulse"></div>);
 
     await dispatch(
@@ -136,10 +139,18 @@ const UploadSongForm = ({ setShowModal }) => {
         </div>
 
         <div className="form-btn-wrapper">
-          <button className="upload-button" type="submit">
+          <button
+            disabled={disableButton}
+            className="upload-button"
+            type="submit"
+          >
             {Submit}
           </button>
-          <button className="cancel-button" onClick={handleCancel}>
+          <button
+            disabled={disableButton}
+            className="cancel-button"
+            onClick={handleCancel}
+          >
             Cancel
           </button>
         </div>
