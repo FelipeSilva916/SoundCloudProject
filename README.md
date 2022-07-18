@@ -48,6 +48,28 @@ This application was created with the use of:
 - Search bar navigates user to the current song details.
 - Navigate through the application with uninterrupted audio playback.
 
+## Technical Implementation Details:
+
+SoundCloud Clone is a single page application.
+SoundCLoud Clone allows the user to edit and delete their songs and albums. It uses the following logic to verify the user's credentials:
+
+```
+  let userManipulateButton;
+
+  if (song?.userId === user?.id) {
+    userManipulateButton = (
+      <div className="user-buttons">
+        <div>
+          <EditSongModal song={songId} />
+        </div>
+        <div className="user-delete-button">
+          <DeleteSongButton songId={songId} />
+        </div>
+      </div>
+    );
+  }
+```
+
 ## To-Do:
 
 - [ ] Playlists
