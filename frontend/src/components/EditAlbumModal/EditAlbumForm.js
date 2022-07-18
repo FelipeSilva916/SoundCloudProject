@@ -9,7 +9,6 @@ const EditAlbumForm = ({ setShowModal }) => {
   const history = useHistory();
   const album = useSelector((state) => state.albums[`${albumId}`]);
   const [title, setTitle] = useState(album.title);
-  const [previewImage, setPreviewImage] = useState(album.previewImage);
   const [description, setDescription] = useState(album.description);
   const [errors, setErrors] = useState([]);
 
@@ -22,7 +21,6 @@ const EditAlbumForm = ({ setShowModal }) => {
       editAlbum({
         id: albumId,
         title,
-        previewImage,
         description
       })
     )
@@ -57,17 +55,7 @@ const EditAlbumForm = ({ setShowModal }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <div className="input-wrapper">
-            <label htmlFor="previewImage">Preview Image</label>
-            <input
-              className="edit-input"
-              type="text"
-              id="previewImage"
-              name="previewImage"
-              value={previewImage}
-              onChange={(e) => setPreviewImage(e.target.value)}
-            />
-          </div>
+
           <div className="input-wrapper">
             <label htmlFor="url">Description</label>
             <input
