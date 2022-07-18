@@ -89,7 +89,6 @@ const UploadAlbumForm = ({ setShowModal }) => {
           <label htmlFor="previewImage">Image</label>
           <input
             required
-            className="upload-input"
             type="file"
             name="imagePreview"
             placeholder="Default Cover"
