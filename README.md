@@ -44,7 +44,6 @@ This application was created with the use of:
 - Create, read, update, and delete **Albums** (CRUD).
 - Upload the image and audio file to the song.
 - Upload an image for an album cover to the album.
-- If no image is selected, the default image is given.
 - Search bar navigates user to the current song details.
 - Navigate through the application with uninterrupted audio playback.
 
