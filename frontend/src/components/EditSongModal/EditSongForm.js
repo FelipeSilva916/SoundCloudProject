@@ -12,8 +12,6 @@ const EditSongForm = ({ setShowModal }) => {
   const userId = sessionUser.id;
   const song = useSelector((state) => state.songs[`${songId}`]);
   const [title, setTitle] = useState(song.title);
-  const [previewImage, setPreviewImage] = useState(song.previewImage);
-  const [url, setUrl] = useState(song.url);
   const [errors, setErrors] = useState([]);
   const [description, setDescription] = useState(song.description);
 
@@ -27,9 +25,7 @@ const EditSongForm = ({ setShowModal }) => {
         id: songId,
         title,
         description,
-        userId,
-        previewImage,
-        url
+        userId
       })
     )
       .then(() => {

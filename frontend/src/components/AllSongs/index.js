@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllSongs } from "../../store/song";
@@ -8,7 +8,6 @@ import "./AllSongs.css";
 const AllSongs = () => {
   const dispatch = useDispatch();
   const songs = useSelector((state) => Object.values(state.songs));
-  const [currentSong, setCurrentSong] = useState(null);
 
   useEffect(() => {
     dispatch(getAllSongs());
@@ -40,7 +39,6 @@ const AllSongs = () => {
                   className="play-button-allsongs"
                   onClick={() => {
                     SongBtn(song);
-                    setCurrentSong(song.url);
                   }}
                 >
                   <i className="fas fa-play"></i>
