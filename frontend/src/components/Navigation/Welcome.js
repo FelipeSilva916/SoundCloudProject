@@ -1,8 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllSongs } from "../../store/song";
 
 const Welcome = () => {
   const user = useSelector((state) => state.session.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllSongs());
+  }, [dispatch]);
+
   if (user) {
     return (
       <>
