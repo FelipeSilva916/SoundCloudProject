@@ -5,6 +5,22 @@ A user can log in as a 'Demo' user or create an account.
 
 Login, explore, and listen at [SoundCloud Clone](https://soundcloudcloneapp.herokuapp.com/)
 
+## Technologies:
+
+This application was created with the use of:
+
+- Express
+- Node JS
+- React
+- Sequelize
+- Csurf JS
+- BCrypt JS
+- Redux
+- Amazon AWS S3
+- React H5 Audio Player
+- SQLite3
+- Postgres
+
 ## Landing Page View:
 
 ![SoundCloud Landing Page View](./images/landingPage.png)
@@ -21,21 +37,7 @@ Login, explore, and listen at [SoundCloud Clone](https://soundcloudcloneapp.hero
 
 ![All Albums Collections View](./images/allAlbums.png)
 
-## Technologies:
 
-This application was created with the use of:
-
-- Express
-- Node JS
-- React
-- Sequelize
-- Csurf JS
-- BCrypt JS
-- Redux
-- Amazon AWS S3
-- React H5 Audio Player
-- SQLite3
-- Postgres
 
 ## Features
 
